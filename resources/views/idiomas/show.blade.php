@@ -21,8 +21,8 @@
       <td>{{$palabra->significado}}</td>
       <td>{{$palabra->updated_at}}</td>
       @if($idioma=="Italiano")
-      <td><!--<button><a href="{{ route('italiano.edit', $palabra->id_it) }}">Editar</a></button>-->
-        <form  method="POST" action="{{ route('italiano.destroy', $palabra->id_it) }}">
+      <td>
+        <form  method="POST" action="{{ route('italiano.destroy', $palabra->id) }}">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
           <button type="submit">
@@ -33,8 +33,8 @@
       @endif
 
       @if($idioma=="Griego")
-      <td><button><a href="{{ route('griego.edit', $palabra->id_gr) }}">Editar</a></button>
-        <form  method="POST" action="{{ route('griego.destroy', $palabra->id_gr) }}">
+      <td>
+        <form  method="POST" action="{{ route('griego.destroy', $palabra->id) }}">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
           <button type="submit">
@@ -45,8 +45,8 @@
       @endif
 
       @if($idioma=="Ingles")
-      <td><button><a href="{{ route('ingles.edit', $palabra->id_en) }}">Editar</a></button>
-        <form  method="POST" action="{{ route('ingles.destroy', $palabra->id_en) }}">
+      <td>
+        <form  method="POST" action="{{ route('ingles.destroy', $palabra->id) }}">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
           <button type="submit">

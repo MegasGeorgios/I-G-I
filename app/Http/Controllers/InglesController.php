@@ -102,8 +102,28 @@ class InglesController extends Controller
      */
     public function destroy($id)
     {
-      DB::table('ingles')->where('id_en', '=', $id)->delete();
+      DB::table('ingles')->where('id', '=', $id)->delete();
 
       return back()->withInput();
+    }
+
+    public function repaso(Request $request)
+    {
+        $idioma='Ingles';
+        $palabras = DB::table('ingles')->latest()->get();
+
+        if ($request->ordenar == 1) {
+          $palabras = DB::table('ingles')->latest()->take(20)->get();
+        }
+
+        if ($request->ordenar == 2) {
+          $palabras = DB::table('ingles')->latest()->take(60)->get();
+        }
+
+        if ($request->ordenar == 3) {
+          $palabras = DB::table('ingles')->latest()->take(100)->get();
+        }
+
+        return view ('idiomas.repaso', compact('idioma','palabras'));
     }
 }

@@ -102,8 +102,28 @@ class GriegoController extends Controller
      */
     public function destroy($id)
     {
-      DB::table('griegos')->where('id_gr', '=', $id)->delete();
+      DB::table('griegos')->where('id', '=', $id)->delete();
 
       return back()->withInput();
+    }
+
+    public function repaso(Request $request)
+    {
+        $idioma='Griego';
+        $palabras = DB::table('griegos')->latest()->get();
+
+        if ($request->ordenar == 1) {
+          $palabras = DB::table('griegos')->latest()->take(20)->get();
+        }
+
+        if ($request->ordenar == 2) {
+          $palabras = DB::table('griegos')->latest()->take(60)->get();
+        }
+
+        if ($request->ordenar == 3) {
+          $palabras = DB::table('griegos')->latest()->take(100)->get();
+        }
+
+        return view ('idiomas.repaso', compact('idioma','palabras'));
     }
 }

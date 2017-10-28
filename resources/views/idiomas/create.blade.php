@@ -26,7 +26,7 @@
       <select name="id_categoria" class="custom-select d-block my-3" required>
         <option value="">Seleccione</option>
         @foreach($categorias as $categoria)
-        <option value="{{$categoria->id_categoria}}">{{$categoria->nombre_categoria}}</option>
+        <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
         @endforeach
       </select>
     </div>

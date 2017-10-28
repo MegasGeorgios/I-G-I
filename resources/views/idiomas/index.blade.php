@@ -19,20 +19,20 @@
                           <div class="dropdown-menu btn-block">
                             <a class="dropdown-item">
                               @if($idioma=="Italiano")
-                                <a href="{{ route('italiano.show', $categoria->id_categoria) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
+                                <a href="{{ route('italiano.show', $categoria->id) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
                               @endif
 
                               @if($idioma=="Griego")
-                                <a href="{{ route('griego.show', $categoria->id_categoria) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
+                                <a href="{{ route('griego.show', $categoria->id) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
                               @endif
 
                               @if($idioma=="Ingles")
-                                <a href="{{ route('ingles.show', $categoria->id_categoria) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
+                                <a href="{{ route('ingles.show', $categoria->id) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
                               @endif
                             </a>
 
                             <a class="dropdown-item">
-                              <form  method="POST" action="{{ route('categoria.destroy', $categoria->id_categoria) }}">
+                              <form  method="POST" action="{{ route('categoria.destroy', $categoria->id) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <a class="list-group-item list-group-item-action" style="text-align:center;">

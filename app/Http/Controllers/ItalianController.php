@@ -103,7 +103,7 @@ class ItalianController extends Controller
      */
     public function destroy($id)
     {
-         DB::table('italians')->where('id_it', '=', $id)->delete();
+         DB::table('italians')->where('id', '=', $id)->delete();
 
          return back()->withInput();
     }

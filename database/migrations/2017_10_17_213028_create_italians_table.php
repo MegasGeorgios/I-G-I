@@ -14,11 +14,11 @@ class CreateItaliansTable extends Migration
     public function up()
     {
         Schema::create('italians', function (Blueprint $table) {
-            $table->increments('id_it');
+            $table->increments('id');
             $table->string('palabra');
             $table->string('significado');
             $table->integer('id_categoria')->unsigned();
-            $table->foreign('id_categoria')->references('id_categoria')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

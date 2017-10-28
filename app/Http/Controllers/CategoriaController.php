@@ -59,7 +59,7 @@ class CategoriaController extends Controller
      */
     public function show(categoria $categoria)
     {
-      $idioma =session('idioma');
+      /*$idioma =session('idioma');
 
       if ($idioma=="Italiano") {
         return redirect()->action('ItalianController@show', ['categoria' => $categoria]);
@@ -69,7 +69,7 @@ class CategoriaController extends Controller
       }
       if ($idioma=="Ingles") {
         return redirect()->action('InglesController@show', ['categoria' => $categoria]);
-      }
+      }*/
     }
 
     /**
@@ -103,7 +103,7 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-      DB::table('categorias')->where('id_categoria', '=', $id)->delete();
+      DB::table('categorias')->where('id', '=', $id)->delete();
 
       return back()->withInput();
     }
