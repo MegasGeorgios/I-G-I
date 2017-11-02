@@ -20,28 +20,21 @@
                             <a class="dropdown-item">
                               @if($idioma=="Italiano")
                                 <a href="{{ route('italiano.show', $categoria->id) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
+                                <a href="{{ route('italiano.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                               @endif
 
                               @if($idioma=="Griego")
                                 <a href="{{ route('griego.show', $categoria->id) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
+                                <a href="{{ route('griego.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                               @endif
 
                               @if($idioma=="Ingles")
                                 <a href="{{ route('ingles.show', $categoria->id) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver</a>
+                                <a href="{{ route('ingles.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                               @endif
                             </a>
 
-                            <a class="dropdown-item">
-                              <form  method="POST" action="{{ route('categoria.destroy', $categoria->id) }}">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <a class="list-group-item list-group-item-action" style="text-align:center;">
-                                <button style="background: transparent; border: none !important;" type="submit">
-                                    Eliminar
-                                </button>
-                                </a>
-                              </form>
-                            </a>
+
                           </div>
                       </div>
                       @endforeach

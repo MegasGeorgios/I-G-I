@@ -100,11 +100,18 @@ class InglesController extends Controller
      * @param  \App\ingles  $ingles
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-      DB::table('ingles')->where('id', '=', $id)->delete();
+      if ($request->clave == 'qwertyuiop') {
+        # code...
 
-      return back()->withInput();
+         DB::table('ingles')->where('id', '=', $id)->delete();
+
+         return back()->withInput()->with('success','Se ha eliminado correctamente');
+      }else {
+        # code...
+        return back()->withInput()->with('wrong','Clave incorrecta');
+      }
     }
 
     public function repaso(Request $request)

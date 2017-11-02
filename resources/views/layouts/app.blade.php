@@ -19,12 +19,17 @@
 <body>
     <div id="app">
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #263238;">
-            <a class="navbar-brand" href="{{ url('/') }}" style="color:white;"><i class="	fa fa-institution" style="font-size:20px;color:white"></i> {{ config('app.name', 'Laravel') }}</a>
-            <a class="navbar-brand " href="{{ url('/home') }}" style="color:white;"><i class="	fa fa-user-circle" style="font-size:20px;color:white"></i> MENU</a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="{{ url('/') }}" style="font-size:18px; color:white;"><i class="	fa fa-institution" style="font-size:20px;color:white"></i> {{ config('app.name', 'Laravel') }}</a>
+              <div class="dropdown" style="font-size:18px;color:white">
+                <button class=" dropdown-toggle" style="background-color: #263238; border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  MENU
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{{ route('italiano.index') }}">Italiano</a>
+                  <a class="dropdown-item" href="{{ route('griego.index') }}">Griego</a>
+                  <a class="dropdown-item" href="{{ route('ingles.index') }}">Ingles</a>
+                </div>
+              </div>
 
 
 

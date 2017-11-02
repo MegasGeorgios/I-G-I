@@ -68,7 +68,7 @@ class ItalianController extends Controller
     {
       $palabras = DB::table('italians')->where('id_categoria', '=', $id)->get();
       $idioma='Italiano';
-      return view ('idiomas.show', compact('palabras','idioma'));
+      return view ('idiomas.show', compact('palabras','idioma','id'));
 
     }
 
@@ -101,11 +101,19 @@ class ItalianController extends Controller
      * @param  \App\italian  $italian
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+
+      if ($request->clave == 'qwertyuiop') {
+        # code...
+
          DB::table('italians')->where('id', '=', $id)->delete();
 
-         return back()->withInput();
+         return back()->withInput()->with('success','Se ha eliminado correctamente');
+      }else {
+        # code...
+        return back()->withInput()->with('wrong','Clave incorrecta');
+      }
     }
 
     public function repaso(Request $request)

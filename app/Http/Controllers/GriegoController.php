@@ -100,11 +100,18 @@ class GriegoController extends Controller
      * @param  \App\griego  $griego
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-      DB::table('griegos')->where('id', '=', $id)->delete();
+      if ($request->clave == 'qwertyuiop') {
+        # code...
 
-      return back()->withInput();
+         DB::table('griegos')->where('id', '=', $id)->delete();
+
+         return back()->withInput()->with('success','Se ha eliminado correctamente');
+      }else {
+        # code...
+        return back()->withInput()->with('wrong','Clave incorrecta');
+      }
     }
 
     public function repaso(Request $request)

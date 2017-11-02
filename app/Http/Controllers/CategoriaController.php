@@ -101,10 +101,17 @@ class CategoriaController extends Controller
      * @param  \App\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-      DB::table('categorias')->where('id', '=', $id)->delete();
-
-      return back()->withInput();
+        if ($request->clave_cat == 'qwertyuiop') {
+              # code...
+            DB::table('categorias')->where('id', '=', $id)->delete();
+            $categorias = categoria::all();
+            $idioma = session('idioma');
+            return view ('idiomas.index', compact('categorias','idioma'))->with('success','Se ha eliminado correctamente');
+         }else {
+            # code...
+            return back()->withInput()->with('wrong','Clave incorrecta');
+       }
     }
 }

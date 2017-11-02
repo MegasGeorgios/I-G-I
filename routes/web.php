@@ -27,6 +27,8 @@ Route::resource('/ingles', 'InglesController');
 
 Route::resource('/categoria', 'CategoriaController');
 
+Route::resource('/cuestionario', 'CuestionarioController');
+
 Route::get('/repasoitaliano', 'ItalianController@repaso');
 
 Route::get('/repasogriego', 'GriegoController@repaso');

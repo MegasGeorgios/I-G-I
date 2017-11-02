@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if (session('wrong'))
+<div class="alert alert-danger " role="alert">
+      <center><strong>{{ session('wrong') }}</strong></center>
+</div>
+@endif
+@if (session('success'))
+<div class="alert alert-primary " role="alert">
+      <center><strong>{{ session('success') }}</strong></center>
+</div>
+@endif
 <table class="table" >
   <thead class="thead-dark">
     <tr>
@@ -25,6 +34,7 @@
         <form  method="POST" action="{{ route('italiano.destroy', $palabra->id) }}">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
+          <input type="password" name="clave" required>
           <button type="submit">
               Eliminar
           </button>
@@ -37,6 +47,7 @@
         <form  method="POST" action="{{ route('griego.destroy', $palabra->id) }}">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
+          <input type="password" name="clave" required>
           <button type="submit">
               Eliminar
           </button>
@@ -49,6 +60,7 @@
         <form  method="POST" action="{{ route('ingles.destroy', $palabra->id) }}">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
+          <input type="password" name="clave" required>
           <button type="submit">
               Eliminar
           </button>
@@ -59,4 +71,5 @@
     @endforeach
   </tbody>
 </table>
+
 @endsection
