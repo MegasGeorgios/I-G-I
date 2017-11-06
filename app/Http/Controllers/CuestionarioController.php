@@ -41,7 +41,6 @@ class CuestionarioController extends Controller
       $task = new cuestionario;
       if (isset($request->frase)) {
         $task->frase = $request->frase;
-        $task->sig_frase = $request->sig_frase;
       }
       if (isset($request->sig_frase)) {
         $task->sig_frase = $request->sig_frase;

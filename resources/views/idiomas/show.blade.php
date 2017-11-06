@@ -28,7 +28,7 @@
       <th scope="row"><?php echo "$i";$i++; ?></th>
       <td>{{$palabra->palabra}}</td>
       <td>{{$palabra->significado}}</td>
-      <td>{{$palabra->updated_at}}</td>
+      <td>{{date('F d, Y', strtotime($palabra->updated_at))}}</td>
       @if($idioma=="Italiano")
       <td>
         <form  method="POST" action="{{ route('italiano.destroy', $palabra->id) }}">
