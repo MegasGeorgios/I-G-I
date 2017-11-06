@@ -17,19 +17,19 @@
                       @if($idioma=="Italiano")
                       <a href="{{ route('italiano.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                       <a href="/repasoitaliano" class="list-group-item list-group-item-action" style="text-align:center;">Repasar Vocabulario</a>
-                      <a href="" data-toggle="modal" data-target="#exampleModal1" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>
+                      <!--<a href="" data-toggle="modal" data-target="#exampleModal1" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>-->
                       @endif
                       @if($idioma=="Griego")
                       <a href="{{ route('griego.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                       <a href="/repasogriego" class="list-group-item list-group-item-action" style="text-align:center;">Repasar Vocabulario</a>
-                      <a href="" data-toggle="modal" data-target="#exampleModal2" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>
+                      <!--<a href="" data-toggle="modal" data-target="#exampleModal2" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>-->
                       @endif
                       @if($idioma=="Ingles")
                       <a href="{{ route('ingles.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                       <a href="/repasoingles" class="list-group-item list-group-item-action" style="text-align:center;">Repasar Vocabulario</a>
-                      <a href="" data-toggle="modal" data-target="#exampleModal3" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>
+                      <!--<a href="" data-toggle="modal" data-target="#exampleModal3" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>-->
                       @endif
-                      <a href="{{ route('cuestionario.index')}} " class="list-group-item list-group-item-action" style="text-align:center;">Ver Apuntes</a>
+                      <!--<a href="{{ route('cuestionario.index')}} " class="list-group-item list-group-item-action" style="text-align:center;">Ver Apuntes</a>-->
                   </div>
                 </div>
             </div>
