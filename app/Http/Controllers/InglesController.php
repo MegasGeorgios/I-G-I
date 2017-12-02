@@ -137,6 +137,8 @@ class InglesController extends Controller
     public function buscar_in(Request $request)
     {
       $buscar=$request->buscar;
+      $buscar=trim($buscar);
+      $buscar=str_replace(' ','',$buscar);
       $palabras= DB::table('ingles')
       ->where('palabra','LIKE','%'.$buscar.'%')
       ->Orwhere('significado','LIKE','%'.$buscar.'%')->get();
