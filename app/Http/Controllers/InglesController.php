@@ -133,4 +133,16 @@ class InglesController extends Controller
 
         return view ('idiomas.repaso', compact('idioma','palabras'));
     }
+
+    public function buscar_in(Request $request)
+    {
+      $buscar=$request->buscar;
+      $palabras= DB::table('ingles')
+      ->where('palabra','LIKE','%'.$buscar.'%')
+      ->Orwhere('significado','LIKE','%'.$buscar.'%')->get();
+      $idioma='Ingles';
+
+      return view ('idiomas.show', compact('palabras','idioma'));
+
+    }
 }

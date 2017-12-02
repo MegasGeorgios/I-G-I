@@ -18,16 +18,28 @@
                       <a href="{{ route('italiano.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                       <a href="/repasoitaliano" class="list-group-item list-group-item-action" style="text-align:center;">Repasar Vocabulario</a>
                       <!--<a href="" data-toggle="modal" data-target="#exampleModal1" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>-->
+                      <form class="form-inline my-2 my-lg-0" action="{{url('/buscar_it')}}">
+                        <input class="form-control mr-sm-2" name="buscar" type="search" placeholder="Buscar palabra" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                      </form>
                       @endif
                       @if($idioma=="Griego")
                       <a href="{{ route('griego.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                       <a href="/repasogriego" class="list-group-item list-group-item-action" style="text-align:center;">Repasar Vocabulario</a>
                       <!--<a href="" data-toggle="modal" data-target="#exampleModal2" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>-->
+                      <form class="form-inline my-2 my-lg-0" action="{{url('/buscar_gr')}}">
+                        <input class="form-control mr-sm-2" name="buscar" type="search" placeholder="Buscar palabra" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                      </form>
                       @endif
                       @if($idioma=="Ingles")
                       <a href="{{ route('ingles.create')}}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                       <a href="/repasoingles" class="list-group-item list-group-item-action" style="text-align:center;">Repasar Vocabulario</a>
                       <!--<a href="" data-toggle="modal" data-target="#exampleModal3" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>-->
+                      <form class="form-inline my-2 my-lg-0" action="{{url('/buscar_in')}}">
+                        <input class="form-control mr-sm-2" name="buscar" type="search" placeholder="Buscar palabra" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                      </form>
                       @endif
                       <!--<a href="{{ route('cuestionario.index')}} " class="list-group-item list-group-item-action" style="text-align:center;">Ver Apuntes</a>-->
                   </div>

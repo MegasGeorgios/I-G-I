@@ -135,4 +135,16 @@ class ItalianController extends Controller
 
         return view ('idiomas.repaso', compact('idioma','palabras'));
     }
+
+    public function buscar_it(Request $request)
+    {
+      $buscar=$request->buscar;
+      $palabras= DB::table('italians')
+      ->where('palabra','LIKE','%'.$buscar.'%')
+      ->Orwhere('significado','LIKE','%'.$buscar.'%')->get();
+      $idioma='Italiano';
+
+      return view ('idiomas.show', compact('palabras','idioma'));
+
+    }
 }

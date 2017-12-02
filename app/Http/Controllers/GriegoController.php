@@ -133,4 +133,16 @@ class GriegoController extends Controller
 
         return view ('idiomas.repaso', compact('idioma','palabras'));
     }
+
+    public function buscar_gr(Request $request)
+    {
+      $buscar=$request->buscar;
+      $palabras= DB::table('griegos')
+      ->where('palabra','LIKE','%'.$buscar.'%')
+      ->Orwhere('significado','LIKE','%'.$buscar.'%')->get();
+      $idioma='Griego';
+
+      return view ('idiomas.show', compact('palabras','idioma'));
+
+    }
 }
