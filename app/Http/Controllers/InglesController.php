@@ -31,7 +31,7 @@ class InglesController extends Controller
     public function create()
     {
       $idioma='Ingles';
-      $ultimas5palabras=DB::table('ingles')->join('categorias','ingles.id_categoria','=', 'categorias.id')->latest()->take(7)->get();
+      $ultimas5palabras=DB::table('ingles')->latest()->take(7)->get();
       $categorias = categoria::all();
       return view ('idiomas.create', compact('idioma','categorias','ultimas5palabras'));
     }

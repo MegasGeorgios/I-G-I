@@ -42,8 +42,9 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">{{$idioma}}</th>
+      <th scope="col"></th>
       <th scope="col">Español</th>
-      <th scope="col">Categoria</th>
+
     </tr>
   </thead>
   <tbody>
@@ -52,8 +53,9 @@
     <tr>
       <th scope="row"><?php echo "$i";$i++; ?></th>
       <td>{{$u5p->palabra}}</td>
+      <td></td>
       <td>{{$u5p->significado}}</td>
-      <td>{{$u5p->nombre_categoria}}</td>
+
     </tr>
     @endforeach
   </tbody>
