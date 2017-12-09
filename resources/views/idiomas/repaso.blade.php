@@ -35,6 +35,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">{{$idioma}}</th>
+      <th scope="col"></th>
       <th scope="col">Español</th>
     </tr>
   </thead>
@@ -44,6 +45,7 @@
     <tr>
       <th scope="row"><?php echo "$i";$i++; ?></th>
       <td>{{$palabra->palabra}}</td>
+      <td></td>
       <td>{{$palabra->significado}}</td>
 
     </tr>
