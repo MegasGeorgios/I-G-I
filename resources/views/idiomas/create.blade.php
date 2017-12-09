@@ -53,7 +53,7 @@
       <th scope="row"><?php echo "$i";$i++; ?></th>
       <td>{{$u5p->palabra}}</td>
       <td>{{$u5p->significado}}</td>
-      <td>{{$u5p->id_categoria}}</td>
+      <td>{{$u5p->$nombre_categoria}}</td>
     </tr>
     @endforeach
   </tbody>
