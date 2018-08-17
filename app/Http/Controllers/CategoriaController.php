@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\categoria;
+use App\Griego;
+use App\Italiano;
+use App\Ingles;
+use App\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,33 +16,34 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($idioma)
     {
-      $categorias = categoria::all();
-      $idioma = session('idioma');
+      if ($idioma == 'italiano') {
+        $palabras = Italiano::orderBy('created_at', 'desc')->get();
+      }elseif ($idioma == 'griego') {
+        $palabras = Griego::orderBy('created_at', 'desc')->get();
+      }elseif ($idioma == 'ingles') {
+        $palabras = Ingles::orderBy('created_at', 'desc')->get();
+      }
+
+      $cat = $palabras->map(function ($u) {
+          return $u->id_categoria;
+      });
+
+      $id_categorias = collect($cat)->unique();
+
+      foreach ($id_categorias as $key => $id_categoria) {
+        $categorias[] = Categoria::where('id',$id_categoria)->select('id','nombre_categoria')->get();
+      }
+
       return view ('idiomas.index', compact('categorias','idioma'));
-
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Almacenar categoria
      */
     public function store(Request $request)
     {
-
       $this->validate($request, [
       'nombre_categoria' => 'required'
       ]);
@@ -52,66 +56,41 @@ class CategoriaController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\categoria  $categoria
-     * @return \Illuminate\Http\Response
+     * Mostrar palabras de una categoria de un idioma
      */
-    public function show(categoria $categoria)
+    public function show($idioma,$id)
     {
-      /*$idioma =session('idioma');
+      if ($idioma == 'italiano') {
+        $palabras = Italiano::where('id_categoria', '=', $id)->orderBy('created_at', 'desc')->get();
+      }elseif ($idioma == 'griego') {
+        $palabras = Griego::where('id_categoria', '=', $id)->orderBy('created_at', 'desc')->get();
+      }elseif ($idioma == 'ingles') {
+        $palabras = Ingles::where('id_categoria', '=', $id)->orderBy('created_at', 'desc')->get();
+      }
 
-      if ($idioma=="Italiano") {
-        return redirect()->action('ItalianController@show', ['categoria' => $categoria]);
-      }
-      if ($idioma=="Griego") {
-        return redirect()->action('GriegoController@show', ['categoria' => $categoria]);
-      }
-      if ($idioma=="Ingles") {
-        return redirect()->action('InglesController@show', ['categoria' => $categoria]);
-      }*/
+      $categoria = Categoria::find($id);
+      $nombre_categoria = $categoria->nombre_categoria;
+
+      return view ('idiomas.show', compact('palabras','idioma','categoria'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(categoria $categoria)
-    {
-
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\categoria  $categoria
-     * @return \Illuminate\Http\Response
+     * Actualizar-editar una categoria
      */
     public function update(Request $request, $id)
     {
+      if ($request->clave == config('password.psswd.pass')) {
 
-    }
+          $categoria = Categoria::find($id);
+          $categoria->nombre_categoria = $request->nombre_categoria;
+          $categoria->save();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request, $id)
-    {
-        if ($request->clave_cat == 'qwertyuiop') {
-              # code...
-            DB::table('categorias')->where('id', '=', $id)->delete();
-            $categorias = categoria::all();
-            $idioma = session('idioma');
-            return view ('idiomas.index', compact('categorias','idioma'))->with('success','Se ha eliminado correctamente');
-         }else {
-            # code...
-            return back()->withInput()->with('wrong','Clave incorrecta');
+          return back()->withInput()->with('success','Se ha actualizado correctamente');
+       }else {
+         # code...
+         return back()->withInput()->with('wrong','Clave incorrecta');
        }
     }
+
+
 }

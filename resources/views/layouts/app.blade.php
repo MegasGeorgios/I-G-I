@@ -25,9 +25,9 @@
                   MENU
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{{ route('italiano.index') }}">Italiano</a>
-                  <a class="dropdown-item" href="{{ route('griego.index') }}">Griego</a>
-                  <a class="dropdown-item" href="{{ route('ingles.index') }}">Ingles</a>
+                  <a class="dropdown-item" href="{{ url('/idioma/italiano') }}">Italiano</a>
+                  <a class="dropdown-item" href="{{ url('/idioma/griego') }}">Griego</a>
+                  <a class="dropdown-item" href="{{ url('/idioma/ingles') }}">Ingles</a>
                 </div>
               </div>
 

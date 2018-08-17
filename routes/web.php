@@ -19,24 +19,20 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::resource('/italiano', 'ItalianController');
+/*
+*   Routes Idioma Controller
+*/
+Route::get('/idioma/{idioma}', 'IdiomaController@index');
+Route::get('/idioma/{idioma}/agregar', 'IdiomaController@add_word');
+Route::post('/idioma/agregar/palabra', 'IdiomaController@store')->name('idioma.store');
+Route::post('/eliminar/palabra/{palabra_id}', 'IdiomaController@destroy')->name('idioma.destroy');
+Route::get('/idioma/{idioma}/repaso', 'IdiomaController@repaso');
+Route::get('/idioma/{idioma}/buscar', 'IdiomaController@search');
 
-Route::resource('/griego', 'GriegoController');
-
-Route::resource('/ingles', 'InglesController');
-
-Route::resource('/categoria', 'CategoriaController');
-
-Route::resource('/cuestionario', 'CuestionarioController');
-
-Route::get('/repasoitaliano', 'ItalianController@repaso');
-
-Route::get('/repasogriego', 'GriegoController@repaso');
-
-Route::get('/repasoingles', 'InglesController@repaso');
-
-Route::get('/buscar_in', 'InglesController@buscar_in');
-
-Route::get('/buscar_it', 'ItalianController@buscar_it');
-
-Route::get('/buscar_gr', 'GriegoController@buscar_gr');
+/*
+*   Routes Categoria Controller
+*/
+Route::get('/categorias/{idioma}', 'CategoriaController@index');
+Route::get('/idioma/{idioma}/categoria/{categoria_id}', 'CategoriaController@show');
+Route::post('/categorias', 'CategoriaController@store')->name('categoria.store');
+Route::post('/editar/categoria/{id}', 'CategoriaController@update')->name('categoria.update');

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ingles extends Model
+class Ingles extends Model
 {
   protected $table = 'ingles';
 
@@ -12,8 +12,8 @@ class ingles extends Model
       'palabra', 'significado'
   ];
 
-  public function categorias()
+  public function categoria()
     {
-        return $this->belongsTo('App\categoria');
+        return $this->belongsTo('App\Categoria');
     }
 }

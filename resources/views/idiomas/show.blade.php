@@ -11,6 +11,28 @@
       <center><strong>{{ session('success') }}</strong></center>
 </div>
 @endif
+
+@if(isset($categoria))
+<form  method="POST" action="{{ url('/editar/categoria/'.$categoria->id) }}">
+  {{ csrf_field() }}
+    <div class="row" >
+      <div class="col-md-3 mb-3 center-block">
+        <label for="validationServer01">Editar</label>
+        <input type="text" class="form-control is-valid" id="validationServer01" name="nombre_categoria" value="{{$categoria->nombre_categoria}}"  required>
+
+        <input type="password" class="form-control is-valid" id="validationServer02" name="clave" placeholder="contraseña" required>
+
+        <input type="hidden" name="idioma" value="{{$idioma}}">
+
+        <button type="submit">
+          Editar
+        </button>
+      </div>
+    </div>
+</form>
+@endif
+
+<br>
 <table class="table" >
   <thead class="thead-dark">
     <tr>
@@ -29,44 +51,17 @@
       <td>{{$palabra->palabra}}</td>
       <td>{{$palabra->significado}}</td>
       <td>{{date('F d, Y', strtotime($palabra->updated_at))}}</td>
-      @if($idioma=="Italiano")
       <td>
-        <form  method="POST" action="{{ route('italiano.destroy', $palabra->id) }}">
+        <form  method="POST" action="{{ url('/eliminar/palabra/'.$palabra->id) }}">
           {{ csrf_field() }}
-          {{ method_field('DELETE') }}
           <input type="password" name="clave" required>
+          <input type="hidden" name="idioma" value="{{$idioma}}">
           <button type="submit">
               Eliminar
           </button>
         </form>
       </td>
-      @endif
 
-      @if($idioma=="Griego")
-      <td>
-        <form  method="POST" action="{{ route('griego.destroy', $palabra->id) }}">
-          {{ csrf_field() }}
-          {{ method_field('DELETE') }}
-          <input type="password" name="clave" required>
-          <button type="submit">
-              Eliminar
-          </button>
-        </form>
-      </td>
-      @endif
-
-      @if($idioma=="Ingles")
-      <td>
-        <form  method="POST" action="{{ route('ingles.destroy', $palabra->id) }}">
-          {{ csrf_field() }}
-          {{ method_field('DELETE') }}
-          <input type="password" name="clave" required>
-          <button type="submit">
-              Eliminar
-          </button>
-        </form>
-      </td>
-      @endif
     </tr>
     @endforeach
   </tbody>
