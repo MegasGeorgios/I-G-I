@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItaliansTable extends Migration
+class CreateItalianosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateItaliansTable extends Migration
      */
     public function up()
     {
-        Schema::create('italians', function (Blueprint $table) {
+        Schema::create('italianos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('palabra');
             $table->string('significado');
