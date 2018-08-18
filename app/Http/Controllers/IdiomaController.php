@@ -6,6 +6,7 @@ use App\Griego;
 use App\Italiano;
 use App\Ingles;
 use App\Categoria;
+use PDF;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -132,5 +133,24 @@ class IdiomaController extends Controller
 
       return view ('idiomas.show', compact('palabras','idioma'));
 
+    }
+
+    public function export_pdf($idioma)
+    {
+      if ($idioma == 'griego') {
+        $palabras = Griego::all();
+      }elseif ($idioma == 'italiano') {
+        $palabras = Italiano::all();
+      }else {
+        $palabras = Ingles::all();
+      }
+
+      $data = [
+        'idioma' => $idioma,
+        'palabras' => $palabras
+      ];
+
+      $pdf = PDF::loadView('pdf', $data);
+      return $pdf->download('repasoidioma.pdf');
     }
 }

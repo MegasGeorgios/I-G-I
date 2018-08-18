@@ -15,11 +15,12 @@
       </select>
     </div>
   </div>
-  <br>
   <button class="btn btn-primary center-block"  type="submit">Filtrar</button>
 </form>
 
-<br><br><br>
+<form action="{{ url('/idioma/'.$idioma.'/pdf') }}" method="get" style="padding-top: 10px; padding-bottom: 10px;">
+  <button class="btn btn-primary center-block"  type="submit">Exportar a PDF</button>
+</form>
 
 <table class="table">
   <thead class="thead-dark">
