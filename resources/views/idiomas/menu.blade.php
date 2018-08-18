@@ -6,7 +6,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>{{ $idioma }}</strong></div>
+                <div class="panel-heading">
+                  <strong>
+                      @if ($idioma == 'griego')
+                          Griego
+                      @elseif ($idioma == 'italiano')
+                          Italiano
+                      @else
+                          Ingles
+                      @endif
+                    </strong>
+                  </div>
 
                 <div class="panel-body">
 

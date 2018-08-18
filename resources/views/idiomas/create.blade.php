@@ -6,11 +6,19 @@
   <div class="container center-block">
     <div class="row" >
       <div class="col-md-3 mb-3 ">
-        <label for="validationServer01">{{$idioma}}</label>
+        <label for="validationServer01">
+          @if ($idioma == 'griego')
+              Griego
+          @elseif ($idioma == 'italiano')
+              Italiano
+          @else
+              Ingles
+          @endif
+        </label>
         <input type="text" class="form-control is-valid" id="validationServer01" name="palabra" placeholder="Palabra"  required>
       </div>
       <div class="col-md-3 mb-3">
-        <label for="validationServer02">español</label>
+        <label for="validationServer02">Español</label>
         <input type="text" class="form-control is-valid" id="validationServer02" name="significado" placeholder="Significado"  required>
       </div>
       <div class="col-md-3 mb-3">
@@ -36,7 +44,15 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">{{$idioma}}</th>
+      <th scope="col">
+        @if ($idioma == 'griego')
+            Griego
+        @elseif ($idioma == 'italiano')
+            Italiano
+        @else
+            Ingles
+        @endif
+      </th>
       <th scope="col"></th>
       <th scope="col">Español</th>
 

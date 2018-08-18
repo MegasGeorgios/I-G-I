@@ -37,7 +37,15 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">{{ $idioma }}</th>
+      <th scope="col">
+        @if ($idioma == 'griego')
+            Griego
+        @elseif ($idioma == 'italiano')
+            Italiano
+        @else
+            Ingles
+        @endif
+      </th>
       <th scope="col">Español</th>
       <th scope="col">Ultima vez</th>
       <th scope="col">Opciones</th>
