@@ -62,12 +62,18 @@ class IdiomaController extends Controller
 
       if ($request->idioma == 'griego') {
         $table = new Griego;
+        $table->palabra = trim($request->palabra);
+
       }elseif ($request->idioma == 'italiano') {
         $table = new Italiano;
       }else {
         $table = new Ingles;
       }
-      $table->palabra = trim(strtolower($request->palabra));
+
+      if ($request->idioma != 'griego') {
+        $table->palabra = trim(strtolower($request->palabra));
+      }
+
       $table->significado = trim(strtolower($request->significado));
       $table->id_categoria = $request->id_categoria;
       $table->save();

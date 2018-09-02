@@ -10,7 +10,7 @@
                 <div class="panel-body">
 
                     <div class="list-group">
-                      @foreach($categorias[0] as $categoria)
+                      @foreach($categorias as $categoria)
                       <div class="btn-group">
                           <button type="button" class="btn  dropdown-toggle btn-lg btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style:outset; border-color:#263238;">
                               {{ $categoria->nombre_categoria }}

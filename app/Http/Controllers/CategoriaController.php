@@ -26,16 +26,20 @@ class CategoriaController extends Controller
         $palabras = Ingles::orderBy('created_at', 'desc')->get();
       }
 
-      $cat = $palabras->map(function ($u) {
-          return $u->id_categoria;
-      });
+      if (count($palabras)>0)
+      {
+        $cat = $palabras->map(function ($u) {
+            return $u->id_categoria;
+        });
 
-      $id_categorias = collect($cat)->unique();
+        $id_categorias = collect($cat)->unique();
 
-      foreach ($id_categorias as $key => $id_categoria) {
-        $categorias[] = Categoria::where('id',$id_categoria)->select('id','nombre_categoria')->get();
+        $categorias = Categoria::whereIn('id',$id_categorias)->select('id','nombre_categoria')->get();
+
+      }else {
+        $categorias = Categoria::all();
       }
-
+    
       return view ('idiomas.index', compact('categorias','idioma'));
     }
 

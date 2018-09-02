@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Italiano extends Model
 {
-  protected $table = 'italians';
+  protected $table = 'italianos';
 
   protected $fillable = [
       'palabra', 'significado'

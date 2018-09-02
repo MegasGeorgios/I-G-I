@@ -30,6 +30,6 @@ class CreateItalianosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('italians');
+        Schema::dropIfExists('italianos');
     }
 }
