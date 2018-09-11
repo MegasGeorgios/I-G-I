@@ -5,8 +5,13 @@
     <title></title>
   </head>
   <style>
+  
+    body {
+      font-family: DejaVu Sans, sans-serif;
+    }
+
     #idioma {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        /* font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
         border-collapse: collapse;
         width: 100%;
     }
