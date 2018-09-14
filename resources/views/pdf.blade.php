@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <style>
-  
+
     body {
       font-family: DejaVu Sans, sans-serif;
     }
@@ -38,7 +38,15 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>{{$idioma}}</th>
+          <th>
+            @if ($idioma == 'griego')
+                Griego
+            @elseif ($idioma == 'italiano')
+                Italiano
+            @else
+                Inglés
+            @endif
+          </th>
           <th>Español</th>
         </tr>
       </thead>

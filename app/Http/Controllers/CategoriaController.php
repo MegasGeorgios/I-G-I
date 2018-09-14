@@ -37,9 +37,9 @@ class CategoriaController extends Controller
         $categorias = Categoria::whereIn('id',$id_categorias)->select('id','nombre_categoria')->get();
 
       }else {
-        $categorias = Categoria::all();
+        $categorias = [];
       }
-    
+
       return view ('idiomas.index', compact('categorias','idioma'));
     }
 

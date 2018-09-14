@@ -113,6 +113,8 @@ class IdiomaController extends Controller
 
       if ($request->value > 0) {
         $palabras = DB::table($tabla)->latest()->take($request->value)->get();
+      }elseif ($request->value < 0) {
+        $palabras = DB::table($tabla)->inRandomOrder()->get();
       }else {
         $palabras = DB::table($tabla)->latest()->get();
       }

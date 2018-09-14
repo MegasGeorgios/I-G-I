@@ -33,46 +33,47 @@
 @endif
 
 <br>
-<table class="table" >
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">
-        @if ($idioma == 'griego')
-            Griego
-        @elseif ($idioma == 'italiano')
-            Italiano
-        @else
-            Ingles
-        @endif
-      </th>
-      <th scope="col">Español</th>
-      <th scope="col">Ultima vez</th>
-      <th scope="col">Opciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php $i=1; ?>
-    @foreach($palabras as $palabra)
-    <tr>
-      <th scope="row"><?php echo "$i";$i++; ?></th>
-      <td>{{$palabra->palabra}}</td>
-      <td>{{$palabra->significado}}</td>
-      <td>{{date('F d, Y', strtotime($palabra->updated_at))}}</td>
-      <td>
-        <form  method="POST" action="{{ url('/eliminar/palabra/'.$palabra->id) }}">
-          {{ csrf_field() }}
-          <input type="password" name="clave" required>
-          <input type="hidden" name="idioma" value="{{$idioma}}">
-          <button type="submit">
-              Eliminar
-          </button>
-        </form>
-      </td>
+<div class="col-md-8 col-md-offset-2">
+  <table class="table" >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">
+          @if ($idioma == 'griego')
+              Griego
+          @elseif ($idioma == 'italiano')
+              Italiano
+          @else
+              Ingles
+          @endif
+        </th>
+        <th scope="col">Español</th>
+        <th scope="col">Agregada</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php $i=1; ?>
+      @foreach($palabras as $palabra)
+      <tr>
+        <th scope="row"><?php echo "$i";$i++; ?></th>
+        <td>{{$palabra->palabra}}</td>
+        <td>{{$palabra->significado}}</td>
+        <td>{{date('F d, Y', strtotime($palabra->updated_at))}}</td>
+        <td>
+          <form  method="POST" action="{{ url('/eliminar/palabra/'.$palabra->id) }}">
+            {{ csrf_field() }}
+            <input type="password" name="clave" placeholder=" contraseña" required>
+            <input type="hidden" name="idioma" value="{{$idioma}}">
+            <button type="submit">
+                Eliminar
+            </button>
+          </form>
+        </td>
 
-    </tr>
-    @endforeach
-  </tbody>
-</table>
-
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
 @endsection
