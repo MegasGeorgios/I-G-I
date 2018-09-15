@@ -78,7 +78,7 @@
 </head>
 
 <body>
-  <div id="app">
+  <div>
     <!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #212529;">
             <a class="navbar-brand" href="{{ url('/') }}" style="font-size:18px; color:white;"><i class="	fa fa-institution" style="font-size:20px;color:white"></i> {{ config('app.name', 'I-G-I') }}</a>
               <div class="dropdown" style="font-size:18px;color:white">
