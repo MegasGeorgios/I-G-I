@@ -84,7 +84,7 @@ class IdiomaController extends Controller
     /**
      * Eliminar palabra
      */
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request)
     {
       if ($request->clave == config('password.psswd.pass')) {
 

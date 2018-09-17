@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 11-09-2018 a las 20:18:44
+-- Tiempo de generación: 15-09-2018 a las 20:44:59
 -- Versión del servidor: 5.7.23-0ubuntu0.18.04.1
 -- Versión de PHP: 7.2.7-0ubuntu0.18.04.2
 
@@ -40,7 +40,6 @@ CREATE TABLE `categorias` (
 INSERT INTO `categorias` (`id`, `nombre_categoria`, `created_at`, `updated_at`) VALUES
 (1, 'Vocabulario', '2018-08-20 22:00:00', NULL),
 (2, 'Animales', '2018-08-21 16:54:19', '2018-08-21 16:54:19'),
-(3, 'Saludos y presentaciones', '2018-08-30 16:48:23', '2018-08-30 16:48:23'),
 (4, 'Ropa', '2018-08-30 18:50:39', '2018-08-30 18:50:39'),
 (5, 'Saludos y presentaciones', '2018-09-11 15:26:14', '2018-09-11 15:26:14');
 

@@ -31,70 +31,65 @@
   </div>
 </form>
 @endif
-
 <br>
-<div id="app">
-  <div class="col-md-8 col-md-offset-2">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">
-            @if ($idioma == 'griego')
-            Griego
-            @elseif ($idioma == 'italiano')
-            Italiano
-            @else
-            Ingles
-            @endif
-          </th>
-          <th scope="col">Español</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php $i=1; ?>
-        @foreach($palabras as $palabra)
-        <tr>
-          <th scope="row">
-            <?php echo "$i";$i++; ?>
-          </th>
-          <td>{{$palabra->palabra}}</td>
-          <td>{{$palabra->significado}}
-            <a href="" data-toggle="modal" data-target="#exampleModal" onclick="asignId(palabraId)">
+<div class="col-md-8 col-md-offset-2">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">
+          @if ($idioma == 'griego')
+          Griego
+          @elseif ($idioma == 'italiano')
+          Italiano
+          @else
+          Ingles
+          @endif
+        </th>
+        <th scope="col">Español</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php $i=1; ?>
+      @foreach($palabras as $palabra)
+      <tr>
+        <th scope="row">
+          <?php echo "$i";$i++; ?>
+        </th>
+        <td>{{$palabra->palabra}}</td>
+        <td>{{$palabra->significado}}
+          <a href="" data-toggle="modal" data-target="#exampleModal" onclick="asignId(palabraId)">
             <i class="fa fa-trash" style="font-size:20px;color:black; float: right;"></i>
           </a>
-          </td>
+        </td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
 
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
 
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Introduzca la contraseña:</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Introduzca la contraseña:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{{ url('/eliminar/palabra/') }}">
+          {{ csrf_field() }}
+          <div class="form-group">
+            <input type="password" class="form-control" name="clave" placeholder=" ... " required>
+            <input type="hidden" name="idioma" value="{{$idioma}}">
         </div>
-        <div class="modal-body">
-          <form method="POST" action="{{ url('/eliminar/palabra/'.'1') }}">
-            {{ csrf_field() }}
-            <div class="form-group">
-              <input type="password" class="form-control" name="clave" placeholder=" ... " required>
-              <input type="hidden" name="idioma" value="{{$idioma}}">
-
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Eliminar</button>
           </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Eliminar</button>
-            </div>
-          </form>
-        </div>
+        </form>
       </div>
     </div>
   </div>
