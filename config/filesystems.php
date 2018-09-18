@@ -50,11 +50,17 @@ return [
 
         'google' => [
             'driver' => 'google',
-            'clientId' => env('GOOGLE_DRIVE_CLIENT_ID'),
-            'clientSecret' => env('GOOGLE_DRIVE_CLIENT_SECRET'),
-            'refreshToken' => env('GOOGLE_DRIVE_REFRESH_TOKEN'),
-            'folderId' => env('GOOGLE_DRIVE_FOLDER_ID'),
+            'clientId' => '767650517635-218qguvcqmbtfm5a051i77d51noctsos.apps.googleusercontent.com',
+            'clientSecret' => 'B1n_eQYn0I5Q_O7mBfr9UHWJ',
+            'refreshToken' => '1/aEDj_8IyU5rWxqS_rttEkP0m4KAnRZzdBqD6BUDduLs',
+            'folderId' => '10eY_9N384GupdnMPlkNUMBcS4ksmUhDn',
         ],
+
+        'dropbox' => [
+    			'driver' => 'dropbox',
+    			'appSecret' => 'kr2j17prlczv96g',
+    			'authorizationToken' => 'GTVF6Wr8kFAAAAAAAAAAClK7hOhaNGNoxTXF03uQEA074ggGLKRey4wBVrDC9NoQ',
+    		],
 
         'public' => [
             'driver' => 'local',

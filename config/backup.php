@@ -77,6 +77,7 @@ return [
              * The disk names on which the backups will be stored.
              */
              'disks' => [
+                 'dropbox',
                  'google',
                  'local',
              ],
@@ -140,6 +141,7 @@ return [
         [
             'name' => 'I-G-I',
             'disks' => [
+                'dropbox',
                 'google',
                 'local',
             ],

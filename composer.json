@@ -10,7 +10,9 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "league/flysystem-dropbox": "^1.0",
         "nao-pon/flysystem-google-drive": "~1.1",
+        "spatie/flysystem-dropbox": "^1.0",
         "spatie/laravel-backup": "^5.10"
     },
     "require-dev": {

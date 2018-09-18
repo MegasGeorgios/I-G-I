@@ -178,7 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        Spatie\Backup\BackupServiceProvider::class
+        Spatie\Backup\BackupServiceProvider::class,
+        App\Providers\DropboxServiceProvider::class
 
     ],
 

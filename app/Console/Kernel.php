@@ -24,9 +24,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-      // Backups (to Google Drive)
+      // Backups
       $schedule->command('backup:clean')->dailyAt('01:30');
       $schedule->command('backup:run --only-db')->dailyAt('01:35');
+
+      // $schedule->command('backup:clean')->weekly()->mondays()->at('05:00')->timezone('Europe/London');
+      // $schedule->command('backup:run')->weekly()->mondays()->at('05:00')->timezone('Europe/London');
     }
 
     /**
