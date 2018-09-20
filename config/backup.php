@@ -78,7 +78,6 @@ return [
              */
              'disks' => [
                  'dropbox',
-                 'google',
                  'local',
              ],
         ],
@@ -142,7 +141,6 @@ return [
             'name' => 'I-G-I',
             'disks' => [
                 'dropbox',
-                'google',
                 'local',
             ],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
