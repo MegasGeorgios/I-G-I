@@ -56,6 +56,11 @@ return [
         //     'folderId' => '10eY_9N384GupdnMPlkNUMBcS4ksmUhDn',
         // ],
 
+        'imagenes' => [
+            'driver' => 'local',
+            'root' => public_path('imagenes'),
+        ],
+
         'dropbox' => [
     			'driver' => 'dropbox',
     			'appSecret' => 'kr2j17prlczv96g',

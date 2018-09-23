@@ -81,9 +81,9 @@
                 </div>
 
                 <div class="links">
-                    <a >Italiano</a>
-                    <a >Griego</a>
-                    <a >Ingles</a>
+                    <a href="{{ url('/idioma/italiano') }}">Italiano</a>
+                    <a href="{{ url('/idioma/griego') }}">Griego</a>
+                    <a href="{{ url('/idioma/ingles') }}">Ingles</a>
                 </div>
             </div>
         </div>
