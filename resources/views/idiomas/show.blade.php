@@ -30,6 +30,27 @@
     </div>
   </div>
 </form>
+
+<form method="POST" action="{{ url('/guardar/recurso') }}" enctype="multipart/form-data">
+  {{ csrf_field() }}
+  <div class="row">
+    <div class="col-md-3 mb-3 center-block">
+      <label for="validationServer01">REGISTRA UN RECURSO!
+        <a href="{{url('/categoria/'.$categoria->id.'/recursos/'.$idioma)}}" style="padding-left:45px;">Ver recursos</a> </label>
+
+      <textarea class="form-control is-valid" id="validationServer02" name="descripcion" placeholder="Descripcion"></textarea>
+
+      <input type="file" name="imagen">
+
+      <input type="hidden" name="idioma" value="{{$idioma}}">
+      <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
+
+      <button type="submit">
+          Subir
+      </button>
+    </div>
+  </div>
+</form>
 @endif
 <br>
 <div class="col-md-8 col-md-offset-2">
@@ -68,7 +89,6 @@
   </table>
 </div>
 
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -94,5 +114,4 @@
     </div>
   </div>
 </div>
-
 @endsection

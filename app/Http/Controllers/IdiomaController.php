@@ -19,8 +19,6 @@ class IdiomaController extends Controller
      */
     public function index($idioma)
     {
-      session()->put('idioma', $idioma);
-
       return view ('idiomas.menu', compact('idioma'));
     }
 

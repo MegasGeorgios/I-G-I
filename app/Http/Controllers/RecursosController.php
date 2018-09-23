@@ -9,48 +9,27 @@ use App\Recursos;
 
 class RecursosController extends Controller
 {
-  public function mostrar_recursos(Request $request)
+  public function mostrar_recursos($id_categoria, $idioma)
   {
-    //obteniendo todos los recursos de la BD
-    $recursos= Recursos::orderBy('id', 'asc')->paginate(2);
-    return response()->json([
-      'pagination' => [
-                'total'         => $recursos->total(),
-                'current_page'  => $recursos->currentPage(),
-                'per_page'      => $recursos->perPage(),
-                'last_page'     => $recursos->lastPage(),
-                'from'          => $recursos->firstItem(),
-                'to'            => $recursos->lastItem(),
-      ],
-      'recursos'=>$recursos
-    ]);
+    $galeria = Recursos::where('idioma',$idioma)->where('id_categoria',$id_categoria)->get();
+
+    return view ('idiomas.recursos', compact('galeria'));
   }
   public function guardar_recurso(Request $request)
   {
-    //validacion (Todos los input son requeridos)
-    if (!$request->input('idioma') || !$request->get('image'))
-    {
-        return response()->json([
-          'mensaje'=>'Datos invalidos o incompletos', 'status'=>'error'
-        ]);
-    }else {
-      //obtenemos la imagen
-      $imageData = $request->get('image');
-      //asiganmos el nombre a la imagen
-      $fileName = time(). '_' . uniqid() . '.' . explode('/', explode(':', substr($imageData, 0, strpos($imageData, ';')))[1])[1];
-      //la almacenamos en el directorio /public/imagenes
-      Storage::disk('imagenes')->put($fileName,file_get_contents($imageData) );
-      //almacenamos en la BD los recursos
-      $recurso= new Recursos;
-      $recurso->idioma = $request->input('idioma');
-      $recurso->descripcion = $request->input('descripcion');
-      $recurso->imagen = $fileName;
+      $imagen = $request->file('imagen');
+      $ruta_archivo = time().'_'.$imagen->getClientOriginalName();
+
+      Storage::disk('imagenes')->put($ruta_archivo,file_get_contents($imagen->getRealPath() ) );
+
+      $recurso= new Recursos();
+      $recurso->idioma = $request->idioma;
+      $recurso->descripcion = $request->descripcion;
+      $recurso->imagen = $ruta_archivo;
+      $recurso->id_categoria = $request->id_categoria;
       $recurso->save();
-      
-      return response()->json([
-        'mensaje' => 'Se ha almacenado correctamente el recurso!',
-        'status'=>'ok'
-      ]);
-    }
+
+      return back()
+            ->with('success','Se ha subido la imagen correctamente.');
   }
 }

@@ -37,3 +37,9 @@ Route::get('/categorias/{idioma}', 'CategoriaController@index');
 Route::get('/idioma/{idioma}/categoria/{categoria_id}', 'CategoriaController@show');
 Route::post('/categorias', 'CategoriaController@store')->name('categoria.store');
 Route::post('/editar/categoria/{id}', 'CategoriaController@update')->name('categoria.update');
+
+/*
+*   Routes Recursos Controller
+*/
+Route::get('/categoria/{id}/recursos/{idioma}', 'RecursosController@mostrar_recursos');
+Route::post('/guardar/recurso', 'RecursosController@guardar_recurso');
