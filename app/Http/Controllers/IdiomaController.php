@@ -101,6 +101,9 @@ class IdiomaController extends Controller
       }
     }
 
+    /**
+     * Repasar vocabulario, filtrar palabras
+     */
     public function repaso(Request $request, $idioma)
     {
       if ($idioma == 'italiano' || $idioma == 'griego') {
@@ -120,6 +123,9 @@ class IdiomaController extends Controller
       return view ('idiomas.repaso', compact('idioma','palabras'));
     }
 
+    /**
+     * Buscar palabras
+     */
     public function search(Request $request, $idioma)
     {
       $buscar = $request->palabra;
@@ -134,13 +140,16 @@ class IdiomaController extends Controller
       }
 
       $palabras= DB::table($tabla)
-      ->where('palabra','LIKE','%'.$buscar.'%')
-      ->Orwhere('significado','LIKE','%'.$buscar.'%')->get();
+      ->where('slug','LIKE','%'.$buscar.'%')->get();
+      // ->Orwhere('significado','LIKE','%'.$buscar.'%')->get();
 
       return view ('idiomas.show', compact('palabras','idioma'));
 
     }
 
+    /**
+     * Exportar a PDF
+     */
     public function export_pdf($idioma)
     {
       if ($idioma == 'griego') {
