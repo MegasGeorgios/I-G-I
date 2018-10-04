@@ -41,5 +41,6 @@ Route::post('/editar/categoria/{id}', 'CategoriaController@update')->name('categ
 /*
 *   Routes Recursos Controller
 */
+Route::get('/recursos/{idioma}', 'RecursosController@recursos');
 Route::get('/categoria/{id}/recursos/{idioma}', 'RecursosController@mostrar_recursos');
 Route::post('/guardar/recurso', 'RecursosController@guardar_recurso');

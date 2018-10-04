@@ -9,12 +9,29 @@ use App\Recursos;
 
 class RecursosController extends Controller
 {
+  /*
+  * Mostrar todos los recursos de un idioma
+  */
+  public function recursos($idioma)
+  {
+    $galeria = Recursos::where('idioma',$idioma)->get();
+
+    return view ('idiomas.recursos', compact('galeria'));
+  }
+
+  /*
+  * Mostrar recursos por categoria e idioma
+  */
   public function mostrar_recursos($id_categoria, $idioma)
   {
     $galeria = Recursos::where('idioma',$idioma)->where('id_categoria',$id_categoria)->get();
 
     return view ('idiomas.recursos', compact('galeria'));
   }
+
+  /*
+  * Almacenar recurso
+  */
   public function guardar_recurso(Request $request)
   {
       $imagen = $request->file('imagen');

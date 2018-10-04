@@ -10,5 +10,5 @@ class Recursos extends Model
     'idioma',
     'descripcion',
     'imagen'
-];
+  ];
 }
