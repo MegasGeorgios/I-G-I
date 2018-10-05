@@ -24,11 +24,13 @@ Route::get('/home', function () {
 */
 Route::get('/idioma/{idioma}', 'IdiomaController@index');
 Route::get('/idioma/{idioma}/agregar', 'IdiomaController@add_word');
-Route::post('/idioma/agregar/palabra', 'IdiomaController@store')->name('idioma.store');
-Route::post('/eliminar/palabra', 'IdiomaController@destroy')->name('idioma.destroy');
 Route::get('/idioma/{idioma}/repaso', 'IdiomaController@repaso')->name('idiomas.repaso');
 Route::get('/idioma/{idioma}/buscar', 'IdiomaController@search');
 Route::get('/idioma/{idioma}/pdf','IdiomaController@export_pdf');
+Route::get('/interseccion','IdiomaController@intersection');
+Route::get('/repetidas/{idioma}','IdiomaController@repeat_words');
+Route::post('/idioma/agregar/palabra', 'IdiomaController@store')->name('idioma.store');
+Route::post('/eliminar/palabra', 'IdiomaController@destroy')->name('idioma.destroy');
 
 /*
 *   Routes Categoria Controller

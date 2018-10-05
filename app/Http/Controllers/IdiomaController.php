@@ -74,6 +74,7 @@ class IdiomaController extends Controller
 
       $table->significado = trim(strtolower($request->significado));
       $table->id_categoria = $request->id_categoria;
+      $table->slug = str_replace(' ','',strtolower($request->palabra)).str_replace(' ','',strtolower($request->significado));
       $table->save();
 
       return $this->add_word($request->idioma);
@@ -86,18 +87,19 @@ class IdiomaController extends Controller
     {
       if ($request->clave == config('password.psswd.pass')) {
 
-        if ($idioma == 'italiano' || $idioma == 'griego') {
-          $tabla = $idioma.'s';
+        if ($request->idioma == 'italiano' || $request->idioma == 'griego') {
+          $tabla = $request->idioma.'s';
         }else {
           $tabla = 'ingles';
         }
 
-        DB::table($tabla)->where('id', '=', $id)->delete();
+        DB::table($tabla)->where('id', '=', $request->id)->delete();
 
-        return back()->withInput()->with('success','Se ha eliminado correctamente');
+        // return back()->withInput()->with('success','Se ha eliminado correctamente');
+        return ['msj' => 'Se ha eliminado correctamente'];
       }else {
-        # code...
-        return back()->withInput()->with('wrong','Clave incorrecta');
+        return ['msj' =>'Clave incorrecta'];
+        // return back()->withInput()->with('wrong','Clave incorrecta');
       }
     }
 
@@ -112,10 +114,14 @@ class IdiomaController extends Controller
         $tabla = 'ingles';
       }
 
-      if ($request->value > 0) {
-        $palabras = DB::table($tabla)->latest()->take($request->value)->get();
-      }elseif ($request->value < 0) {
+      if ($request->value == 1) {
         $palabras = DB::table($tabla)->inRandomOrder()->get();
+      }elseif ($request->value == 2) {
+        $palabras = DB::table($tabla)->select('palabra')->get();
+      }elseif ($request->value == 3) {
+        $palabras = DB::table($tabla)->select('significado')->get();
+      }elseif (in_array($request->value,['20','60','100'])) {
+        $palabras = DB::table($tabla)->latest()->take($request->value)->get();
       }else {
         $palabras = DB::table($tabla)->latest()->get();
       }
@@ -167,5 +173,65 @@ class IdiomaController extends Controller
 
       $pdf = PDF::loadView('pdf', $data);
       return $pdf->download('repasoidioma.pdf');
+    }
+
+    /**
+     * Interseccion de idiomas
+     */
+    public function intersection()
+    {
+      // $griego = Griego::select('palabra','significado')->get();
+      // $italiano = Italiano::select('palabra','significado')->get();
+      // $ingles = Ingles::select('palabra','significado')->get();
+      $griego = collect(Griego::pluck('significado')->all());
+      $italiano = collect(Italiano::pluck('significado')->all());
+      $ingles = collect(Ingles::pluck('significado')->all());
+      // $grouped = $collection->mapToGroups(function ($item, $key) {
+      //     return [$item['department'] => $item['name']];
+      // });
+      //Intersectamos los idiomas
+      $intersect = $griego->intersect($italiano);//->intersect($ingles);
+      // Griego::find($intersect->keys()[0]);
+      dd($intersect);
+
+    }
+
+    /**
+     * Encontrar y eliminar palabras repetidas
+     */
+    public function repeat_words($idioma)
+    {
+      if ($idioma == 'griego') {
+        $palabras = Griego::all();
+      }elseif ($idioma == 'italiano') {
+        $palabras = Italiano::all();
+      }else {
+        $palabras = Ingles::all();
+      }
+
+      $palabras = $palabras->map(function ($p) use($palabras){
+          $count = 0;
+          foreach ($palabras as $key => $pa) {
+            if ($p->slug == $pa->slug) {
+              $count++;
+            }
+          }
+          if ($count > 1) {
+            return $p;
+          }
+      })->reject(function ($value) {
+          return empty($value);
+      });
+
+      $palabras = $palabras->map(function ($p){
+          $p->nomb_cat = Categoria::find($p->id_categoria)->nombre_categoria;
+          return $p;
+      });
+
+      $categoria = NULL;
+      $repetidas = true;
+
+      return view ('idiomas.show', compact('palabras','idioma','categoria','repetidas'));
+
     }
 }

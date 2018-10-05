@@ -9,7 +9,9 @@
       <h3 style="text-align: center;">Ordenar por:</h3><br>
       <select name="value" class="custom-select center-block" style="width:150px; height:30px;">
         <option value="0">Todas</option>
-        <option value="-1">Aleatoreo</option>
+        <option value="1">Aleatoreo</option>
+        <option value="2">Solo {{$idioma}}</option>
+        <option value="3">Solo español</option>
         <option value="20">Ultimas 20</option>
         <option value="60">Ultimas 60</option>
         <option value="100">Ultimas 100</option>
@@ -46,9 +48,21 @@
       @foreach($palabras as $palabra)
       <tr>
         <th scope="row"><?php echo "$i";$i++; ?></th>
-        <td>{{$palabra->palabra}}</td>
+        <td>
+          @if(isset($palabra->palabra))
+            {{$palabra->palabra}}
+          @else
+            <input type="text" name="palabra">
+          @endif
+        </td>
         <td></td>
-        <td>{{$palabra->significado}}</td>
+        <td>
+          @if(isset($palabra->significado))
+            {{$palabra->significado}}
+          @else
+            <input type="text" name="palabra">
+          @endif
+        </td>
 
       </tr>
       @endforeach
