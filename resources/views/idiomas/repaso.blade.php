@@ -25,7 +25,7 @@
   <button class="btn btn-primary center-block" style="width:150px;" type="submit">Exportar a PDF</button>
 </form>
 
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8 col-md-offset-2" id="vue">
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -40,7 +40,11 @@
           @endif
         </th>
         <th scope="col"></th>
-        <th scope="col">Español</th>
+        @if(isset($palabra->significado))
+          <th scope="col">Español</th>
+        @else
+          <th scope="col">Practicar</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -52,7 +56,9 @@
           @if(isset($palabra->palabra))
             {{$palabra->palabra}}
           @else
-            <input type="text" name="palabra">
+            <a href="" data-toggle="modal" data-target="#exampleModal" v-on:click="asignAtributes({{$palabra->id}},'{{$idioma}}')">
+              <i class="fa fa-pencil fa-fw" style="padding-left: 15px;" aria-hidden="true"></i>
+            </a>
           @endif
         </td>
         <td></td>
@@ -60,7 +66,9 @@
           @if(isset($palabra->significado))
             {{$palabra->significado}}
           @else
-            <input type="text" name="palabra">
+            <a href="" data-toggle="modal" data-target="#exampleModal" v-on:click="asignAtributes({{$palabra->id}},'{{$idioma}}')">
+              <i class="fa fa-pencil fa-fw" style="padding-left: 15px;" aria-hidden="true"></i>
+            </a>
           @endif
         </td>
 
@@ -69,5 +77,62 @@
 
     </tbody>
   </table>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Introduzca la respuesta:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- <form method="POST" action="{{ url('/eliminar/palabra/') }}"> -->
+            {{ csrf_field() }}
+            <div class="form-group">
+              <input type="text" class="form-control" name="significado" v-model="respuesta" placeholder="Ingresa la palabra" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" v-on:click="validarPalabra">
+                <i class="fa fa-check"  aria-hidden="true"></i>
+              </button>
+            </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+var app = new Vue({
+  el: '#vue',
+  data: {
+    id: 0,
+    idioma: '',
+    respuesta: ''
+  },
+  methods:{
+    asignAtributes (id, idioma, tipo){
+      this.id = id;
+      this.idioma = idioma;
+      this.tipo = tipo;
+    },
+    validarPalabra(){
+      axios.post(`/validar/palabra`, {
+        id: this.id,
+        idioma: this.idioma,
+        respuesta: this.respuesta,
+      }).then(response => {
+        alert(response.data.msj);
+        //location.reload();
+      });
+    }
+  }
+});
+</script>
 @endsection

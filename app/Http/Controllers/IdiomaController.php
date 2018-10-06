@@ -117,9 +117,9 @@ class IdiomaController extends Controller
       if ($request->value == 1) {
         $palabras = DB::table($tabla)->inRandomOrder()->get();
       }elseif ($request->value == 2) {
-        $palabras = DB::table($tabla)->select('palabra')->get();
+        $palabras = DB::table($tabla)->select('id','palabra')->get();
       }elseif ($request->value == 3) {
-        $palabras = DB::table($tabla)->select('significado')->get();
+        $palabras = DB::table($tabla)->select('id','significado')->get();
       }elseif (in_array($request->value,['20','60','100'])) {
         $palabras = DB::table($tabla)->latest()->take($request->value)->get();
       }else {
@@ -127,6 +127,31 @@ class IdiomaController extends Controller
       }
 
       return view ('idiomas.repaso', compact('idioma','palabras'));
+    }
+
+    /**
+     * Practicar vocabulario
+     */
+    public function validar_palabra(Request $request)
+    {
+      if ( $request->respuesta != '' && $request->idioma != '' && $request->id > 0 ){
+
+        if ($request->idioma == 'italiano' || $request->idioma == 'griego') {
+          $tabla = $request->idioma.'s';
+        }else {
+          $tabla = 'ingles';
+        }
+
+        $palabra = DB::table($tabla)->where('id', '=', $request->id)->first();
+
+        if (($request->respuesta == $palabra->significado) || ($request->respuesta == $palabra->palabra)) {
+          return response()->json(['msj' => 'Acertaste!']);
+        }else {
+          return response()->json(['msj' =>'Respuesta incorrecta']);
+        }
+      }else {
+        return response()->json(['msj' =>'Datos incompletos']);
+      }
     }
 
     /**
