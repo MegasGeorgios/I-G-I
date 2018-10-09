@@ -117,9 +117,9 @@ class IdiomaController extends Controller
       if ($request->value == 1) {
         $palabras = DB::table($tabla)->inRandomOrder()->get();
       }elseif ($request->value == 2) {
-        $palabras = DB::table($tabla)->select('id','palabra')->get();
+        $palabras = DB::table($tabla)->select('id','palabra')->inRandomOrder()->get();
       }elseif ($request->value == 3) {
-        $palabras = DB::table($tabla)->select('id','significado')->get();
+        $palabras = DB::table($tabla)->select('id','significado')->inRandomOrder()->get();
       }elseif (in_array($request->value,['20','60','100'])) {
         $palabras = DB::table($tabla)->latest()->take($request->value)->get();
       }else {

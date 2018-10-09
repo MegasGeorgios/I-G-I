@@ -129,6 +129,7 @@ var app = new Vue({
         respuesta: this.respuesta,
       }).then(response => {
         alert(response.data.msj);
+        this.respuesta = '';
         //location.reload();
       });
     }
