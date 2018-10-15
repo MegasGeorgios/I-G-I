@@ -18,6 +18,14 @@
       </select>
     </div>
   </div>
+  <div class="col-md-12 mb-3">
+    <select name="cat_id" class="custom-select center-block" style="width:150px; height:30px;">
+      <option value="0">Excluir categoria:</option>
+      @foreach($categorias as $categoria)
+        <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
+      @endforeach
+    </select>
+  </div>
   <button class="btn btn-primary center-block" style="width:150px;" type="submit">Filtrar</button>
 </form>
 
@@ -106,34 +114,4 @@
   </div>
 
 </div>
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-var app = new Vue({
-  el: '#vue',
-  data: {
-    id: 0,
-    idioma: '',
-    respuesta: ''
-  },
-  methods:{
-    asignAtributes (id, idioma, tipo){
-      this.id = id;
-      this.idioma = idioma;
-      this.tipo = tipo;
-    },
-    validarPalabra(){
-      axios.post(`/validar/palabra`, {
-        id: this.id,
-        idioma: this.idioma,
-        respuesta: this.respuesta,
-      }).then(response => {
-        alert(response.data.msj);
-        this.respuesta = '';
-        //location.reload();
-      });
-    }
-  }
-});
-</script>
 @endsection

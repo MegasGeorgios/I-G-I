@@ -114,19 +114,28 @@ class IdiomaController extends Controller
         $tabla = 'ingles';
       }
 
+      $categorias = Categoria::all();
+      $palabras = DB::table($tabla);
+
       if ($request->value == 1) {
-        $palabras = DB::table($tabla)->inRandomOrder()->get();
+        $palabras = $palabras->inRandomOrder();
       }elseif ($request->value == 2) {
-        $palabras = DB::table($tabla)->select('id','palabra')->inRandomOrder()->get();
+        $palabras = $palabras->select('id','palabra')->inRandomOrder();
       }elseif ($request->value == 3) {
-        $palabras = DB::table($tabla)->select('id','significado')->inRandomOrder()->get();
+        $palabras = $palabras->select('id','significado')->inRandomOrder();
       }elseif (in_array($request->value,['20','60','100'])) {
-        $palabras = DB::table($tabla)->latest()->take($request->value)->get();
+        $palabras = $palabras->latest()->take($request->value);
       }else {
-        $palabras = DB::table($tabla)->latest()->get();
+        $palabras = $palabras->latest();
       }
 
-      return view ('idiomas.repaso', compact('idioma','palabras'));
+      if ($request->cat_id > 0) {
+        $palabras = $palabras->whereNotIn('id_categoria',[$request->cat_id])->get();
+      }else {
+        $palabras = $palabras->get();
+      }
+
+      return view ('idiomas.repaso', compact('idioma','palabras','categorias'));
     }
 
     /**

@@ -123,6 +123,53 @@
   </div>
 
   <!-- Scripts -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+    const app = new Vue({
+        el: '#vue',
+        data: {
+          id: 0,
+          idioma: '',
+          clave: '',
+          respuesta: ''
+        },
+        methods:{
+          asignAtributesShow (id, idioma){
+            this.id = id;
+            this.idioma = idioma;
+          },
+          asignAtributes (id, idioma, tipo){
+            this.id = id;
+            this.idioma = idioma;
+            this.tipo = tipo;
+          },
+          borrar(){
+            // console.log([this.id, this.idioma, this.clave]);
+            axios.post(`/eliminar/palabra`, {
+              id: this.id,
+              idioma: this.idioma,
+              clave: this.clave,
+            }).then(response => {
+              alert(response.data.msj);
+              location.reload();
+            });
+          },
+          validarPalabra(){
+            axios.post(`/validar/palabra`, {
+              id: this.id,
+              idioma: this.idioma,
+              respuesta: this.respuesta,
+            }).then(response => {
+              alert(response.data.msj);
+              this.respuesta = '';
+              //location.reload();
+            });
+          }
+        }
+
+    });
+  </script>
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
     function myFunction() {
@@ -134,6 +181,7 @@
       }
     }
   </script>
+
 </body>
 
 </html>

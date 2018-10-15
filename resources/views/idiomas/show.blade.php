@@ -85,7 +85,7 @@
             </th>
             <td>{{$palabra->palabra}}</td>
             <td>{{$palabra->significado}}
-              <a href="" data-toggle="modal" data-target="#exampleModal" v-on:click="asignAtributes({{$palabra->id}},'{{$idioma}}')">
+              <a href="" data-toggle="modal" data-target="#exampleModal" v-on:click="asignAtributesShow({{$palabra->id}},'{{$idioma}}')">
                 <i class="fa fa-trash" style="font-size:20px;color:black; float: right;"></i>
               </a>
             </td>
@@ -125,33 +125,4 @@
       </div>
     </div>
 </div>
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-var app = new Vue({
-  el: '#vue',
-  data: {
-    id: 0,
-    clave: '',
-    idioma: ''
-  },
-  methods:{
-    asignAtributes (id, idioma){
-      this.id = id;
-      this.idioma = idioma;
-    },
-    borrar(){
-      // console.log([this.id, this.idioma, this.clave]);
-      axios.post(`/eliminar/palabra`, {
-        id: this.id,
-        idioma: this.idioma,
-        clave: this.clave,
-      }).then(response => {
-        alert(response.data.msj);
-        location.reload();
-      });
-    }
-  }
-});
-</script>
 @endsection
