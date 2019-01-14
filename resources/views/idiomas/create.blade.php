@@ -15,11 +15,11 @@
               Ingles
           @endif
         </label>
-        <input type="text" class="form-control is-valid" id="validationServer01" name="palabra" placeholder="Palabra"  required>
+        <input type="text" class="form-control is-valid" id="validationServer01" name="palabra" placeholder="Palabra" autocomplete="off"  required>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationServer02">Español</label>
-        <input type="text" class="form-control is-valid" id="validationServer02" name="significado" placeholder="Significado"  required>
+        <input type="text" class="form-control is-valid" id="validationServer02" name="significado" placeholder="Significado" autocomplete="off" required>
       </div>
       <div class="col-md-3 mb-3">
         <label>Categoria</label>

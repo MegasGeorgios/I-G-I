@@ -11,9 +11,13 @@
                 {{$imagen->descripcion}}
               </a>
             </li>
-            <!-- <li><a href="/"><img class="ns-img" src="img/3.jpg"></a></li> -->
           @endforeach
         </ul>
     </div>
 </div>
+<!-- <div class="bxslider">
+  @foreach($galeria as $imagen)
+    <div><img src="{{URL::asset('/imagenes/'.$imagen->imagen)}}"></div>
+  @endforeach
+</div> -->
 @endsection
