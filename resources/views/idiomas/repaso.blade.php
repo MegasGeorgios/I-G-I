@@ -10,6 +10,7 @@
       <select name="value" class="custom-select center-block" style="width:150px; height:30px;">
         <option value="0">Todas</option>
         <option value="1">Aleatoreo</option>
+        <option value="4">Favoritas</option>
         <option value="2">Solo {{$idioma}}</option>
         <option value="3">Solo español</option>
         <option value="20">Ultimas 20</option>

@@ -123,6 +123,8 @@ class IdiomaController extends Controller
         $palabras = $palabras->select('id','palabra')->inRandomOrder();
       }elseif ($request->value == 3) {
         $palabras = $palabras->select('id','significado')->inRandomOrder();
+      }elseif ($request->value == 4) {
+        $palabras = $palabras->where('favorita',1)->inRandomOrder();
       }elseif (in_array($request->value,['20','60','100'])) {
         $palabras = $palabras->latest()->take($request->value);
       }else {
@@ -161,6 +163,33 @@ class IdiomaController extends Controller
       }else {
         return response()->json(['msj' =>'Datos incompletos']);
       }
+    }
+
+    /**
+     * Marcar/resaltar una palabra
+     */
+    public function favorita($id, $idioma)
+    {
+      if ($idioma == 'italiano') {
+        $palabra = Italiano::find($id);
+      }elseif ($idioma == 'griego') {
+        $palabra = Griego::find($id);
+      }elseif ($idioma == 'ingles') {
+        $palabra = Ingles::find($id);
+      }
+
+      // si la palabra no esta resaltada entonces resaltar si no desresaltar
+      if ($palabra->favorita == 0) {
+        $palabra->favorita = 1;
+        $pintar = 1;
+      }else {
+        $palabra->favorita = 0;
+        $pintar = 0;
+      }
+      $palabra->save();
+
+      return response()->json(['status' => $pintar]);
+
     }
 
     /**

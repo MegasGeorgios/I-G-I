@@ -156,6 +156,17 @@
               location.reload();
             });
           },
+          resaltarPalabra(id, idioma){
+            // console.log([this.id, this.idioma, this.clave]);
+            axios.get(`/favorita/`+id+`/`+idioma).then(response => {
+              if(response.data.status == 1){
+                document.getElementById("resaltarfila-"+id).style.backgroundColor='#B8F9AA';
+              }else {
+                document.getElementById("resaltarfila-"+id).style.backgroundColor='#f5f8fa';
+              }
+              //location.reload();
+            });
+          },
           validarPalabra(){
             axios.post(`/validar/palabra`, {
               id: this.id,

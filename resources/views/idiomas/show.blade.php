@@ -20,7 +20,7 @@
       <div class="col-md-3 mb-3 center-block">
         <label for="validationServer01">Editar</label>
         <input type="text" class="form-control is-valid" id="validationServer01" name="nombre_categoria" value="{{$categoria->nombre_categoria}}"  required>
-
+        <input type="text" class="form-control is-valid" id="validationServer02" name="url_clase" value="{{$categoria->url_clase}}" placeholder="url de la clase">
         <input type="password" class="form-control is-valid" id="validationServer03" name="clave" placeholder="contraseña" required>
 
         <input type="hidden" name="idioma" value="{{$idioma}}">
@@ -28,6 +28,7 @@
         <button type="submit">
           Editar
         </button>
+        <a href="{{url($categoria->url_clase)}}" target="_blank">ir a la clase</a>
       </div>
     </div>
   </form>
@@ -39,7 +40,7 @@
         <label for="validationServer01">REGISTRA UN RECURSO!
           <a href="{{url('/categoria/'.$categoria->id.'/recursos/'.$idioma)}}" style="padding-left:45px;">Ver recursos</a> </label>
 
-          <textarea class="form-control is-valid" id="validationServer02" name="descripcion" placeholder="Descripcion"></textarea>
+          <textarea class="form-control is-valid" id="validationServer04" name="descripcion" placeholder="Descripcion"></textarea>
 
           <input type="file" name="imagen">
 
@@ -79,7 +80,11 @@
         <tbody>
           <?php $i=1; ?>
           @foreach($palabras as $palabra)
-          <tr>
+          @if($palabra->favorita == 1)
+          <tr id="resaltarfila-{{$palabra->id}}" style="background-color: #B8F9AA;">
+          @else
+          <tr id="resaltarfila-{{$palabra->id}}">
+          @endif
             <th scope="row">
               <?php echo "$i";$i++; ?>
             </th>
@@ -87,6 +92,9 @@
             <td>{{$palabra->significado}}
               <a href="" data-toggle="modal" data-target="#exampleModal" v-on:click="asignAtributesShow({{$palabra->id}},'{{$idioma}}')">
                 <i class="fa fa-trash" style="font-size:20px;color:black; float: right;"></i>
+              </a>
+              <a v-on:click="resaltarPalabra({{$palabra->id}},'{{$idioma}}')">
+                <i class="fa fa-bookmark-o" style="font-size:20px;color:black; float: right; padding-right: 5px;"></i>
               </a>
             </td>
             @if(isset($repetidas))

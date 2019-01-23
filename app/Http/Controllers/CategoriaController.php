@@ -52,9 +52,9 @@ class CategoriaController extends Controller
       'nombre_categoria' => 'required'
       ]);
 
-      $task = new categoria;
-      $task->nombre_categoria = $request->nombre_categoria;
-      $task->save();
+      $cat = new categoria;
+      $cat->nombre_categoria = $request->nombre_categoria;
+      $cat->save();
 
       return back()->withInput();
     }
@@ -87,6 +87,7 @@ class CategoriaController extends Controller
 
           $categoria = Categoria::find($id);
           $categoria->nombre_categoria = $request->nombre_categoria;
+          $categoria->url_clase = $request->url_clase;
           $categoria->save();
 
           return back()->withInput()->with('success','Se ha actualizado correctamente');
