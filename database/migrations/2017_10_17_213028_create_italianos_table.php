@@ -17,6 +17,7 @@ class CreateItalianosTable extends Migration
             $table->increments('id');
             $table->string('palabra');
             $table->string('significado');
+            $table->integer('favorita')->default(0);
             $table->integer('id_categoria')->unsigned();
             $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
