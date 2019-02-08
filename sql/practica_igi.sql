@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 30-01-2019 a las 18:39:29
+-- Tiempo de generación: 08-02-2019 a las 20:37:15
 -- Versión del servidor: 8.0.13
 -- Versión de PHP: 7.2.10-0ubuntu0.18.04.1
 
@@ -55,7 +55,9 @@ INSERT INTO `categorias` (`id`, `nombre_categoria`, `url_clase`, `created_at`, `
 (12, '¿Qué idiomas hablas?', '#', '2018-12-02 19:06:15', '2018-12-02 19:06:15'),
 (13, 'Pronombres personales (nominativo)', '#', '2019-01-28 18:32:36', '2019-01-28 18:32:36'),
 (14, 'EL VERBO EIMAI', '#', '2019-01-29 18:07:24', '2019-01-29 18:07:24'),
-(15, 'Artículos definidos e indefinidos', '#', '2019-01-30 17:21:59', '2019-01-30 17:21:59');
+(15, 'Artículos definidos e indefinidos', '#', '2019-01-30 17:21:59', '2019-01-30 17:21:59'),
+(18, 'SUSTANTIVOS', 'https://academiaegeo.com/cursos/a1/lecciones/sustantivos/', '2019-02-04 18:01:32', '2019-02-04 18:24:16'),
+(19, 'Ordinales (1º, 2º, 3º…)', '#', '2019-02-08 19:19:54', '2019-02-08 19:19:54');
 
 -- --------------------------------------------------------
 
@@ -386,7 +388,68 @@ INSERT INTO `griegos` (`id`, `palabra`, `significado`, `id_categoria`, `created_
 (273, 'Ένα', 'un/uno', 15, '2019-01-30 17:34:58', '2019-01-30 17:34:58', 'Έναun/uno', 0),
 (274, 'Ένας δάσκαλος', 'un maestro', 15, '2019-01-30 17:35:30', '2019-01-30 17:35:30', 'Έναςδάσκαλοςunmaestro', 0),
 (275, 'Ένα μολύβι', 'un lápiz)', 15, '2019-01-30 17:35:47', '2019-01-30 17:35:47', 'Έναμολύβιunlápiz)', 0),
-(276, 'Μια κοπέλα', 'una chica', 15, '2019-01-30 17:35:26', '2019-01-30 17:35:26', 'Μιακοπέλαunachica', 0);
+(276, 'Μια κοπέλα', 'una chica', 15, '2019-01-30 17:35:26', '2019-01-30 17:35:26', 'Μιακοπέλαunachica', 0),
+(277, 'Ο   -ας', 'articulo y terminacion de la palabra en singular masculino', 18, '2019-02-04 18:06:24', '2019-02-04 18:06:24', 'Ο-αςarticuloyterminaciondelapalabraensingularmasculino', 0),
+(278, 'Ο  -ης', 'articulo y terminacion de la palabra en singular masculino', 18, '2019-02-04 18:06:27', '2019-02-04 18:06:27', 'Ο-ηςarticuloyterminaciondelapalabraensingularmasculino', 0),
+(279, 'Ο   -ος', 'articulo y terminacion de la palabra en singular masculino', 18, '2019-02-04 18:06:21', '2019-02-04 18:06:21', 'Ο-οςarticuloyterminaciondelapalabraensingularmasculino', 0),
+(280, 'Οι   -οι', 'articulo y terminacion palabra plural masculino', 18, '2019-02-04 18:07:58', '2019-02-04 18:07:58', 'Οι-οιarticuloyterminacionpalabrapluralmasculino', 0),
+(281, 'Οι   -ες', 'articulo y terminacion palabra plur', 18, '2019-02-04 18:08:10', '2019-02-04 18:08:10', 'Οι-εςarticuloyterminacionpalabraplur', 0),
+(282, 'Οι  -ες', 'articulo y terminacion palabra plural masculino', 18, '2019-02-04 18:08:05', '2019-02-04 18:08:05', 'Οι-εςarticuloyterminacionpalabrapluralmasculino', 0),
+(283, 'Ο πελάτης, οι πελάτες', 'el cliente, los clientes', 18, '2019-02-04 18:11:57', '2019-02-04 18:11:57', 'Οπελάτης,οιπελάτεςelcliente,losclientes', 0),
+(284, 'O δάσκαλος, οι δάσκαλοι', 'el maestro, los maestros', 18, '2019-02-04 18:12:04', '2019-02-04 18:12:04', 'oδάσκαλος,οιδάσκαλοιelmaestro,losmaestros', 0),
+(285, 'Ο Έλληνας, οι Έλληνες', 'el griego, los griegos', 18, '2019-02-04 18:12:00', '2019-02-04 18:12:00', 'ΟΈλληνας,οιΈλληνεςelgriego,losgriegos', 0),
+(286, 'Η  -η', 'art. teminacion singular femenino', 18, '2019-02-04 18:13:27', '2019-02-04 18:13:27', 'Η-ηart.teminacionsingularfemenino', 0),
+(287, 'Η   -η', 'art. terminacion singular femenino', 18, '2019-02-04 18:13:47', '2019-02-04 18:13:47', 'Η-ηart.terminacionsingularfemenino', 0),
+(288, 'Οι   -ες', 'art. terminacion plural femenino', 18, '2019-02-04 18:13:58', '2019-02-04 18:13:58', 'Οι-εςart.terminacionpluralfemenino', 0),
+(289, 'Η τιμή, οι τιμές', 'el precio, los precios', 18, '2019-02-04 18:15:27', '2019-02-04 18:15:27', 'Ητιμή,οιτιμέςelprecio,losprecios', 0),
+(290, 'Η μητέρα, οι μητέρες', 'la madre, las madres', 18, '2019-02-04 18:15:45', '2019-02-04 18:15:45', 'Ημητέρα,οιμητέρεςlamadre,lasmadres', 0),
+(291, 'Το   -ο', 'art. terminacion neutro singular', 18, '2019-02-04 18:18:45', '2019-02-04 18:18:45', 'Το-οart.terminacionneutrosingular', 0),
+(292, 'Το   -ι', 'art. terminacion neutro singular', 18, '2019-02-04 18:19:25', '2019-02-04 18:19:25', 'Το-ιart.terminacionneutrosingular', 0),
+(293, 'Το   -μα', 'art. terminacion neutro singular', 18, '2019-02-04 18:19:30', '2019-02-04 18:19:30', 'Το-μαart.terminacionneutrosingular', 0),
+(294, 'Το εισιτήριο, τα εισιτήρια', 'El ticket, los tickets', 18, '2019-02-04 18:20:19', '2019-02-04 18:20:19', 'Τοεισιτήριο,ταεισιτήριαlacosa,lascosas', 0),
+(295, 'Το πουλί, τα πουλιά', 'el pájaro, los pájaros', 18, '2019-02-04 18:21:59', '2019-02-04 18:21:59', 'Τοπουλί,ταπουλιάelpájaro,lospájaros', 0),
+(296, 'Το πράγμα, τα πράγματα', 'la cosa, las cosas', 18, '2019-02-04 18:22:13', '2019-02-04 18:22:13', 'Τοπράγμα,ταπράγματαlacosa,lascosas', 0),
+(297, 'Η γατούλα', 'el gatito', 18, '2019-02-04 18:27:07', '2019-02-04 18:27:07', 'Ηγατούλαelgatito', 0),
+(298, 'Το κουνέλι', 'el conejo', 18, '2019-02-04 18:27:25', '2019-02-04 18:27:25', 'Τοκουνέλιelconejo', 0),
+(299, 'Η χελώνα', 'la tortuga', 18, '2019-02-04 18:28:06', '2019-02-04 18:28:06', 'Ηχελώναlatortuga', 0),
+(300, 'Η κιθάρα', 'la guitarra', 18, '2019-02-04 18:28:46', '2019-02-04 18:28:46', 'Ηκιθάραlaguitarra', 0),
+(301, 'Οι τραγουδιστές', 'los cantantes', 18, '2019-02-04 18:29:31', '2019-02-04 18:29:31', 'Οιτραγουδιστέςloscantantes', 0),
+(302, 'Τα μολύβια', 'los lápices', 18, '2019-02-04 18:31:03', '2019-02-04 18:31:03', 'Ταμολύβιαloslápices', 0),
+(303, 'Οι χυμοί', 'los zumos', 18, '2019-02-04 18:31:35', '2019-02-04 18:31:35', 'Οιχυμοίloszumos', 0),
+(304, 'Οι μοτοσικλέτες', 'las motocicletas', 18, '2019-02-04 18:32:11', '2019-02-04 18:32:11', 'Οιμοτοσικλέτεςlasmotocicletas', 0),
+(305, 'Ο φίλος – Οι φίλοι', 'el amigo - los amigos', 18, '2019-02-04 18:34:20', '2019-02-04 18:34:20', 'Οφίλος–Οιφίλοιelamigo-losamigos', 0),
+(306, 'Η κόρη - Οι κόρες', 'la hija - las hijas', 18, '2019-02-04 18:35:46', '2019-02-04 18:35:46', 'Ηκόρη-Οικόρεςlahija-lashijas', 0),
+(307, 'Ο μαθητής - Οι μαθητές', 'el alumno - los alumnos', 18, '2019-02-04 18:36:04', '2019-02-04 18:36:04', 'Ομαθητής-Οιμαθητέςelalumno-losalumnos', 0),
+(308, 'Ο πατέρας – Οι πατέρες', 'el padre - los padres', 18, '2019-02-04 18:36:22', '2019-02-04 18:36:22', 'Οπατέρας–Οιπατέρεςelpadre-lospadres', 0),
+(309, 'Η γαλοπούλα - Οι γαλοπούλες', 'el pavo - los pavos', 18, '2019-02-04 18:37:51', '2019-02-04 18:37:51', 'Ηγαλοπούλα-Οιγαλοπούλεςelpavo-lospavos', 0),
+(310, 'Το γλυκό - Τα γλυκά', 'el dulce - los dulces', 18, '2019-02-04 18:38:23', '2019-02-04 18:38:23', 'Τογλυκό-Ταγλυκάeldulce-losdulces', 0),
+(311, 'Το γάντι - Τα γάντια', 'el guante - los guantes', 18, '2019-02-04 18:39:04', '2019-02-04 18:39:04', 'Τογάντι-Ταγάντιαelguante-losguantes', 0),
+(312, 'Το γράμμα - Το γράμμα', 'la carta - las cartas', 18, '2019-02-04 18:39:44', '2019-02-04 18:39:44', 'Τογράμμα-Τογράμμαlacarta-lascartas', 0),
+(313, 'Ο φύλακας - Οι φύλακες', 'el vigilante - los vigilantes', 18, '2019-02-04 18:51:39', '2019-02-04 18:51:39', 'Οφύλακας-Οιφύλακεςelvigilante-losvigilantes', 0),
+(314, 'Η μητέρα - Οι μητέρες', 'la madre - las madres', 18, '2019-02-04 18:51:40', '2019-02-04 18:51:40', 'Ημητέρα-Οιμητέρεςlamadre-lasmadres', 0),
+(315, 'Ο χάρτης - Οι χάρτες', 'el mapa - los mapas', 18, '2019-02-04 18:51:42', '2019-02-04 18:51:42', 'Οχάρτης-Οιχάρτεςelmapa-losmapas', 0),
+(316, 'Η σακούλα - Οι σακούλες', 'la bolsa - las bolsas', 18, '2019-02-04 18:51:43', '2019-02-04 18:51:43', 'Ησακούλα-Οισακούλεςlabolsa-lasbolsas', 0),
+(317, 'Το τραπέζι - Τα τραπέζια', 'la mesa - las mesas', 18, '2019-02-04 18:51:46', '2019-02-04 18:51:46', 'Τοτραπέζι-Τατραπέζιαlamesa-lasmesas', 0),
+(318, 'Πρώτος/η/ο', 'primero/a', 19, '2019-02-08 19:22:18', '2019-02-08 19:22:18', 'Πρώτος/η/οprimero/a', 0),
+(319, 'Δεύτερος/η/ο', 'segundo/a', 19, '2019-02-08 19:22:39', '2019-02-08 19:22:39', 'Δεύτερος/η/οsegundo/a', 0),
+(320, 'Τρίτος/η/ο', 'tercero/a', 19, '2019-02-08 19:22:50', '2019-02-08 19:22:50', 'Τρίτος/η/οtercero/a', 0),
+(321, 'Τέταρτος/η/ο', 'cuarto/a', 19, '2019-02-08 19:23:01', '2019-02-08 19:23:01', 'Τέταρτος/η/οcuarto/a', 0),
+(322, 'Πέμπτος/η/ο', 'quinto/a', 19, '2019-02-08 19:23:11', '2019-02-08 19:23:11', 'Πέμπτος/η/οquinto/a', 0),
+(323, 'Έκτος/η/ο', 'sexto/a', 19, '2019-02-08 19:23:19', '2019-02-08 19:23:19', 'Έκτος/η/οsexto/a', 0),
+(324, 'Έβδομος/η/ο', 'septimo/a', 19, '2019-02-08 19:23:32', '2019-02-08 19:23:32', 'Έβδομος/η/οseptimo/a', 0),
+(325, 'Όγδοος/η/ο', 'octavo/a', 19, '2019-02-08 19:23:41', '2019-02-08 19:23:41', 'Όγδοος/η/οoctavo/a', 0),
+(326, 'Ένατος/η/ο', 'noveno/a', 19, '2019-02-08 19:23:50', '2019-02-08 19:23:50', 'Ένατος/η/οnoveno/a', 0),
+(327, 'Δέκατος/η/ο', 'decimo/a', 19, '2019-02-08 19:24:13', '2019-02-08 19:24:13', 'Δέκατος/η/οdecimo/a', 0),
+(328, 'Ο Πρώτος άνθρωπος', 'la primera persona', 19, '2019-02-08 19:29:50', '2019-02-08 19:29:50', 'ΟΠρώτοςάνθρωποςlaprimerapersona', 0),
+(329, 'Η Τρίτοη φορά', 'la tercera vez', 19, '2019-02-08 19:30:08', '2019-02-08 19:30:08', 'ΗΤρίτοηφοράlaterceravez', 0),
+(330, 'Το Ένατο παιχνίδι', 'el noveno juego', 19, '2019-02-08 19:30:34', '2019-02-08 19:30:34', 'ΤοΈνατοπαιχνίδιelnovenojuego', 0),
+(331, 'Ο Δέκατος πλανήτης', 'el décimo planeta', 19, '2019-02-08 19:30:55', '2019-02-08 19:30:55', 'ΟΔέκατοςπλανήτηςeldécimoplaneta', 0),
+(332, 'Ο Έβδομος ουρανός', 'el séptimo cielo', 19, '2019-02-08 19:33:48', '2019-02-08 19:33:48', 'ΟΈβδομοςουρανόςelséptimocielo', 0),
+(333, 'Το Έκτο αίνιγμα', 'el sexto enigma', 19, '2019-02-08 19:34:11', '2019-02-08 19:34:11', 'ΤοΈκτοαίνιγμαelsextoenigma', 0),
+(334, 'Η Τέταρτη πόρτα', 'la cuarta puerta', 19, '2019-02-08 19:34:43', '2019-02-08 19:34:43', 'ΗΤέταρτηπόρταlacuartapuerta', 0),
+(335, 'Το Δεύτερο αυτοκίνητο', 'el segundo coche', 19, '2019-02-08 19:35:14', '2019-02-08 19:35:14', 'ΤοΔεύτεροαυτοκίνητοelsegundocoche', 0),
+(336, 'Ο Όγδοος μήνας', 'el octavo mes', 19, '2019-02-08 19:36:48', '2019-02-08 19:36:48', 'ΟΌγδοοςμήναςeloctavomes', 0),
+(337, 'Η Πέμπτη ευκαιρία', 'la quinta oportunidad', 19, '2019-02-08 19:36:33', '2019-02-08 19:36:33', 'ΗΠέμπτηευκαιρίαlaquintaoportunidad', 0);
 
 -- --------------------------------------------------------
 
@@ -542,7 +605,7 @@ ALTER TABLE `recursos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `cuestionarios`
@@ -560,7 +623,7 @@ ALTER TABLE `dialogos`
 -- AUTO_INCREMENT de la tabla `griegos`
 --
 ALTER TABLE `griegos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=277;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
 
 --
 -- AUTO_INCREMENT de la tabla `ingles`

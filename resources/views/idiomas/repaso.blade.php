@@ -20,8 +20,7 @@
     </div>
   </div>
   <div class="col-md-12 mb-3">
-    <select name="cat_id" class="custom-select center-block" style="width:150px; height:30px;">
-      <option value="0">Excluir categoria:</option>
+    <select name="cat_id" multiple class="custom-select center-block" style="width:150px; height:300px;">
       @foreach($categorias as $categoria)
         <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
       @endforeach
@@ -86,6 +85,8 @@
 
     </tbody>
   </table>
+
+  {{ $palabras->links() }}
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

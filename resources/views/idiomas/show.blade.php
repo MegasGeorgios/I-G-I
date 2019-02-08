@@ -54,6 +54,9 @@
       </div>
     </form>
     @endif
+    <form action="{{ url('/idioma/'.$idioma.'/categoria/'.$categoria->id.'/pdf') }}" method="get" style="padding-top: 10px; padding-bottom: 10px;">
+      <button class="btn btn-primary center-block" style="width:150px;" type="submit">Exportar a PDF</button>
+    </form>
     <br>
     <div class="col-md-8 col-md-offset-2">
       <table class="table">

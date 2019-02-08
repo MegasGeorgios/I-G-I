@@ -130,11 +130,11 @@ class IdiomaController extends Controller
       }else {
         $palabras = $palabras->latest();
       }
-
+      //dd($request);
       if ($request->cat_id > 0) {
-        $palabras = $palabras->whereNotIn('id_categoria',[$request->cat_id])->get();
+        $palabras = $palabras->whereNotIn('id_categoria',[$request->cat_id])->paginate(15);
       }else {
-        $palabras = $palabras->get();
+        $palabras = $palabras->paginate(15);
       }
 
       return view ('idiomas.repaso', compact('idioma','palabras','categorias'));
@@ -219,14 +219,26 @@ class IdiomaController extends Controller
     /**
      * Exportar a PDF
      */
-    public function export_pdf($idioma)
+    public function export_pdf($idioma, $cat_id=NULL)
     {
       if ($idioma == 'griego') {
-        $palabras = Griego::all();
+        if (!is_null($cat_id)) {
+          $palabras = Griego::where('id_categoria',$cat_id)->get();
+        }else {
+          $palabras = Griego::all();
+        }
       }elseif ($idioma == 'italiano') {
-        $palabras = Italiano::all();
+        if (!is_null($cat_id)) {
+          $palabras = Italiano::where('id_categoria',$cat_id)->get();
+        }else {
+          $palabras = Italiano::all();
+        }
       }else {
-        $palabras = Ingles::all();
+        if (!is_null($cat_id)) {
+          $palabras = Ingles::where('id_categoria',$cat_id)->get();
+        }else {
+          $palabras = Ingles::all();
+        }
       }
 
       $data = [
