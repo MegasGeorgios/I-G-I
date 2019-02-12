@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-02-2019 a las 20:37:15
--- Versión del servidor: 8.0.13
+-- Servidor: localhost:3306
+-- Tiempo de generación: 12-02-2019 a las 18:49:15
+-- Versión del servidor: 5.7.25-0ubuntu0.18.04.2
 -- Versión de PHP: 7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `practica_igi`
+-- Base de datos: `i-g-i`
 --
 
 -- --------------------------------------------------------
@@ -57,7 +55,8 @@ INSERT INTO `categorias` (`id`, `nombre_categoria`, `url_clase`, `created_at`, `
 (14, 'EL VERBO EIMAI', '#', '2019-01-29 18:07:24', '2019-01-29 18:07:24'),
 (15, 'Artículos definidos e indefinidos', '#', '2019-01-30 17:21:59', '2019-01-30 17:21:59'),
 (18, 'SUSTANTIVOS', 'https://academiaegeo.com/cursos/a1/lecciones/sustantivos/', '2019-02-04 18:01:32', '2019-02-04 18:24:16'),
-(19, 'Ordinales (1º, 2º, 3º…)', '#', '2019-02-08 19:19:54', '2019-02-08 19:19:54');
+(19, 'Ordinales (1º, 2º, 3º…)', '#', '2019-02-08 19:19:54', '2019-02-08 19:19:54'),
+(20, '¿Cuántos años tienes?', '#', '2019-02-12 16:34:36', '2019-02-12 16:34:36');
 
 -- --------------------------------------------------------
 
@@ -449,7 +448,16 @@ INSERT INTO `griegos` (`id`, `palabra`, `significado`, `id_categoria`, `created_
 (334, 'Η Τέταρτη πόρτα', 'la cuarta puerta', 19, '2019-02-08 19:34:43', '2019-02-08 19:34:43', 'ΗΤέταρτηπόρταlacuartapuerta', 0),
 (335, 'Το Δεύτερο αυτοκίνητο', 'el segundo coche', 19, '2019-02-08 19:35:14', '2019-02-08 19:35:14', 'ΤοΔεύτεροαυτοκίνητοelsegundocoche', 0),
 (336, 'Ο Όγδοος μήνας', 'el octavo mes', 19, '2019-02-08 19:36:48', '2019-02-08 19:36:48', 'ΟΌγδοοςμήναςeloctavomes', 0),
-(337, 'Η Πέμπτη ευκαιρία', 'la quinta oportunidad', 19, '2019-02-08 19:36:33', '2019-02-08 19:36:33', 'ΗΠέμπτηευκαιρίαlaquintaoportunidad', 0);
+(337, 'Η Πέμπτη ευκαιρία', 'la quinta oportunidad', 19, '2019-02-08 19:36:33', '2019-02-08 19:36:33', 'ΗΠέμπτηευκαιρίαlaquintaoportunidad', 0),
+(338, 'Πόσων/Πόσο χρονών είσαι;', 'cuantos años tienes ? (muy formal)', 20, '2019-02-12 16:39:26', '2019-02-12 16:39:26', 'Πόσων/Πόσοχρονώνείσαι;cuantosañostienes?(muyformal)', 0),
+(339, 'Τι ηλικία έχεις;', 'cuantos años tienes ? (medio formal)', 20, '2019-02-12 16:39:27', '2019-02-12 16:39:27', 'Τιηλικίαέχεις;cuantosañostienes?(medioformal)', 0),
+(340, 'Πόσο είσαι;', 'cuantos años tienes ? (informal)', 20, '2019-02-12 16:39:29', '2019-02-12 16:39:29', 'Πόσοείσαι;cuantosañostienes?(informal)', 0),
+(341, 'Είμαι δεκατέσσερα', 'tengo 14', 20, '2019-02-12 16:40:58', '2019-02-12 16:40:58', 'Είμαιδεκατέσσεραtengo14', 0),
+(342, 'Είμαι τριάντα δύο', 'tengo 32', 20, '2019-02-12 16:41:07', '2019-02-12 16:41:07', 'Είμαιτριάνταδύοtengo32', 0),
+(343, 'Είμαι ογδόντα τρία', 'tengo 83', 20, '2019-02-12 16:41:16', '2019-02-12 16:41:16', 'Είμαιογδόντατρίαtengo83', 0),
+(344, 'Είμαι δεκατεσσάρων χρονών', 'tengo 14 años', 20, '2019-02-12 16:44:19', '2019-02-12 16:44:19', 'Είμαιδεκατεσσάρωνχρονώνtengo14años', 0),
+(345, 'Είμαι ογδόντα τριών χρονών', 'tengo 83 años', 20, '2019-02-12 16:44:25', '2019-02-12 16:44:25', 'Είμαιογδόντατριώνχρονώνtengo83años', 0),
+(346, 'Είμαι + número en genitivo + χρονών (Una forma de responder)', 'Είμαι + número en nominativo (otra forma de responder)', 20, '2019-02-12 16:45:09', '2019-02-12 16:45:09', 'Είμαι+númeroengenitivo+χρονών(unaformaderesponder)Είμαι+númeroennominativo(otraformaderesponder)', 0);
 
 -- --------------------------------------------------------
 
@@ -605,50 +613,42 @@ ALTER TABLE `recursos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `cuestionarios`
 --
 ALTER TABLE `cuestionarios`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `dialogos`
 --
 ALTER TABLE `dialogos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `griegos`
 --
 ALTER TABLE `griegos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
 --
 -- AUTO_INCREMENT de la tabla `ingles`
 --
 ALTER TABLE `ingles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `italianos`
 --
 ALTER TABLE `italianos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `recursos`
 --
 ALTER TABLE `recursos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- Restricciones para tablas volcadas
 --
@@ -676,7 +676,6 @@ ALTER TABLE `italianos`
 --
 ALTER TABLE `recursos`
   ADD CONSTRAINT `recursos_id_categoria_foreign` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
