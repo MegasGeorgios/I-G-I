@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 12-02-2019 a las 18:49:15
+-- Tiempo de generación: 14-02-2019 a las 18:03:10
 -- Versión del servidor: 5.7.25-0ubuntu0.18.04.2
 -- Versión de PHP: 7.2.10-0ubuntu0.18.04.1
 
@@ -56,7 +56,8 @@ INSERT INTO `categorias` (`id`, `nombre_categoria`, `url_clase`, `created_at`, `
 (15, 'Artículos definidos e indefinidos', '#', '2019-01-30 17:21:59', '2019-01-30 17:21:59'),
 (18, 'SUSTANTIVOS', 'https://academiaegeo.com/cursos/a1/lecciones/sustantivos/', '2019-02-04 18:01:32', '2019-02-04 18:24:16'),
 (19, 'Ordinales (1º, 2º, 3º…)', '#', '2019-02-08 19:19:54', '2019-02-08 19:19:54'),
-(20, '¿Cuántos años tienes?', '#', '2019-02-12 16:34:36', '2019-02-12 16:34:36');
+(20, '¿Cuántos años tienes?', '#', '2019-02-12 16:34:36', '2019-02-12 16:34:36'),
+(21, 'Precios y dinero', '#', '2019-02-14 15:42:21', '2019-02-14 15:42:21');
 
 -- --------------------------------------------------------
 
@@ -457,7 +458,22 @@ INSERT INTO `griegos` (`id`, `palabra`, `significado`, `id_categoria`, `created_
 (343, 'Είμαι ογδόντα τρία', 'tengo 83', 20, '2019-02-12 16:41:16', '2019-02-12 16:41:16', 'Είμαιογδόντατρίαtengo83', 0),
 (344, 'Είμαι δεκατεσσάρων χρονών', 'tengo 14 años', 20, '2019-02-12 16:44:19', '2019-02-12 16:44:19', 'Είμαιδεκατεσσάρωνχρονώνtengo14años', 0),
 (345, 'Είμαι ογδόντα τριών χρονών', 'tengo 83 años', 20, '2019-02-12 16:44:25', '2019-02-12 16:44:25', 'Είμαιογδόντατριώνχρονώνtengo83años', 0),
-(346, 'Είμαι + número en genitivo + χρονών (Una forma de responder)', 'Είμαι + número en nominativo (otra forma de responder)', 20, '2019-02-12 16:45:09', '2019-02-12 16:45:09', 'Είμαι+númeroengenitivo+χρονών(unaformaderesponder)Είμαι+númeroennominativo(otraformaderesponder)', 0);
+(346, 'Είμαι + número en genitivo + χρονών (Una forma de responder)', 'Είμαι + número en nominativo (otra forma de responder)', 20, '2019-02-12 16:45:09', '2019-02-12 16:45:09', 'Είμαι+númeroengenitivo+χρονών(unaformaderesponder)Είμαι+númeroennominativo(otraformaderesponder)', 0),
+(347, 'Πόσο κάνει αυτό;', '¿cuánto cuesta esto?', 21, '2019-02-14 15:43:52', '2019-02-14 15:43:52', 'Πόσοκάνειαυτό;¿cuántocuestaesto?', 0),
+(348, 'Πόσο κοστίζουν αυτά;', '¿cuánto cuestan estas cosas?', 21, '2019-02-14 15:44:11', '2019-02-14 15:44:11', 'Πόσοκοστίζουναυτά;¿cuántocuestanestascosas?', 0),
+(349, 'Πόσο κάνουν όλα μαζί;', '¿cuánto cuesta todo junto?', 21, '2019-02-14 15:44:29', '2019-02-14 15:44:29', 'Πόσοκάνουνόλαμαζί;¿cuántocuestatodojunto?', 0),
+(350, 'Πόσο κάνει αυτό το βιβλίο;', '¿cuánto cuesta este libro?', 21, '2019-02-14 15:44:47', '2019-02-14 15:44:47', 'Πόσοκάνειαυτότοβιβλίο;¿cuántocuestaestelibro?', 0),
+(351, 'Πόσο κοστίζουν τα τετράδια;', '¿cuánto cuestan las libretas?', 21, '2019-02-14 15:45:06', '2019-02-14 15:45:06', 'Πόσοκοστίζουντατετράδια;¿cuántocuestanlaslibretas?', 0),
+(352, 'Οι καλύτερες τιμές', 'los mejores precios', 21, '2019-02-14 15:46:51', '2019-02-14 15:46:51', 'Οικαλύτερεςτιμέςlosmejoresprecios', 0),
+(353, 'Προσφορές', 'ofertas', 21, '2019-02-14 15:47:22', '2019-02-14 15:47:22', 'Προσφορέςofertas', 0),
+(354, 'Τέσσερα και ενενήντα έξι το κιλό', '4,96 el kilo', 21, '2019-02-14 15:48:55', '2019-02-14 15:48:55', 'Τέσσερακαιενενήνταέξιτοκιλό4,96elkilo', 0),
+(355, 'Κιμάς', 'carne picada', 4, '2019-02-14 15:50:23', '2019-02-14 15:50:23', 'Κιμάςcarnepicada', 0),
+(356, 'δώρο', 'regalo', 21, '2019-02-14 15:50:49', '2019-02-14 15:50:49', 'δώροregalo', 0),
+(357, 'Εκατόν είκοσι εννέα ευρώ', '129 euros', 21, '2019-02-14 15:52:42', '2019-02-14 15:52:42', 'Εκατόνείκοσιεννέαευρώ129euros', 0),
+(358, 'Εκατόν ενενήντα πέντε ευρώ', '195 euros', 21, '2019-02-14 15:54:13', '2019-02-14 15:54:13', 'Εκατόνενενήνταπέντεευρώ195euros', 0),
+(359, 'εκπτωσεις', 'rebajas', 21, '2019-02-14 15:58:30', '2019-02-14 15:58:30', 'εκπτωσειςrebajas', 0),
+(360, 'ακριβό', 'caro', 21, '2019-02-14 16:01:05', '2019-02-14 16:01:05', 'ακριβόcaro', 0),
+(361, 'φθηνό', 'barato', 21, '2019-02-14 16:01:28', '2019-02-14 16:01:28', 'φθηνόbarato', 0);
 
 -- --------------------------------------------------------
 
@@ -613,7 +629,7 @@ ALTER TABLE `recursos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `cuestionarios`
 --
@@ -628,7 +644,7 @@ ALTER TABLE `dialogos`
 -- AUTO_INCREMENT de la tabla `griegos`
 --
 ALTER TABLE `griegos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=362;
 --
 -- AUTO_INCREMENT de la tabla `ingles`
 --
