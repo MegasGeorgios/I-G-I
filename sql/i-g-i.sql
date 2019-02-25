@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-02-2019 a las 19:41:26
+-- Tiempo de generación: 25-02-2019 a las 19:34:51
 -- Versión del servidor: 5.7.25-0ubuntu0.18.04.2
 -- Versión de PHP: 7.2.10-0ubuntu0.18.04.1
 
@@ -59,7 +59,8 @@ INSERT INTO `categorias` (`id`, `nombre_categoria`, `url_clase`, `created_at`, `
 (20, '¿Cuántos años tienes?', '#', '2019-02-12 16:34:36', '2019-02-12 16:34:36'),
 (21, 'Precios y dinero', '#', '2019-02-14 15:42:21', '2019-02-14 15:42:21'),
 (22, 'La Hora', '#', '2019-02-18 17:19:28', '2019-02-18 17:19:28'),
-(23, 'Los días y los meses', '#', '2019-02-19 17:14:13', '2019-02-19 17:14:13');
+(23, 'Los días y los meses', '#', '2019-02-19 17:14:13', '2019-02-19 17:14:13'),
+(24, 'Las estaciones y el clima', '#', '2019-02-25 17:21:39', '2019-02-25 17:21:39');
 
 -- --------------------------------------------------------
 
@@ -541,7 +542,22 @@ INSERT INTO `griegos` (`id`, `palabra`, `significado`, `id_categoria`, `created_
 (425, 'Χθες', 'ayer', 23, '2019-02-19 17:36:59', '2019-02-19 17:36:59', 'Χθεςayer', 0),
 (426, 'πρχοθες', 'antes de ayer', 23, '2019-02-19 17:38:14', '2019-02-19 17:38:14', 'πρχοθεςantesdeayer', 0),
 (427, 'άυριο', 'mañana', 23, '2019-02-19 17:40:11', '2019-02-19 17:40:11', 'άυριοmañana', 0),
-(428, 'μεθαυριο', 'pasado mañana', 23, '2019-02-19 17:41:10', '2019-02-19 17:41:10', 'μεθαυριοpasadomañana', 0);
+(428, 'μεθαυριο', 'pasado mañana', 23, '2019-02-19 17:41:10', '2019-02-19 17:41:10', 'μεθαυριοpasadomañana', 0),
+(429, 'Η άνοιξη', 'primavera', 24, '2019-02-25 17:22:40', '2019-02-25 17:22:40', 'Ηάνοιξηprimavera', 0),
+(430, 'Το καλοκαίρι', 'verano', 24, '2019-02-25 17:22:55', '2019-02-25 17:22:55', 'Τοκαλοκαίριverano', 0),
+(431, 'Το φθινόπωρο', 'otoño', 24, '2019-02-25 17:23:23', '2019-02-25 17:23:23', 'Τοφθινόπωροotoño', 0),
+(432, 'Ο χειμώνας', 'invierno', 24, '2019-02-25 17:23:41', '2019-02-25 17:23:41', 'Οχειμώναςinvierno', 0),
+(433, 'Πώς είναι ο καιρός σήμερα;', 'cómo está el clima hoy?', 24, '2019-02-25 17:24:04', '2019-02-25 17:24:04', 'Πώςείναιοκαιρόςσήμερα;cómoestáelclimahoy?', 0),
+(434, 'Τι καιρό έχουμε σήμερα;', 'qué clima tenemos hoy?', 24, '2019-02-25 17:24:19', '2019-02-25 17:24:19', 'Τικαιρόέχουμεσήμερα;quéclimatenemoshoy?', 0),
+(435, 'Τι καιρό θα έχουμε αύριο, την Δευτέρα, την Τρίτη…;', '¿qué clima tendremos mañana, el lunes, el martes…?', 24, '2019-02-25 17:24:37', '2019-02-25 17:24:37', 'Τικαιρόθαέχουμεαύριο,τηνΔευτέρα,τηνΤρίτη…;¿quéclimatendremosmañana,ellunes,elmartes…?', 0),
+(436, 'Είναι συννεφιασμένος / Έχουμε σύννεφα', 'está nublado / hay nubes', 24, '2019-02-25 17:24:59', '2019-02-25 17:24:59', 'Είναισυννεφιασμένος/Έχουμεσύννεφαestánublado/haynubes', 0),
+(437, 'Είναι με λίγα σύννεφα / Είναι μερικώς συννεφιασμένος', 'está medio nublado', 24, '2019-02-25 17:25:25', '2019-02-25 17:25:25', 'Είναιμελίγασύννεφα/Είναιμερικώςσυννεφιασμένοςestámedionublado', 0),
+(438, 'Έχουμε καταιγίδα', 'hay tormenta', 24, '2019-02-25 17:25:48', '2019-02-25 17:25:48', 'Έχουμεκαταιγίδαhaytormenta', 0),
+(439, 'Κάνει ζέστη', 'hace calor', 24, '2019-02-25 17:26:00', '2019-02-25 17:26:00', 'Κάνειζέστηhacecalor', 0),
+(440, 'Κάνει κρύο', 'hace frío', 24, '2019-02-25 17:26:24', '2019-02-25 17:26:24', 'Κάνεικρύοhacefrío', 0),
+(441, 'Βρέχει / Έχουμε βροχή', 'está lloviendo / tenemos lluvia', 24, '2019-02-25 17:26:40', '2019-02-25 17:26:40', 'Βρέχει/Έχουμεβροχήestálloviendo/tenemoslluvia', 0),
+(442, 'Χιονίζει / Έχουμε χιόνι', 'está nevando / tenemos nieve', 24, '2019-02-25 17:32:20', '2019-02-25 17:32:20', 'Χιονίζει/Έχουμεχιόνιestánevando/tenemosnieve', 0),
+(443, 'Φυσάει λίγο / πολύ', 'hace poco/mucho viento', 24, '2019-02-25 17:32:35', '2019-02-25 17:32:35', 'Φυσάειλίγο/πολύhacepoco/muchoviento', 0);
 
 -- --------------------------------------------------------
 
@@ -697,7 +713,7 @@ ALTER TABLE `recursos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `cuestionarios`
 --
@@ -712,7 +728,7 @@ ALTER TABLE `dialogos`
 -- AUTO_INCREMENT de la tabla `griegos`
 --
 ALTER TABLE `griegos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=429;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
 --
 -- AUTO_INCREMENT de la tabla `ingles`
 --

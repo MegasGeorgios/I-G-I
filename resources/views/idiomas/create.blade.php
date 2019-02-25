@@ -24,7 +24,7 @@
       <div class="col-md-3 mb-3">
         <label>Categoria</label>
         <select name="id_categoria" class="custom-select d-block" style="height: 36px;" required>
-          <option value="">Seleccione</option>
+          <option value="{{$ultima_cat->id}}">{{$ultima_cat->nombre_categoria}}</option>
           @foreach($nombre_categorias as $categoria)
           <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
           @endforeach

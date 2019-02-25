@@ -38,10 +38,12 @@ class IdiomaController extends Controller
       }
 
       $nombre_categorias = Categoria::all();
+      $ultima_cat = $nombre_categorias->last();
       $ultimas_palabras = collect($palabras)->take(10);
 
       return view ('idiomas.create', [
         'idioma' => $idioma,
+        'ultima_cat' => $ultima_cat,
         'nombre_categorias' => $nombre_categorias,
         'ultimas_palabras' => $ultimas_palabras
       ]);
