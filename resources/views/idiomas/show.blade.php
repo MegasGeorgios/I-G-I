@@ -28,7 +28,9 @@
         <button type="submit">
           Editar
         </button>
+        @if(isset($categoria->url_clase))
         <a href="{{url($categoria->url_clase)}}" target="_blank">ir a la clase</a>
+        @endif
       </div>
     </div>
   </form>
@@ -53,10 +55,11 @@
         </div>
       </div>
     </form>
-    @endif
+
     <form action="{{ url('/idioma/'.$idioma.'/categoria/'.$categoria->id.'/pdf') }}" method="get" style="padding-top: 10px; padding-bottom: 10px;">
       <button class="btn btn-primary center-block" style="width:150px;" type="submit">Exportar a PDF</button>
     </form>
+    @endif
     <br>
     <div class="col-md-8 col-md-offset-2">
       <table class="table">

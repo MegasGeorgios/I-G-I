@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 25-02-2019 a las 19:34:51
+-- Tiempo de generación: 13-03-2019 a las 19:53:49
 -- Versión del servidor: 5.7.25-0ubuntu0.18.04.2
--- Versión de PHP: 7.2.10-0ubuntu0.18.04.1
+-- Versión de PHP: 7.2.15-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -60,7 +60,8 @@ INSERT INTO `categorias` (`id`, `nombre_categoria`, `url_clase`, `created_at`, `
 (21, 'Precios y dinero', '#', '2019-02-14 15:42:21', '2019-02-14 15:42:21'),
 (22, 'La Hora', '#', '2019-02-18 17:19:28', '2019-02-18 17:19:28'),
 (23, 'Los días y los meses', '#', '2019-02-19 17:14:13', '2019-02-19 17:14:13'),
-(24, 'Las estaciones y el clima', '#', '2019-02-25 17:21:39', '2019-02-25 17:21:39');
+(24, 'Las estaciones y el clima', '#', '2019-02-25 17:21:39', '2019-02-25 17:21:39'),
+(25, 'Adjetivos', NULL, '2019-03-13 17:20:09', '2019-03-13 17:20:09');
 
 -- --------------------------------------------------------
 
@@ -557,7 +558,26 @@ INSERT INTO `griegos` (`id`, `palabra`, `significado`, `id_categoria`, `created_
 (440, 'Κάνει κρύο', 'hace frío', 24, '2019-02-25 17:26:24', '2019-02-25 17:26:24', 'Κάνεικρύοhacefrío', 0),
 (441, 'Βρέχει / Έχουμε βροχή', 'está lloviendo / tenemos lluvia', 24, '2019-02-25 17:26:40', '2019-02-25 17:26:40', 'Βρέχει/Έχουμεβροχήestálloviendo/tenemoslluvia', 0),
 (442, 'Χιονίζει / Έχουμε χιόνι', 'está nevando / tenemos nieve', 24, '2019-02-25 17:32:20', '2019-02-25 17:32:20', 'Χιονίζει/Έχουμεχιόνιestánevando/tenemosnieve', 0),
-(443, 'Φυσάει λίγο / πολύ', 'hace poco/mucho viento', 24, '2019-02-25 17:32:35', '2019-02-25 17:32:35', 'Φυσάειλίγο/πολύhacepoco/muchoviento', 0);
+(443, 'Φυσάει λίγο / πολύ', 'hace poco/mucho viento', 24, '2019-02-25 17:32:35', '2019-02-25 17:32:35', 'Φυσάειλίγο/πολύhacepoco/muchoviento', 0),
+(444, 'Μεγάλος', 'grande', 25, '2019-03-13 17:21:29', '2019-03-13 17:21:29', 'Μεγάλοςgrande', 0),
+(445, 'Μικρός', 'pequeño', 25, '2019-03-13 17:23:54', '2019-03-13 17:23:54', 'Μικρόςpequeño', 0),
+(446, 'Ψηλός', 'alto', 25, '2019-03-13 17:24:04', '2019-03-13 17:24:04', 'Ψηλόςalto', 0),
+(447, 'Δυνατός', 'fuerte', 25, '2019-03-13 17:24:14', '2019-03-13 17:24:14', 'Δυνατόςfuerte', 0),
+(448, 'Αδύνατος', 'débil', 25, '2019-03-13 17:24:24', '2019-03-13 17:24:24', 'Αδύνατοςdébil', 0),
+(449, 'Άσπρος', 'blanco', 25, '2019-03-13 17:24:35', '2019-03-13 17:24:35', 'Άσπροςblanco', 0),
+(450, 'Μαύρος', 'negro', 25, '2019-03-13 17:24:45', '2019-03-13 17:24:45', 'Μαύροςnegro', 0),
+(451, 'Γρήγορος', 'rápido', 25, '2019-03-13 17:24:56', '2019-03-13 17:24:56', 'Γρήγοροςrápido', 0),
+(452, 'Σημαντικός', 'importante', 25, '2019-03-13 17:25:10', '2019-03-13 17:25:10', 'Σημαντικόςimportante', 0),
+(453, 'Όμορφος', 'guapo', 25, '2019-03-13 17:25:21', '2019-03-13 17:25:21', 'Όμορφοςguapo', 0),
+(454, 'Η δυνατή γυναίκα', 'la mujer fuerte', 25, '2019-03-13 17:26:59', '2019-03-13 17:26:59', 'Ηδυνατήγυναίκαlamujerfuerte', 0),
+(455, 'Τα σηματικά πράγματα', 'las cosas importantes', 25, '2019-03-13 17:27:53', '2019-03-13 17:28:07', 'Τασηματικάπράγματαlascosasimportantes', 1),
+(456, 'Ο μικρός άντρας', 'el hombre pequeño', 25, '2019-03-13 17:28:42', '2019-03-13 17:28:42', 'Ομικρόςάντραςelhombrepequeño', 0),
+(457, 'Η άδεια αίθουσα', 'la sala vacía', 25, '2019-03-13 17:33:49', '2019-03-13 17:33:49', 'Ηάδειααίθουσαlasalavacía', 0),
+(458, 'Το πράσινο βιβλίο κοστίζει/κάνει δεκαπέντε ευρώ.', 'el libro verde cuesta 15 euros', 25, '2019-03-13 17:40:14', '2019-03-13 17:40:14', 'Τοπράσινοβιβλίοκοστίζει/κάνειδεκαπέντεευρώ.ellibroverdecuesta15euros', 0),
+(459, 'Ο ψηλός και δυνατός άνδρας είναι από την Γερμανία και είναι τριάντα πέντε (χρονών)', 'el hombre alto y fuerte es de alemania y tiene 35 años', 25, '2019-03-13 17:42:04', '2019-03-13 17:42:04', 'ΟψηλόςκαιδυνατόςάνδραςείναιαπότηνΓερμανίακαιείναιτριάνταπέντε(χρονών)elhombrealtoyfuerteesdealemaniaytiene35años', 0),
+(460, 'Το κόκκινο αυτοκίνητο είναι γρήγορο', 'el coche rojo es rápido', 25, '2019-03-13 17:43:10', '2019-03-13 17:43:10', 'Τοκόκκινοαυτοκίνητοείναιγρήγοροelcocherojoesrápido', 0),
+(461, 'Η αδελφή είναι όμορφη', 'la hermana es guapa', 25, '2019-03-13 17:45:10', '2019-03-13 17:45:10', 'Ηαδελφήείναιόμορφηlahermanaesguapa', 0),
+(462, 'Ο κουνιάδος είναι από την Ισπανία, είναι είκοσι ενός (χρονών) και είναι δημοσιογράφος', 'el cuñado es de españa, tiene 21 años y es periodista', 25, '2019-03-13 17:49:34', '2019-03-13 17:49:34', 'ΟκουνιάδοςείναιαπότηνΙσπανία,είναιείκοσιενός(χρονών)καιείναιδημοσιογράφοςelcuñadoesdeespaña,tiene21añosyesperiodista', 0);
 
 -- --------------------------------------------------------
 
@@ -713,7 +733,7 @@ ALTER TABLE `recursos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT de la tabla `cuestionarios`
 --
@@ -728,7 +748,7 @@ ALTER TABLE `dialogos`
 -- AUTO_INCREMENT de la tabla `griegos`
 --
 ALTER TABLE `griegos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
 --
 -- AUTO_INCREMENT de la tabla `ingles`
 --
