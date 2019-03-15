@@ -15,10 +15,10 @@
 
   @if(isset($categoria))
   <form method="POST" action="{{ url('/editar/categoria/'.$categoria->id) }}">
-    {{ csrf_field() }}
+    @csrf
     <div class="row">
       <div class="col-md-3 mb-3 center-block">
-        <label for="validationServer01">Editar</label>
+        <label for="validationServer01">EDITAR</label>
         <input type="text" class="form-control is-valid" id="validationServer01" name="nombre_categoria" value="{{$categoria->nombre_categoria}}"  required>
         <input type="text" class="form-control is-valid" id="validationServer02" name="url_clase" value="{{$categoria->url_clase}}" placeholder="url de la clase">
         <input type="password" class="form-control is-valid" id="validationServer03" name="clave" placeholder="contraseña" required>
@@ -39,12 +39,12 @@
     {{ csrf_field() }}
     <div class="row">
       <div class="col-md-3 mb-3 center-block">
-        <label for="validationServer01">REGISTRA UN RECURSO!
+        <label for="validationServer01">SUBE UN RECURSO!
           <a href="{{url('/categoria/'.$categoria->id.'/recursos/'.$idioma)}}" style="padding-left:45px;">Ver recursos</a> </label>
 
           <textarea class="form-control is-valid" id="validationServer04" name="descripcion" placeholder="Descripcion"></textarea>
 
-          <input type="file" name="imagen">
+          <input type="file" name="archivo">
 
           <input type="hidden" name="idioma" value="{{$idioma}}">
           <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
@@ -56,8 +56,16 @@
       </div>
     </form>
 
+    <div class="row">
+      <div class="col-md-3 mb-3 center-block">
+        @foreach($recursos as $recurso)
+          <a href="{{url('/descargar/recurso/'.$recurso->id)}}" target="_blank">{{ $recurso->imagen }}</a><br>
+        @endforeach
+      </div>
+    </div>
+    
     <form action="{{ url('/idioma/'.$idioma.'/categoria/'.$categoria->id.'/pdf') }}" method="get" style="padding-top: 10px; padding-bottom: 10px;">
-      <button class="btn btn-primary center-block" style="width:150px;" type="submit">Exportar a PDF</button>
+      <button class="btn btn-primary center-block" style="width:200px;" type="submit">Exportar categoria a PDF</button>
     </form>
     @endif
     <br>
@@ -110,6 +118,89 @@
             @endif
           </tr>
           @endforeach
+        </tbody>
+      </table>
+
+      @foreach($notas as $nota)
+       <div class="card text-center">
+          <div class="card-header nota">
+            Nota
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{ $nota->nota }}</p>
+          </div>
+          <div class="card-footer text-muted">
+            {{ $nota->created_at->format('d/m/Y')}} - {{ $nota->created_at->format('H:i')}}
+          </div>
+        </div>
+      @endforeach
+
+      <form method="POST" action="{{ url('/guardar/nota') }}" >
+      @csrf
+        <div class="row" style="padding-top: 15px; padding-bottom: 15px;">
+          <label for="validationServer01">AGREGA UNA NOTA!</label>
+
+          <textarea class="form-control is-valid" id="validationServer05" name="nota" rows="8" required></textarea>
+          <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
+          <button type="submit">
+            Agregar
+          </button>
+        </div>
+      </form>
+
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="form-row" style="padding-top: 15px;">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Columnas</label>
+          <input class="form-control" type='text' v-model='columnas' name='col' >
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputPassword4">Filas</label>
+          <input class="form-control" type='text' v-model='filas' name='fila'>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Nombre tabla</label>
+          <input class="form-control" type='text' name='titulo'>
+        </div>
+      </div>
+
+      <table class="table table-bordered table-dark">
+        <tbody>
+          <tr v-for="columna,c in parseInt(filas)">
+            <td v-for="fila,f in parseInt(columnas)">
+              <input class="form-control" type='text' :name="'input'+(c+1)+'/'+(f+1)">
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

@@ -27,6 +27,12 @@
   display: none;
 }
 
+.nota{
+  color: #fff;
+  background-color: #212529;
+  border-color: #32383e;
+}
+
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {
     display: none;

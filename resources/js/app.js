@@ -34,7 +34,9 @@ const app = new Vue({
     id: 0,
     idioma: '',
     clave: '',
-    respuesta: ''
+    respuesta: '',
+    columnas:'3',
+    filas:'3'
   },
   methods:{
     asignAtributesShow (id, idioma){

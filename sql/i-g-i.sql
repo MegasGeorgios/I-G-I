@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 13-03-2019 a las 19:53:49
--- Versión del servidor: 5.7.25-0ubuntu0.18.04.2
--- Versión de PHP: 7.2.15-0ubuntu0.18.04.1
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 15-03-2019 a las 14:21:52
+-- Versión del servidor: 10.1.31-MariaDB
+-- Versión de PHP: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -61,7 +63,7 @@ INSERT INTO `categorias` (`id`, `nombre_categoria`, `url_clase`, `created_at`, `
 (22, 'La Hora', '#', '2019-02-18 17:19:28', '2019-02-18 17:19:28'),
 (23, 'Los días y los meses', '#', '2019-02-19 17:14:13', '2019-02-19 17:14:13'),
 (24, 'Las estaciones y el clima', '#', '2019-02-25 17:21:39', '2019-02-25 17:21:39'),
-(25, 'Adjetivos', NULL, '2019-03-13 17:20:09', '2019-03-13 17:20:09');
+(25, 'Adjetivos', 'https://academiaegeo.com/cursos/a1/lecciones/adjetivos/', '2019-03-13 17:20:09', '2019-03-14 10:24:28');
 
 -- --------------------------------------------------------
 
@@ -638,7 +640,31 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2018_09_23_141327_create_recursos_table', 2),
 (7, '2018_10_01_205750_alter_tables_slug', 3),
 (8, '2019_01_24_175610_create_dialogos_table', 4),
-(9, '2018_10_01_205750_alter_tables_favorita', 5);
+(9, '2018_10_01_205750_alter_tables_favorita', 5),
+(10, '2019_03_14_095356_create_notas_table', 6),
+(11, '2019_03_15_103528_create_tablas_table', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas`
+--
+
+CREATE TABLE `notas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nota` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_categoria` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `notas`
+--
+
+INSERT INTO `notas` (`id`, `nota`, `id_categoria`, `created_at`, `updated_at`) VALUES
+(1, 'Adjetivos que terminan por -ος y hacen el femenino con -α en lugar de –η. Los adjetivos con estas terminaciones son aquellos cuya raíz termina en sonido i o en cualquier otra vocal acentuada. Por ejemplo, los adjetivos άγριος (salvaje), άδειος (vacío), δημόσιος (público), καινούργιος (nuevo), κρύος (frío).', 25, '2019-03-14 09:44:38', '2019-03-14 09:44:38'),
+(3, 'El adjetivo va antes que el sujeto/objeto.\r\n\r\nEj: Το πράσινο βιβλίο => El libro verde', 25, '2019-03-14 10:19:31', '2019-03-14 10:19:31');
 
 -- --------------------------------------------------------
 
@@ -661,13 +687,30 @@ CREATE TABLE `recursos` (
 --
 
 INSERT INTO `recursos` (`id`, `idioma`, `descripcion`, `imagen`, `id_categoria`, `created_at`, `updated_at`) VALUES
-(1, 'griego', NULL, '1537728632_Captura de pantalla de 2018-09-17 22-27-02.jpg', 6, '2018-09-23 18:50:32', '2018-09-23 18:50:32'),
-(2, 'griego', NULL, '1537728654_Captura de pantalla de 2018-09-17 22-28-53.jpg', 6, '2018-09-23 18:50:54', '2018-09-23 18:50:54'),
-(3, 'griego', NULL, '1537728675_Captura de pantalla de 2018-09-17 22-29-08.jpg', 6, '2018-09-23 18:51:15', '2018-09-23 18:51:15'),
+(1, 'griego', NULL, '1537728632_Captura01.jpg', 6, '2018-09-23 18:50:32', '2018-09-23 18:50:32'),
+(2, 'griego', NULL, '1537728654_Captura02.jpg', 6, '2018-09-23 18:50:54', '2018-09-23 18:50:54'),
+(3, 'griego', NULL, '1537728675_Captura03.jpg', 6, '2018-09-23 18:51:15', '2018-09-23 18:51:15'),
 (4, 'griego', NULL, '1537736526_Captura de pantalla de 2018-09-20 19-15-13.jpg', 7, '2018-09-23 21:02:06', '2018-09-23 21:02:06'),
 (5, 'griego', 'Trabajo en el:\r\n-supermercado\r\n-restaurante\r\n-hotel', '1539292727_Captura de pantalla de 2018-10-11 23-13-57.jpg', 10, '2018-10-11 21:18:47', '2018-10-11 21:18:47'),
 (6, 'griego', 'para hacer referencia a una cadena de tienes (franquicia) se usa \'sta\' \r\ntrabajo en Mcdonalds', '1539293053_Captura de pantalla de 2018-10-11 23-13-57.jpg', 10, '2018-10-11 21:24:13', '2018-10-11 21:24:13'),
 (7, 'griego', NULL, '1539293305_Captura de pantalla de 2018-10-11 23-25-23.jpg', 10, '2018-10-11 21:28:25', '2018-10-11 21:28:25');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tablas`
+--
+
+CREATE TABLE `tablas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `titulo` text COLLATE utf8mb4_unicode_ci,
+  `filas` int(11) NOT NULL,
+  `columnas` int(11) NOT NULL,
+  `datos` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_categoria` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Índices para tablas volcadas
@@ -719,11 +762,25 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `notas`
+--
+ALTER TABLE `notas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `notas_id_categoria_foreign` (`id_categoria`);
+
+--
 -- Indices de la tabla `recursos`
 --
 ALTER TABLE `recursos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `recursos_id_categoria_foreign` (`id_categoria`);
+
+--
+-- Indices de la tabla `tablas`
+--
+ALTER TABLE `tablas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tablas_id_categoria_foreign` (`id_categoria`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -734,41 +791,61 @@ ALTER TABLE `recursos`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
 -- AUTO_INCREMENT de la tabla `cuestionarios`
 --
 ALTER TABLE `cuestionarios`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `dialogos`
 --
 ALTER TABLE `dialogos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `griegos`
 --
 ALTER TABLE `griegos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
+
 --
 -- AUTO_INCREMENT de la tabla `ingles`
 --
 ALTER TABLE `ingles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `italianos`
 --
 ALTER TABLE `italianos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `notas`
+--
+ALTER TABLE `notas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `recursos`
 --
 ALTER TABLE `recursos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `tablas`
+--
+ALTER TABLE `tablas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -792,10 +869,23 @@ ALTER TABLE `italianos`
   ADD CONSTRAINT `italianos_id_categoria_foreign` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `notas`
+--
+ALTER TABLE `notas`
+  ADD CONSTRAINT `notas_id_categoria_foreign` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `recursos`
 --
 ALTER TABLE `recursos`
   ADD CONSTRAINT `recursos_id_categoria_foreign` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tablas`
+--
+ALTER TABLE `tablas`
+  ADD CONSTRAINT `tablas_id_categoria_foreign` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

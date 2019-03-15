@@ -34,7 +34,7 @@ class RecursosController extends Controller
   */
   public function guardar_recurso(Request $request)
   {
-      $imagen = $request->file('imagen');
+      $imagen = $request->file('archivo');
       $ruta_archivo = time().'_'.$imagen->getClientOriginalName();
 
       Storage::disk('imagenes')->put($ruta_archivo,file_get_contents($imagen->getRealPath() ) );
@@ -49,4 +49,17 @@ class RecursosController extends Controller
       return back()
             ->with('success','Se ha subido la imagen correctamente.');
   }
+
+  /*
+  * Descargar recurso
+  */
+  public function descargar_recurso($id_recurso)
+  {
+      $nombre_recurso = Recursos::find($id_recurso)->imagen;
+      $directorio = Storage::disk('imagenes')->getAdapter()->getPathPrefix();
+      $recurso = $directorio.$nombre_recurso;
+      
+      return response()->download($recurso);
+  }
+
 }

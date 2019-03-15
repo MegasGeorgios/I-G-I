@@ -41,6 +41,7 @@ Route::post('/eliminar/palabra', 'IdiomaController@destroy')->name('idioma.destr
 Route::get('/categorias/{idioma}', 'CategoriaController@index');
 Route::get('/idioma/{idioma}/categoria/{categoria_id}', 'CategoriaController@show');
 Route::post('/categorias', 'CategoriaController@store')->name('categoria.store');
+Route::post('/guardar/nota', 'CategoriaController@storeNote');
 Route::post('/editar/categoria/{id}', 'CategoriaController@update')->name('categoria.update');
 
 /*
@@ -48,6 +49,7 @@ Route::post('/editar/categoria/{id}', 'CategoriaController@update')->name('categ
 */
 Route::get('/recursos/{idioma}', 'RecursosController@recursos');
 Route::get('/categoria/{id}/recursos/{idioma}', 'RecursosController@mostrar_recursos');
+Route::get('/descargar/recurso/{id}', 'RecursosController@descargar_recurso');
 Route::post('/guardar/recurso', 'RecursosController@guardar_recurso');
 
 /*

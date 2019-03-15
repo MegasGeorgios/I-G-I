@@ -6,6 +6,9 @@ use App\Griego;
 use App\Italiano;
 use App\Ingles;
 use App\Categoria;
+use App\Notas;
+use App\Tablas;
+use App\Recursos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -60,6 +63,48 @@ class CategoriaController extends Controller
     }
 
     /**
+     * Almacenar nota
+     */
+    public function storeNote(Request $request)
+    {
+      $this->validate($request, [
+      'nota' => 'required',
+      'id_categoria' => 'required'
+      ]);
+
+      $table = new Notas;
+      $table->nota = $request->nota;
+      $table->id_categoria = $request->id_categoria;
+      $table->save();
+
+      return back()->withInput();
+    }
+
+    /**
+     * Almacenar tabla
+     */
+    public function storeTable(Request $request)
+    {
+      $this->validate($request, [
+      'filas' => 'required',
+      'columnas' => 'required',
+      'id_categoria' => 'required'
+      ]);
+
+      $table = new Tablas;
+      if (isset($request->titulo)) {
+        $table->titulo = $request->titulo;
+      }
+      $table->filas = $request->filas;
+      $table->columnas = $request->columnas;
+      $table->datos = $datos;
+      $table->id_categoria = $request->id_categoria;
+      $table->save();
+
+      return back()->withInput();
+    }
+
+    /**
      * Mostrar palabras de una categoria de un idioma
      */
     public function show($idioma,$id)
@@ -73,9 +118,11 @@ class CategoriaController extends Controller
       }
 
       $categoria = Categoria::find($id);
-      $nombre_categoria = $categoria->nombre_categoria;
+      $notas = Notas::where('id_categoria',$id)->get();
+      $tablas = Tablas::where('id_categoria',$id)->get();
+      $recursos = Recursos::where('id_categoria',$id)->where('imagen','like','%.pdf%')->get();
 
-      return view ('idiomas.show', compact('palabras','idioma','categoria'));
+      return view ('idiomas.show', compact('palabras','idioma','categoria','notas','recursos', 'tablas'));
     }
 
     /**

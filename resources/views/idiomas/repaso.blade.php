@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="col-md-12 mb-3">
-    <select name="cat_id" multiple class="custom-select center-block" style="width:150px; height:300px;">
+    <select name="cat_id[]" multiple class="custom-select center-block" style="width:150px; height:300px;">
       @foreach($categorias as $categoria)
         <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
       @endforeach

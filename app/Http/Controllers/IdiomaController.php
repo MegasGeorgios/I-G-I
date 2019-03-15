@@ -132,9 +132,9 @@ class IdiomaController extends Controller
       }else {
         $palabras = $palabras->latest();
       }
-      //dd($request);
+      //dd($request->cat_id);
       if ($request->cat_id > 0) {
-        $palabras = $palabras->whereNotIn('id_categoria',[$request->cat_id])->paginate(15);
+        $palabras = $palabras->whereNotIn('id_categoria',$request->cat_id)->paginate(15);
       }else {
         $palabras = $palabras->paginate(15);
       }
