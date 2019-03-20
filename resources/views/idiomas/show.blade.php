@@ -148,61 +148,79 @@
         </div>
       </form>
 
-      <table class="table table-striped table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+      @foreach ($tablas as $tabla)
+        @if(isset($tabla->titulo))
+          <div class="card-header">
+            {{ $tabla->titulo }}
+          </div>
+        @endif
+        
+        <table class="table table-striped table-dark">
+          <tbody>
+            <?php $j = 0; $i = 0;?>
+            @while($j < $tabla->filas)
+            <?php $ij = 0; ?>
+              <tr>
+                @while($ij < $tabla->columnas)
+                  @if($tabla->datos[$i] != '-')
+                    <td>{{ $tabla->datos[$i] }}</td>
+                  @else
+                    <td></td>
+                  @endif
+                    <?php $i++; $ij++;?>                
+                @endwhile
+                
+              </tr>
+              <?php $j++; ?>
+            @endwhile
+          </tbody>
+        </table>
+      @endforeach
 
-      <div class="form-row" style="padding-top: 15px;">
-        <div class="form-group col-md-3">
-          <label for="inputEmail4">Columnas</label>
-          <input class="form-control" type='text' v-model='columnas' name='col' >
-        </div>
-        <div class="form-group col-md-3">
-          <label for="inputPassword4">Filas</label>
-          <input class="form-control" type='text' v-model='filas' name='fila'>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Nombre tabla</label>
-          <input class="form-control" type='text' name='titulo'>
-        </div>
-      </div>
+      <form method="post" action="{{ url('/guardar/tabla') }}">
+        @csrf
 
-      <table class="table table-bordered table-dark">
-        <tbody>
-          <tr v-for="columna,c in parseInt(filas)">
-            <td v-for="fila,f in parseInt(columnas)">
-              <input class="form-control" type='text' :name="'input'+(c+1)+'/'+(f+1)">
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="form-row" style="padding-top: 15px;">
+          <div class="form-group col-md-2">
+            <label >Filas</label>
+            <input class="form-control" type='text' v-model='filas' name='filas'>
+          </div>
+          <div class="form-group col-md-2">
+            <label >Columnas</label>
+            <input class="form-control" type='text' v-model='columnas' name='columnas' >
+          </div>
+          <div class="form-group col-md-5">
+            <label >Nombre tabla</label>
+            <input class="form-control" type='text' name='titulo'>
+          </div>
+          <div class="form-group col-md-3">
+            <label >Guardar tabla</label>
+            <button class="form-control" type="submit" ><i class="fa fa-save"></i></button>
+          </div>
+        </div>
+
+      
+        <table class="table table-bordered table-dark">
+          <tbody>
+            <tr v-for="columna,f in parseInt(filas)">
+              <td v-for="fila,c in parseInt(columnas)">
+                <input class="form-control" type='text' name="input[]">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
+      </form>
+
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -42,6 +42,7 @@ Route::get('/categorias/{idioma}', 'CategoriaController@index');
 Route::get('/idioma/{idioma}/categoria/{categoria_id}', 'CategoriaController@show');
 Route::post('/categorias', 'CategoriaController@store')->name('categoria.store');
 Route::post('/guardar/nota', 'CategoriaController@storeNote');
+Route::post('/guardar/tabla', 'CategoriaController@storeTable');
 Route::post('/editar/categoria/{id}', 'CategoriaController@update')->name('categoria.update');
 
 /*

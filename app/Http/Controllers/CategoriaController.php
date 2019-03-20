@@ -91,17 +91,35 @@ class CategoriaController extends Controller
       'id_categoria' => 'required'
       ]);
 
-      $table = new Tablas;
-      if (isset($request->titulo)) {
-        $table->titulo = $request->titulo;
+      $datos = [];
+      $bandera = false;
+      $numInputs = $request->filas*$request->columnas;
+      
+      for ($i=0; $i < $numInputs; $i++) { 
+        if (isset($request->input[$i])) {
+          $bandera = true;
+          $datos[] = $request->input[$i];
+        }else{
+          $datos[] = '-';
+        }
       }
-      $table->filas = $request->filas;
-      $table->columnas = $request->columnas;
-      $table->datos = $datos;
-      $table->id_categoria = $request->id_categoria;
-      $table->save();
 
-      return back()->withInput();
+      if ($bandera) {
+        $datosJSON = json_encode($datos);
+
+        $table = new Tablas;
+        $table->titulo = $request->titulo;
+        $table->filas = $request->filas;
+        $table->columnas = $request->columnas;
+        $table->datos = $datosJSON;
+        $table->id_categoria = $request->id_categoria;
+        $table->save();
+
+        return back()->withInput();
+      }else{
+        return back()->withInput()->with('wrong','La tabla debe contener al menos un valor');
+      }
+      
     }
 
     /**
@@ -121,6 +139,10 @@ class CategoriaController extends Controller
       $notas = Notas::where('id_categoria',$id)->get();
       $tablas = Tablas::where('id_categoria',$id)->get();
       $recursos = Recursos::where('id_categoria',$id)->where('imagen','like','%.pdf%')->get();
+
+      foreach ($tablas as $t) {
+       $t->datos = json_decode($t->datos);
+      }
 
       return view ('idiomas.show', compact('palabras','idioma','categoria','notas','recursos', 'tablas'));
     }
