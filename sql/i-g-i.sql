@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2019 a las 17:40:19
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.4
+-- Servidor: localhost:3306
+-- Tiempo de generación: 27-03-2019 a las 19:22:13
+-- Versión del servidor: 5.7.25-0ubuntu0.18.04.2
+-- Versión de PHP: 7.2.15-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -56,14 +54,15 @@ INSERT INTO `categorias` (`id`, `nombre_categoria`, `url_clase`, `created_at`, `
 (13, 'Pronombres personales (nominativo)', '#', '2019-01-28 18:32:36', '2019-01-28 18:32:36'),
 (14, 'EL VERBO EIMAI', '#', '2019-01-29 18:07:24', '2019-01-29 18:07:24'),
 (15, 'Artículos definidos e indefinidos', '#', '2019-01-30 17:21:59', '2019-01-30 17:21:59'),
-(18, 'SUSTANTIVOS', 'https://academiaegeo.com/cursos/a1/lecciones/sustantivos/', '2019-02-04 18:01:32', '2019-02-04 18:24:16'),
-(19, 'Ordinales (1º, 2º, 3º…)', '#', '2019-02-08 19:19:54', '2019-02-08 19:19:54'),
+(18, 'Sustantivos', 'https://academiaegeo.com/cursos/a1/lecciones/sustantivos/', '2019-02-04 18:01:32', '2019-03-27 17:21:11'),
+(19, 'Numeros y Num. Ordinales (1º, 2º, 3º…)', '#', '2019-02-08 19:19:54', '2019-03-27 17:19:58'),
 (20, '¿Cuántos años tienes?', '#', '2019-02-12 16:34:36', '2019-02-12 16:34:36'),
 (21, 'Precios y dinero', '#', '2019-02-14 15:42:21', '2019-02-14 15:42:21'),
 (22, 'La Hora', '#', '2019-02-18 17:19:28', '2019-02-18 17:19:28'),
 (23, 'Los días y los meses', '#', '2019-02-19 17:14:13', '2019-02-19 17:14:13'),
 (24, 'Las estaciones y el clima', '#', '2019-02-25 17:21:39', '2019-02-25 17:21:39'),
-(25, 'Adjetivos', 'https://academiaegeo.com/cursos/a1/lecciones/adjetivos/', '2019-03-13 17:20:09', '2019-03-14 10:24:28');
+(25, 'Adjetivos', NULL, '2019-03-13 17:20:09', '2019-03-13 17:20:09'),
+(26, 'Posesivos', 'https://academiaegeo.com/cursos/a1/lecciones/posesivos/', '2019-03-25 18:00:11', '2019-03-27 17:01:09');
 
 -- --------------------------------------------------------
 
@@ -579,7 +578,22 @@ INSERT INTO `griegos` (`id`, `palabra`, `significado`, `id_categoria`, `created_
 (459, 'Ο ψηλός και δυνατός άνδρας είναι από την Γερμανία και είναι τριάντα πέντε (χρονών)', 'el hombre alto y fuerte es de alemania y tiene 35 años', 25, '2019-03-13 17:42:04', '2019-03-13 17:42:04', 'ΟψηλόςκαιδυνατόςάνδραςείναιαπότηνΓερμανίακαιείναιτριάνταπέντε(χρονών)elhombrealtoyfuerteesdealemaniaytiene35años', 0),
 (460, 'Το κόκκινο αυτοκίνητο είναι γρήγορο', 'el coche rojo es rápido', 25, '2019-03-13 17:43:10', '2019-03-13 17:43:10', 'Τοκόκκινοαυτοκίνητοείναιγρήγοροelcocherojoesrápido', 0),
 (461, 'Η αδελφή είναι όμορφη', 'la hermana es guapa', 25, '2019-03-13 17:45:10', '2019-03-13 17:45:10', 'Ηαδελφήείναιόμορφηlahermanaesguapa', 0),
-(462, 'Ο κουνιάδος είναι από την Ισπανία, είναι είκοσι ενός (χρονών) και είναι δημοσιογράφος', 'el cuñado es de españa, tiene 21 años y es periodista', 25, '2019-03-13 17:49:34', '2019-03-13 17:49:34', 'ΟκουνιάδοςείναιαπότηνΙσπανία,είναιείκοσιενός(χρονών)καιείναιδημοσιογράφοςelcuñadoesdeespaña,tiene21añosyesperiodista', 0);
+(462, 'Ο κουνιάδος είναι από την Ισπανία, είναι είκοσι ενός (χρονών) και είναι δημοσιογράφος', 'el cuñado es de españa, tiene 21 años y es periodista', 25, '2019-03-13 17:49:34', '2019-03-13 17:49:34', 'ΟκουνιάδοςείναιαπότηνΙσπανία,είναιείκοσιενός(χρονών)καιείναιδημοσιογράφοςelcuñadoesdeespaña,tiene21añosyesperiodista', 0),
+(464, 'Το σπίτι μου', 'mi casa', 26, '2019-03-27 16:55:55', '2019-03-27 16:55:55', 'Τοσπίτιμουmicasa', 0),
+(465, 'Η γιαγιά της', 'su abuela – de ella', 26, '2019-03-27 16:56:09', '2019-03-27 16:56:09', 'Ηγιαγιάτηςsuabuela–deella', 0),
+(466, 'Ο κόσμος μας', 'nuestro mundo', 26, '2019-03-27 16:56:21', '2019-03-27 16:56:21', 'Οκόσμοςμαςnuestromundo', 0),
+(467, 'Ποιανού είναι αυτό το σπίτι;', '¿de quién es esta casa?', 26, '2019-03-27 16:56:44', '2019-03-27 16:56:44', 'Ποιανούείναιαυτότοσπίτι;¿dequiénesestacasa?', 0),
+(468, 'Είναι του Γιώργο', 'es de giorgos', 26, '2019-03-27 16:57:03', '2019-03-27 16:57:03', 'ΕίναιτουΓιώργοesdegiorgos', 0),
+(469, 'Ποιου είναι το κόκκινο αυτοκίνητο;', '¿de quién es el coche rojo?', 26, '2019-03-27 16:57:19', '2019-03-27 16:57:19', 'Ποιουείναιτοκόκκινοαυτοκίνητο;¿dequiéneselcocherojo?', 0),
+(470, 'Είναι της Ελένης', 'es de elena', 26, '2019-03-27 16:57:37', '2019-03-27 16:57:37', 'ΕίναιτηςΕλένηςesdeelena', 0),
+(471, 'Τίνος είναι το μπλουζάκι;', '¿de quién es la camiseta?', 26, '2019-03-27 16:57:52', '2019-03-27 16:57:52', 'Τίνοςείναιτομπλουζάκι;¿dequiéneslacamiseta?', 0),
+(472, 'Είναι του Παναγιώτη.', 'es de panagiotis', 26, '2019-03-27 16:58:07', '2019-03-27 16:58:07', 'ΕίναιτουΠαναγιώτη.esdepanagiotis', 0),
+(473, 'Το βιβλίο είναι δικό μου', 'el libro es mío', 26, '2019-03-27 16:58:45', '2019-03-27 16:58:45', 'Τοβιβλίοείναιδικόμουellibroesmío', 0),
+(474, 'Τα πράγματα είναι δικά της', 'las cosas son suyas – de ella', 26, '2019-03-27 16:58:55', '2019-03-27 16:58:55', 'Ταπράγματαείναιδικάτηςlascosassonsuyas–deella', 0),
+(475, 'Ο γάτος είναι δικός μας', 'el gato es nuestro', 26, '2019-03-27 16:59:07', '2019-03-27 16:59:07', 'Ογάτοςείναιδικόςμαςelgatoesnuestro', 0),
+(476, 'Το δικό μου βιβλίο', 'mi libro', 26, '2019-03-27 16:59:21', '2019-03-27 16:59:21', 'Τοδικόμουβιβλίοmilibro', 0),
+(477, 'Τα δικά της πράγματα', 'sus cosas', 26, '2019-03-27 16:59:37', '2019-03-27 16:59:37', 'Ταδικάτηςπράγματαsuscosas', 0),
+(478, 'Ο δικός μας γάτος', 'nuestro gato', 26, '2019-03-27 16:59:49', '2019-03-27 16:59:49', 'Οδικόςμαςγάτοςnuestrogato', 0);
 
 -- --------------------------------------------------------
 
@@ -640,9 +654,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2018_09_23_141327_create_recursos_table', 2),
 (7, '2018_10_01_205750_alter_tables_slug', 3),
 (8, '2019_01_24_175610_create_dialogos_table', 4),
-(9, '2018_10_01_205750_alter_tables_favorita', 5),
-(10, '2019_03_14_095356_create_notas_table', 6),
-(11, '2019_03_15_103528_create_tablas_table', 7);
+(9, '2018_10_01_205750_alter_tables_favorita', 5);
 
 -- --------------------------------------------------------
 
@@ -664,7 +676,8 @@ CREATE TABLE `notas` (
 
 INSERT INTO `notas` (`id`, `nota`, `id_categoria`, `created_at`, `updated_at`) VALUES
 (1, 'Adjetivos que terminan por -ος y hacen el femenino con -α en lugar de –η. Los adjetivos con estas terminaciones son aquellos cuya raíz termina en sonido i o en cualquier otra vocal acentuada. Por ejemplo, los adjetivos άγριος (salvaje), άδειος (vacío), δημόσιος (público), καινούργιος (nuevo), κρύος (frío).', 25, '2019-03-14 09:44:38', '2019-03-14 09:44:38'),
-(3, 'El adjetivo va antes que el sujeto/objeto.\r\n\r\nEj: Το πράσινο βιβλίο => El libro verde', 25, '2019-03-14 10:19:31', '2019-03-14 10:19:31');
+(3, 'El adjetivo va antes que el sujeto/objeto.\r\n\r\nEj: Το πράσινο βιβλίο => El libro verde', 25, '2019-03-14 10:19:31', '2019-03-14 10:19:31'),
+(4, 'IMPORTANTE: Los adjetivos posesivos se escriben después del sustantivo.', 26, '2019-03-27 17:00:42', '2019-03-27 17:00:42');
 
 -- --------------------------------------------------------
 
@@ -687,13 +700,21 @@ CREATE TABLE `recursos` (
 --
 
 INSERT INTO `recursos` (`id`, `idioma`, `descripcion`, `imagen`, `id_categoria`, `created_at`, `updated_at`) VALUES
-(1, 'griego', NULL, '1537728632_Captura01.jpg', 6, '2018-09-23 18:50:32', '2018-09-23 18:50:32'),
-(2, 'griego', NULL, '1537728654_Captura02.jpg', 6, '2018-09-23 18:50:54', '2018-09-23 18:50:54'),
-(3, 'griego', NULL, '1537728675_Captura03.jpg', 6, '2018-09-23 18:51:15', '2018-09-23 18:51:15'),
+(1, 'griego', NULL, '1537728632_Captura de pantalla de 2018-09-17 22-27-02.jpg', 6, '2018-09-23 18:50:32', '2018-09-23 18:50:32'),
+(2, 'griego', NULL, '1537728654_Captura de pantalla de 2018-09-17 22-28-53.jpg', 6, '2018-09-23 18:50:54', '2018-09-23 18:50:54'),
+(3, 'griego', NULL, '1537728675_Captura de pantalla de 2018-09-17 22-29-08.jpg', 6, '2018-09-23 18:51:15', '2018-09-23 18:51:15'),
 (4, 'griego', NULL, '1537736526_Captura de pantalla de 2018-09-20 19-15-13.jpg', 7, '2018-09-23 21:02:06', '2018-09-23 21:02:06'),
 (5, 'griego', 'Trabajo en el:\r\n-supermercado\r\n-restaurante\r\n-hotel', '1539292727_Captura de pantalla de 2018-10-11 23-13-57.jpg', 10, '2018-10-11 21:18:47', '2018-10-11 21:18:47'),
 (6, 'griego', 'para hacer referencia a una cadena de tienes (franquicia) se usa \'sta\' \r\ntrabajo en Mcdonalds', '1539293053_Captura de pantalla de 2018-10-11 23-13-57.jpg', 10, '2018-10-11 21:24:13', '2018-10-11 21:24:13'),
-(7, 'griego', NULL, '1539293305_Captura de pantalla de 2018-10-11 23-25-23.jpg', 10, '2018-10-11 21:28:25', '2018-10-11 21:28:25');
+(7, 'griego', NULL, '1539293305_Captura de pantalla de 2018-10-11 23-25-23.jpg', 10, '2018-10-11 21:28:25', '2018-10-11 21:28:25'),
+(8, 'griego', NULL, '1553709691_Τα-κτητικά-επίθετα-και-οι-κτητικές-αντωνυμίες.pdf', 26, '2019-03-27 17:01:31', '2019-03-27 17:01:31'),
+(9, 'griego', NULL, '1553710168_Τα-επίθετα.pdf', 25, '2019-03-27 17:09:28', '2019-03-27 17:09:28'),
+(10, 'griego', NULL, '1553710315_Η-κλίση-των-άρθρων.pdf', 15, '2019-03-27 17:11:55', '2019-03-27 17:11:55'),
+(11, 'griego', NULL, '1553710404_Τα-κέρματα-και-τα-τραπεζογραμμάτια.pdf', 21, '2019-03-27 17:13:24', '2019-03-27 17:13:24'),
+(12, 'griego', NULL, '1553710624_Οι-αριθμοί-στη-γενική-2.pdf', 20, '2019-03-27 17:17:04', '2019-03-27 17:17:04'),
+(13, 'griego', NULL, '1553710710_Τα-τακτικά-αριθμητικά.pdf', 19, '2019-03-27 17:18:30', '2019-03-27 17:18:30'),
+(14, 'griego', NULL, '1553710808_Οι-αριθμοί.pdf', 19, '2019-03-27 17:20:08', '2019-03-27 17:20:08'),
+(15, 'griego', NULL, '1553710880_Τα-ουσιαστικά.pdf', 18, '2019-03-27 17:21:20', '2019-03-27 17:21:20');
 
 -- --------------------------------------------------------
 
@@ -711,6 +732,14 @@ CREATE TABLE `tablas` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tablas`
+--
+
+INSERT INTO `tablas` (`id`, `titulo`, `filas`, `columnas`, `datos`, `id_categoria`, `created_at`, `updated_at`) VALUES
+(9, 'Adjetivos posesivos', 6, 3, '[\"-\",\"Singular\",\"Plural\",\"1\\u00aa pers.\",\"\\u03bc\\u03bf\\u03c5\",\"\\u03bc\\u03b1\\u03c2\",\"2\\u00aa pers.\",\"\\u03c3\\u03bf\\u03c5\",\"\\u03c3\\u03b1\\u03c2\",\"-\",\"\\u03c4\\u03bf\\u03c5\",\"-\",\"3\\u00aa pers.\",\"\\u03c4\\u03b7\\u03c2\",\"\\u03c4\\u03bf\\u03c5\\u03c2\",\"-\",\"\\u03c4\\u03bf\\u03c5\",\"-\"]', 26, '2019-03-27 17:05:10', '2019-03-27 17:05:10'),
+(10, 'Pronombres posesivos', 6, 3, '[\"-\",\"Singular\",\"Plural\",\"1\\u00aa pers.\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03bc\\u03bf\\u03c5\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03bc\\u03b1\\u03c2\",\"2\\u00aa pers.\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03c3\\u03bf\\u03c5\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03c3\\u03b1\\u03c2\",\"-\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03c4\\u03bf\\u03c5\",\"-\",\"3\\u00aa pers.\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03c4\\u03b7\\u03c2\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03c4\\u03bf\\u03c5\\u03c2\",\"-\",\"\\u03b4\\u03b9\\u03ba\\u03cc\\u03c2 \\u03c4\\u03bf\\u03c5\",\"-\"]', 26, '2019-03-27 17:06:48', '2019-03-27 17:06:48');
 
 --
 -- Índices para tablas volcadas
@@ -790,62 +819,52 @@ ALTER TABLE `tablas`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT de la tabla `cuestionarios`
 --
 ALTER TABLE `cuestionarios`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `dialogos`
 --
 ALTER TABLE `dialogos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `griegos`
 --
 ALTER TABLE `griegos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=479;
 --
 -- AUTO_INCREMENT de la tabla `ingles`
 --
 ALTER TABLE `ingles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `italianos`
 --
 ALTER TABLE `italianos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- AUTO_INCREMENT de la tabla `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `recursos`
 --
 ALTER TABLE `recursos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `tablas`
 --
 ALTER TABLE `tablas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Restricciones para tablas volcadas
 --
@@ -885,7 +904,6 @@ ALTER TABLE `recursos`
 --
 ALTER TABLE `tablas`
   ADD CONSTRAINT `tablas_id_categoria_foreign` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

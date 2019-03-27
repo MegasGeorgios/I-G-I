@@ -47,7 +47,7 @@ class RecursosController extends Controller
       $recurso->save();
 
       return back()
-            ->with('success','Se ha subido la imagen correctamente.');
+            ->with('success','Se ha subido el archivo correctamente.');
   }
 
   /*
@@ -58,7 +58,7 @@ class RecursosController extends Controller
       $nombre_recurso = Recursos::find($id_recurso)->imagen;
       $directorio = Storage::disk('imagenes')->getAdapter()->getPathPrefix();
       $recurso = $directorio.$nombre_recurso;
-      
+
       return response()->download($recurso);
   }
 
