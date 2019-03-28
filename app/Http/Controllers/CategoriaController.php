@@ -123,7 +123,7 @@ class CategoriaController extends Controller
     }
 
     /**
-     * Mostrar palabras de una categoria de un idioma
+     * Mostrar palabras/notas/tablas/recursos de una categoria de un idioma
      */
     public function show($idioma,$id)
     {
@@ -164,6 +164,39 @@ class CategoriaController extends Controller
          # code...
          return back()->withInput()->with('wrong','Clave incorrecta');
        }
+    }
+
+    /**
+     * Almacenar palabra
+     */
+    public function almacenarPalabra(Request $request)
+    {
+      $this->validate($request, [
+        'idioma' => 'required',
+        'palabra' => 'required',
+        'significado' => 'required',
+      ]);
+
+      if ($request->idioma == 'griego') {
+        $table = new Griego;
+        $table->palabra = trim($request->palabra);
+
+      }elseif ($request->idioma == 'italiano') {
+        $table = new Italiano;
+      }else {
+        $table = new Ingles;
+      }
+
+      if ($request->idioma != 'griego') {
+        $table->palabra = trim(strtolower($request->palabra));
+      }
+
+      $table->significado = trim(strtolower($request->significado));
+      $table->id_categoria = $request->id_categoria;
+      $table->slug = str_replace(' ','',strtolower($request->palabra)).str_replace(' ','',strtolower($request->significado));
+      $table->save();
+
+      return back()->withInput();
     }
 
 

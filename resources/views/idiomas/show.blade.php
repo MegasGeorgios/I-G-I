@@ -67,6 +67,37 @@
     <form action="{{ url('/idioma/'.$idioma.'/categoria/'.$categoria->id.'/pdf') }}" method="get" style="padding-top: 10px; padding-bottom: 10px;">
       <button class="btn btn-primary center-block" style="width:200px;" type="submit">Exportar categoria a PDF</button>
     </form>
+
+    <form method="POST" class="was-validated" action="{{ url('/categoria/almacenar/palabra') }}">
+    {{ csrf_field() }}
+      <div class="container center-block">
+        <div class="row" >
+          <div class="col-md-3 mb-3 ">
+            <label for="validationServer01">
+              @if ($idioma == 'griego')
+                  Griego
+              @elseif ($idioma == 'italiano')
+                  Italiano
+              @else
+                  Ingles
+              @endif
+            </label>
+            <input type="text" class="form-control is-valid" name="palabra" placeholder="Palabra" autocomplete="off"  required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationServer02">Español</label>
+            <input type="text" class="form-control is-valid"  name="significado" placeholder="Significado" autocomplete="off" required>
+          </div>
+          
+          <div class="col-md-3 mb-3">
+            <label></label>
+              <button class="form-control "  type="submit">Guardar</button>
+          </div>
+          <input type="hidden" name="idioma" value="{{$idioma}}">
+          <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
+        </div>
+      </div>
+    </form>
     @endif
     <br>
     <div class="col-md-8 col-md-offset-2">
@@ -213,7 +244,7 @@
           <tbody>
             <tr v-for="columna,f in parseInt(filas)">
               <td v-for="fila,c in parseInt(columnas)">
-                <input class="form-control" type='text' name="input[]">
+                <input class="form-control" type='text' name="input[]" autocomplete="off">
               </td>
             </tr>
           </tbody>

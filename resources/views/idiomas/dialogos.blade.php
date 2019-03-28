@@ -7,14 +7,14 @@
       <div class="card-header" id="heading{{$index}}">
         <h2 class="mb-0">
           <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">
-            {{$dialogo->titulo}}
+              {{$dialogo->titulo}}
           </button>
         </h2>
       </div>
 
       <div id="collapse{{$index}}" class="collapse show" aria-labelledby="heading{{$index}}" data-parent="#accordionExample">
         <div class="card-body">
-          {{$dialogo->dialogo}}
+             {{$dialogo->dialogo}}
         </div>
       </div>
     </div>

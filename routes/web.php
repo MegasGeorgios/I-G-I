@@ -44,6 +44,7 @@ Route::post('/categorias', 'CategoriaController@store')->name('categoria.store')
 Route::post('/guardar/nota', 'CategoriaController@storeNote');
 Route::post('/guardar/tabla', 'CategoriaController@storeTable');
 Route::post('/editar/categoria/{id}', 'CategoriaController@update')->name('categoria.update');
+Route::post('/categoria/almacenar/palabra', 'CategoriaController@almacenarPalabra');
 
 /*
 *   Routes Recursos Controller

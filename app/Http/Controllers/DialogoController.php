@@ -24,6 +24,8 @@ class DialogoController extends Controller
 
       $num_dialogos = count($dialogos);
 
+     
+
       return view ('idiomas.dialogos', compact('dialogos','idioma','num_dialogos'));
     }
 
