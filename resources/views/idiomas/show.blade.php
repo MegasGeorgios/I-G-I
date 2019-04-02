@@ -152,108 +152,113 @@
         </tbody>
       </table>
 
-      @foreach($notas as $nota)
-       <div class="card text-center">
-          <div class="card-header nota">
-            Nota
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{ $nota->nota }}</p>
-          </div>
-          <div class="card-footer text-muted">
-            {{ $nota->created_at->format('d/m/Y')}} - {{ $nota->created_at->format('H:i')}}
-          </div>
-        </div>
-      @endforeach
-
-      <form method="POST" action="{{ url('/guardar/nota') }}" >
-      @csrf
-        <div class="row" style="padding-top: 15px; padding-bottom: 15px;">
-          <label for="validationServer01">AGREGA UNA NOTA!</label>
-
-          <textarea class="form-control is-valid" id="validationServer05" name="nota" rows="8" required></textarea>
-          <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
-          <button type="submit">
-            Agregar
-          </button>
-        </div>
-      </form>
-
-      @foreach ($tablas as $tabla)
-        @if(isset($tabla->titulo))
-          <div class="card-header">
-            {{ $tabla->titulo }}
-          </div>
-        @endif
-        
-        <table class="table table-striped table-dark">
-          <tbody>
-            <?php $j = 0; $i = 0;?>
-            @while($j < $tabla->filas)
-            <?php $ij = 0; ?>
-              <tr>
-                @while($ij < $tabla->columnas)
-                  @if($tabla->datos[$i] != '-')
-                    <td>{{ $tabla->datos[$i] }}</td>
-                  @else
-                    <td></td>
-                  @endif
-                    <?php $i++; $ij++;?>                
-                @endwhile
-                
-              </tr>
-              <?php $j++; ?>
-            @endwhile
-          </tbody>
-        </table>
-      @endforeach
-
-      <form method="post" action="{{ url('/guardar/tabla') }}">
-        @csrf
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+      @if(isset($notas))
+        @foreach($notas as $nota)
+         <div class="card text-center">
+            <div class="card-header nota">
+              Nota
             </div>
-        @endif
-        <div class="form-row" style="padding-top: 15px;">
-          <div class="form-group col-md-2">
-            <label >Filas</label>
-            <input class="form-control" type='text' v-model='filas' name='filas'>
+            <div class="card-body">
+              <p class="card-text">{{ $nota->nota }}</p>
+            </div>
+            <div class="card-footer text-muted">
+              {{ $nota->created_at->format('d/m/Y')}} - {{ $nota->created_at->format('H:i')}}
+            </div>
           </div>
-          <div class="form-group col-md-2">
-            <label >Columnas</label>
-            <input class="form-control" type='text' v-model='columnas' name='columnas' >
-          </div>
-          <div class="form-group col-md-5">
-            <label >Nombre tabla</label>
-            <input class="form-control" type='text' name='titulo'>
-          </div>
-          <div class="form-group col-md-3">
-            <label >Guardar tabla</label>
-            <button class="form-control" type="submit" ><i class="fa fa-save"></i></button>
-          </div>
-        </div>
+        @endforeach
 
-      
-        <table class="table table-bordered table-dark">
-          <tbody>
-            <tr v-for="columna,f in parseInt(filas)">
-              <td v-for="fila,c in parseInt(columnas)">
-                <input class="form-control" type='text' name="input[]" autocomplete="off">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
-      </form>
 
-    </div>
+        <form method="POST" action="{{ url('/guardar/nota') }}" >
+        @csrf
+          <div class="row" style="padding-top: 15px; padding-bottom: 15px;">
+            <label for="validationServer01">AGREGA UNA NOTA!</label>
 
+            <textarea class="form-control is-valid" id="validationServer05" name="nota" rows="8" required></textarea>
+            <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
+            <button type="submit">
+              Agregar
+            </button>
+          </div>
+        </form>
+      @endif
+
+      @if(isset($tablas))
+        @foreach ($tablas as $tabla)
+          @if(isset($tabla->titulo))
+            <div class="card-header">
+              {{ $tabla->titulo }}
+            </div>
+          @endif
+          
+          <table class="table table-striped table-dark">
+            <tbody>
+              <?php $j = 0; $i = 0;?>
+              @while($j < $tabla->filas)
+              <?php $ij = 0; ?>
+                <tr>
+                  @while($ij < $tabla->columnas)
+                    @if($tabla->datos[$i] != '-')
+                      <td>{{ $tabla->datos[$i] }}</td>
+                    @else
+                      <td></td>
+                    @endif
+                      <?php $i++; $ij++;?>                
+                  @endwhile
+                  
+                </tr>
+                <?php $j++; ?>
+              @endwhile
+            </tbody>
+          </table>
+        @endforeach
+
+        <form method="post" action="{{ url('/guardar/tabla') }}">
+          @csrf
+
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+          <div class="form-row" style="padding-top: 15px;">
+            <div class="form-group col-md-2">
+              <label >Filas</label>
+              <input class="form-control" type='text' v-model='filas' name='filas'>
+            </div>
+            <div class="form-group col-md-2">
+              <label >Columnas</label>
+              <input class="form-control" type='text' v-model='columnas' name='columnas' >
+            </div>
+            <div class="form-group col-md-5">
+              <label >Nombre tabla</label>
+              <input class="form-control" type='text' name='titulo'>
+            </div>
+            <div class="form-group col-md-3">
+              <label >Guardar tabla</label>
+              <button class="form-control" type="submit" ><i class="fa fa-save"></i></button>
+            </div>
+          </div>
+
+        
+          <table class="table table-bordered table-dark">
+            <tbody>
+              <tr v-for="columna,f in parseInt(filas)">
+                <td v-for="fila,c in parseInt(columnas)">
+                  <input class="form-control" type='text' name="input[]" autocomplete="off">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
+        </form>
+
+      </div>
+    @endif
+    
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
