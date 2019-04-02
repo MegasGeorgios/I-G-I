@@ -24,7 +24,8 @@ class RecursosController extends Controller
   */
   public function mostrar_recursos($id_categoria, $idioma)
   {
-    $galeria = Recursos::where('idioma',$idioma)->where('id_categoria',$id_categoria)->get();
+    //devolver solo imagenes, no pdf
+    $galeria = Recursos::where('idioma',$idioma)->where('id_categoria',$id_categoria)->where('imagen', 'NOT LIKE', '%pdf')->get();
 
     return view ('idiomas.recursos', compact('galeria'));
   }
@@ -35,7 +36,8 @@ class RecursosController extends Controller
   public function guardar_recurso(Request $request)
   {
       $imagen = $request->file('archivo');
-      $ruta_archivo = time().'_'.$imagen->getClientOriginalName();
+      //eliminar espacios del nombre del archivo.
+      $ruta_archivo = str_replace(' ','',time().'_'.$imagen->getClientOriginalName());
 
       Storage::disk('imagenes')->put($ruta_archivo,file_get_contents($imagen->getRealPath() ) );
 

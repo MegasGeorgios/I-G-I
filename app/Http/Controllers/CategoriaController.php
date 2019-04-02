@@ -139,12 +139,13 @@ class CategoriaController extends Controller
       $notas = Notas::where('id_categoria',$id)->get();
       $tablas = Tablas::where('id_categoria',$id)->get();
       $recursos = Recursos::where('id_categoria',$id)->where('imagen','like','%.pdf%')->get();
+      $galeria = Recursos::where('idioma',$idioma)->where('id_categoria',$id)->where('imagen', 'NOT LIKE', '%pdf')->get();
 
       foreach ($tablas as $t) {
        $t->datos = json_decode($t->datos);
       }
 
-      return view ('idiomas.show', compact('palabras','idioma','categoria','notas','recursos', 'tablas'));
+      return view ('idiomas.show', compact('palabras','idioma','categoria','notas','recursos','galeria','tablas'));
     }
 
     /**

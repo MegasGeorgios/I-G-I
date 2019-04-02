@@ -39,8 +39,7 @@
     {{ csrf_field() }}
     <div class="row">
       <div class="col-md-3 mb-3 center-block">
-        <label for="validationServer01">SUBE UN RECURSO!
-          <a href="{{url('/categoria/'.$categoria->id.'/recursos/'.$idioma)}}" style="padding-left:45px;">Ver recursos</a> </label>
+        <label for="validationServer01">SUBE UN RECURSO!</label>
 
           <textarea class="form-control is-valid" id="validationServer04" name="descripcion" placeholder="Descripcion"></textarea>
 
@@ -68,36 +67,38 @@
       <button class="btn btn-primary center-block" style="width:200px;" type="submit">Exportar categoria a PDF</button>
     </form>
 
-    <form method="POST" class="was-validated" action="{{ url('/categoria/almacenar/palabra') }}">
-    {{ csrf_field() }}
-      <div class="container center-block">
-        <div class="row" >
-          <div class="col-md-3 mb-3 ">
-            <label for="validationServer01">
-              @if ($idioma == 'griego')
-                  Griego
-              @elseif ($idioma == 'italiano')
-                  Italiano
-              @else
-                  Ingles
-              @endif
-            </label>
-            <input type="text" class="form-control is-valid" name="palabra" placeholder="Palabra" autocomplete="off"  required>
+    <div class="col-md-8 col-md-offset-2">
+      <form method="POST" class="was-validated" action="{{ url('/categoria/almacenar/palabra') }}">
+      {{ csrf_field() }}
+        <div class="container center-block">
+          <div class="row" >
+            <div class="col-md-3 mb-3 ">
+              <label for="validationServer01">
+                @if ($idioma == 'griego')
+                    Griego
+                @elseif ($idioma == 'italiano')
+                    Italiano
+                @else
+                    Ingles
+                @endif
+              </label>
+              <input type="text" class="form-control is-valid" name="palabra" placeholder="Palabra" autocomplete="off"  required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationServer02">Español</label>
+              <input type="text" class="form-control is-valid"  name="significado" placeholder="Significado" autocomplete="off" required>
+            </div>
+            
+            <div class="col-md-3 mb-3">
+              <label></label>
+                <button class="form-control "  type="submit">Guardar</button>
+            </div>
+            <input type="hidden" name="idioma" value="{{$idioma}}">
+            <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationServer02">Español</label>
-            <input type="text" class="form-control is-valid"  name="significado" placeholder="Significado" autocomplete="off" required>
-          </div>
-          
-          <div class="col-md-3 mb-3">
-            <label></label>
-              <button class="form-control "  type="submit">Guardar</button>
-          </div>
-          <input type="hidden" name="idioma" value="{{$idioma}}">
-          <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
     @endif
     <br>
     <div class="col-md-8 col-md-offset-2">
@@ -182,6 +183,26 @@
         </form>
       @endif
 
+      @if(isset($galeria))
+        <div class="row">
+         <div class="bxslider">
+            @foreach($galeria as $imagen)
+              <div><img src="{{URL::asset('/imagenes/'.$imagen->imagen)}}"></div>
+            @endforeach
+          </div>
+        </div>
+      
+        <script>
+        $('.bxslider').bxSlider({
+          auto: true,
+          autoControls: true,
+          stopAutoOnClick: true,
+          pager: true,
+          slideWidth: 600
+        });
+        </script>
+      @endif
+
       @if(isset($tablas))
         @foreach ($tablas as $tabla)
           @if(isset($tabla->titulo))
@@ -258,7 +279,7 @@
 
       </div>
     @endif
-    
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
