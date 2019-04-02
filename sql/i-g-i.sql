@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 27-03-2019 a las 19:22:13
+-- Tiempo de generación: 02-04-2019 a las 19:31:31
 -- Versión del servidor: 5.7.25-0ubuntu0.18.04.2
 -- Versión de PHP: 7.2.15-0ubuntu0.18.04.1
 
@@ -202,7 +202,7 @@ INSERT INTO `griegos` (`id`, `palabra`, `significado`, `id_categoria`, `created_
 (76, 'Είμαι από το Μεξικό', 'soy de méxico', 7, '2018-09-20 17:11:38', '2018-09-20 17:11:38', 'ΕίμαιαπότοΜεξικόsoydeméxico', 0),
 (77, 'Είμαι από τον Λίβανο', 'soy de líbano', 7, '2018-09-20 17:12:00', '2018-09-20 17:12:00', 'ΕίμαιαπότονΛίβανοsoydelíbano', 0),
 (78, 'Είμαι από τις Ηνωμένες Πολιτείες της Αμερικής', 'soy de eeuu', 7, '2018-09-20 17:12:43', '2018-09-20 17:12:43', 'ΕίμαιαπότιςΗνωμένεςΠολιτείεςτηςΑμερικήςsoydeeeuu', 0),
-(79, 'Πού μένεις/μένετε;', '¿dónde vives?', 8, '2018-10-03 17:06:59', '2019-01-26 19:45:26', 'Πούμένεις/μένετε;¿dóndevives?', 0),
+(79, 'Πού μένεις/μένετε;', '¿dónde vives?', 8, '2018-10-03 17:06:59', '2019-04-02 15:25:41', 'Πούμένεις/μένετε;¿dóndevives?', 1),
 (80, 'Ποια είναι η διεύθυνσή σου/σας;', '¿cuál es tu dirección?', 8, '2018-10-03 17:07:25', '2018-10-03 17:07:25', 'Ποιαείναιηδιεύθυνσήσου/σας;¿cuálestudirección?', 0),
 (81, 'Διεύθυνση, παρακαλώ', 'dirección, por favor', 8, '2018-10-03 17:07:51', '2018-10-03 17:07:51', 'Διεύθυνση,παρακαλώdirección,porfavor', 0),
 (82, 'Μένω στο Λονδίνο', 'vivo en londres', 8, '2018-10-03 17:11:28', '2018-10-03 17:11:28', 'ΜένωστοΛονδίνοvivoenlondres', 0),
@@ -700,13 +700,6 @@ CREATE TABLE `recursos` (
 --
 
 INSERT INTO `recursos` (`id`, `idioma`, `descripcion`, `imagen`, `id_categoria`, `created_at`, `updated_at`) VALUES
-(1, 'griego', NULL, '1537728632_Captura de pantalla de 2018-09-17 22-27-02.jpg', 6, '2018-09-23 18:50:32', '2018-09-23 18:50:32'),
-(2, 'griego', NULL, '1537728654_Captura de pantalla de 2018-09-17 22-28-53.jpg', 6, '2018-09-23 18:50:54', '2018-09-23 18:50:54'),
-(3, 'griego', NULL, '1537728675_Captura de pantalla de 2018-09-17 22-29-08.jpg', 6, '2018-09-23 18:51:15', '2018-09-23 18:51:15'),
-(4, 'griego', NULL, '1537736526_Captura de pantalla de 2018-09-20 19-15-13.jpg', 7, '2018-09-23 21:02:06', '2018-09-23 21:02:06'),
-(5, 'griego', 'Trabajo en el:\r\n-supermercado\r\n-restaurante\r\n-hotel', '1539292727_Captura de pantalla de 2018-10-11 23-13-57.jpg', 10, '2018-10-11 21:18:47', '2018-10-11 21:18:47'),
-(6, 'griego', 'para hacer referencia a una cadena de tienes (franquicia) se usa \'sta\' \r\ntrabajo en Mcdonalds', '1539293053_Captura de pantalla de 2018-10-11 23-13-57.jpg', 10, '2018-10-11 21:24:13', '2018-10-11 21:24:13'),
-(7, 'griego', NULL, '1539293305_Captura de pantalla de 2018-10-11 23-25-23.jpg', 10, '2018-10-11 21:28:25', '2018-10-11 21:28:25'),
 (8, 'griego', NULL, '1553709691_Τα-κτητικά-επίθετα-και-οι-κτητικές-αντωνυμίες.pdf', 26, '2019-03-27 17:01:31', '2019-03-27 17:01:31'),
 (9, 'griego', NULL, '1553710168_Τα-επίθετα.pdf', 25, '2019-03-27 17:09:28', '2019-03-27 17:09:28'),
 (10, 'griego', NULL, '1553710315_Η-κλίση-των-άρθρων.pdf', 15, '2019-03-27 17:11:55', '2019-03-27 17:11:55'),
@@ -714,7 +707,20 @@ INSERT INTO `recursos` (`id`, `idioma`, `descripcion`, `imagen`, `id_categoria`,
 (12, 'griego', NULL, '1553710624_Οι-αριθμοί-στη-γενική-2.pdf', 20, '2019-03-27 17:17:04', '2019-03-27 17:17:04'),
 (13, 'griego', NULL, '1553710710_Τα-τακτικά-αριθμητικά.pdf', 19, '2019-03-27 17:18:30', '2019-03-27 17:18:30'),
 (14, 'griego', NULL, '1553710808_Οι-αριθμοί.pdf', 19, '2019-03-27 17:20:08', '2019-03-27 17:20:08'),
-(15, 'griego', NULL, '1553710880_Τα-ουσιαστικά.pdf', 18, '2019-03-27 17:21:20', '2019-03-27 17:21:20');
+(15, 'griego', NULL, '1553710880_Τα-ουσιαστικά.pdf', 18, '2019-03-27 17:21:20', '2019-03-27 17:21:20'),
+(16, 'griego', NULL, '1554225667_1.jpg', 6, '2019-04-02 15:21:07', '2019-04-02 15:21:07'),
+(17, 'griego', NULL, '1554225682_2.jpg', 6, '2019-04-02 15:21:22', '2019-04-02 15:21:22'),
+(18, 'griego', NULL, '1554225688_3.jpg', 6, '2019-04-02 15:21:28', '2019-04-02 15:21:28'),
+(19, 'griego', NULL, '1554225760_1.jpg', 7, '2019-04-02 15:22:40', '2019-04-02 15:22:40'),
+(20, 'griego', NULL, '1554225767_2.jpg', 7, '2019-04-02 15:22:47', '2019-04-02 15:22:47'),
+(21, 'griego', NULL, '1554225773_3.jpg', 7, '2019-04-02 15:22:53', '2019-04-02 15:22:53'),
+(22, 'griego', NULL, '1554225779_4.jpg', 7, '2019-04-02 15:22:59', '2019-04-02 15:22:59'),
+(23, 'griego', NULL, '1554225785_5.jpg', 7, '2019-04-02 15:23:05', '2019-04-02 15:23:05'),
+(24, 'griego', NULL, '1554225792_6.jpg', 7, '2019-04-02 15:23:12', '2019-04-02 15:23:12'),
+(25, 'griego', NULL, '1554225797_7.jpg', 7, '2019-04-02 15:23:17', '2019-04-02 15:23:17'),
+(26, 'griego', NULL, '1554225861_1.jpg', 8, '2019-04-02 15:24:21', '2019-04-02 15:24:21'),
+(27, 'griego', NULL, '1554225868_2.jpg', 8, '2019-04-02 15:24:28', '2019-04-02 15:24:28'),
+(28, 'griego', NULL, '1554225876_3.jpg', 8, '2019-04-02 15:24:36', '2019-04-02 15:24:36');
 
 -- --------------------------------------------------------
 
@@ -849,7 +855,7 @@ ALTER TABLE `italianos`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `notas`
 --
@@ -859,7 +865,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de la tabla `recursos`
 --
 ALTER TABLE `recursos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT de la tabla `tablas`
 --
