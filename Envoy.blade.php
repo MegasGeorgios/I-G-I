@@ -1,11 +1,11 @@
-@servers(['aws' => 'ubuntu@3.17.64.215'])
+@servers(['aws' => '-i ~/I-G-I/igi-aws.pem ubuntu@3.17.64.215'])
 
 @include('vendor/autoload.php')
 
 @setup
     $origin = 'git@github.com:MegasGeorgios/I-G-I';
     $branch = isset($branch) ? $branch : 'master-v5.7';
-    $app_dir = '/var/www/html';
+    $app_dir = '/var/www/html/I-G-I';
 
     if ( !isset($on)) {
         throw new Exception('La variable --on no está definida');
@@ -54,6 +54,11 @@
 @task('migrate', ['on' => $on])
     cd {{ $app_dir }}
     php artisan migrate
+@endtask
+
+@task('migrate:reset', ['on' => $on])
+    cd {{ $app_dir }}
+    php artisan migrate:reset
 @endtask
 
 @task('assets:install', ['on' => $on])
