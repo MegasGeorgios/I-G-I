@@ -41,9 +41,9 @@
       <div class="col-md-3 mb-3 center-block">
         <label for="validationServer01">SUBE UN RECURSO!</label>
 
-          <textarea class="form-control is-valid" id="validationServer04" name="descripcion" placeholder="Descripcion"></textarea>
+          <!-- <textarea class="form-control is-valid" id="validationServer04" name="descripcion" placeholder="Descripcion"></textarea> -->
 
-          <input type="file" name="archivo">
+          <input type="file" name="archivo" accept=".doc,.docx,.pdf">
 
           <input type="hidden" name="idioma" value="{{$idioma}}">
           <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
@@ -62,7 +62,7 @@
         @endforeach
       </div>
     </div>
-    
+
     <form action="{{ url('/idioma/'.$idioma.'/categoria/'.$categoria->id.'/pdf') }}" method="get" style="padding-top: 10px; padding-bottom: 10px;">
       <button class="btn btn-primary center-block" style="width:200px;" type="submit">Exportar categoria a PDF</button>
     </form>
@@ -88,7 +88,7 @@
               <label for="validationServer02">Español</label>
               <input type="text" class="form-control is-valid"  name="significado" placeholder="Significado" autocomplete="off" required>
             </div>
-            
+
             <div class="col-md-3 mb-3">
               <label></label>
                 <button class="form-control "  type="submit">Guardar</button>
@@ -184,14 +184,14 @@
       @endif
 
       @if(isset($galeria))
-        <div class="row">
+        <!-- <div class="row">
          <div class="bxslider">
             @foreach($galeria as $imagen)
               <div><img src="{{URL::asset('/imagenes/'.$imagen->imagen)}}"></div>
             @endforeach
           </div>
         </div>
-      
+
         <script>
         $('.bxslider').bxSlider({
           auto: true,
@@ -200,7 +200,7 @@
           pager: true,
           slideWidth: 600
         });
-        </script>
+        </script> -->
       @endif
 
       @if(isset($tablas))
@@ -210,7 +210,7 @@
               {{ $tabla->titulo }}
             </div>
           @endif
-          
+
           <table class="table table-striped table-dark">
             <tbody>
               <?php $j = 0; $i = 0;?>
@@ -223,9 +223,9 @@
                     @else
                       <td></td>
                     @endif
-                      <?php $i++; $ij++;?>                
+                      <?php $i++; $ij++;?>
                   @endwhile
-                  
+
                 </tr>
                 <?php $j++; ?>
               @endwhile
@@ -264,7 +264,7 @@
             </div>
           </div>
 
-        
+
           <table class="table table-bordered table-dark">
             <tbody>
               <tr v-for="columna,f in parseInt(filas)">

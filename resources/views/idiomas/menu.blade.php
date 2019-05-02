@@ -26,7 +26,7 @@
                       <a href="{{ url('/categorias/'.$idioma) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver Categorias</a>
                       <a href="{{ url('/idioma/'.$idioma.'/agregar') }}" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Vocabulario</a>
                       <a href="{{ url('/idioma/'.$idioma.'/repaso') }}" class="list-group-item list-group-item-action" style="text-align:center;">Repasar Vocabulario</a>
-                      <a href="{{ url('/recursos/'.$idioma) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver Galeria</a>
+                      <!-- <a href="{{ url('/recursos/'.$idioma) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver Galeria</a> -->
                       <a href="{{ url('/dialogos/'.$idioma) }}" class="list-group-item list-group-item-action" style="text-align:center;">Dialogos</a>
                       <!--<a href="" data-toggle="modal" data-target="#exampleModal3" class="list-group-item list-group-item-action" style="text-align:center;">Agregar Apuntes</a>-->
                       <form class="form-inline my-2 my-lg-0" method="GET" action="{{url('/idioma/'.$idioma.'/buscar')}}">
