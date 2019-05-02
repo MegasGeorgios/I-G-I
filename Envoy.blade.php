@@ -12,7 +12,7 @@
     }
 @endsetup
 
-@macro('app:deploy', ['on' => $on])
+@macro('app:deploy', ['on' => $on, 'confirm' => true])
     down
     git:pull
     migrate
@@ -78,6 +78,7 @@
 
 @task('cache:clear', ['on' => $on])
     cd {{ $app_dir }}
+    php artisan cache:clear
     php artisan view:clear
     php artisan config:clear
     echo "caché limpiada correctamente";
