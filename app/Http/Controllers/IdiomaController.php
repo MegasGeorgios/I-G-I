@@ -121,10 +121,6 @@ class IdiomaController extends Controller
 
       if ($request->value == 1) {
         $palabras = $palabras->inRandomOrder();
-      }elseif ($request->value == 2) {
-        $palabras = $palabras->select('id','palabra')->inRandomOrder();
-      }elseif ($request->value == 3) {
-        $palabras = $palabras->select('id','significado')->inRandomOrder();
       }elseif ($request->value == 4) {
         $palabras = $palabras->where('favorita',1)->inRandomOrder();
       }elseif (in_array($request->value,['20','60','100'])) {
@@ -142,6 +138,36 @@ class IdiomaController extends Controller
       return view ('idiomas.repaso', compact('idioma','palabras','categorias'));
     }
 
+    /*
+    * Retorna vista practicar
+    */
+    public function practicar(Request $request, $idioma)
+    {
+      if ($idioma == 'italiano' || $idioma == 'griego') {
+        $tabla = $idioma.'s';
+      }else {
+        $tabla = 'ingles';
+      }
+
+      if (isset($request->value)) {
+        $selected = $request->value;
+      }else {
+        $selected = 2;
+      }
+
+      $categorias = Categoria::all();
+      $palabras = DB::table($tabla);
+
+      if ($request->value == 3) {
+        $palabras = $palabras->select('id','significado')->inRandomOrder();
+      }else {
+        $palabras = $palabras->select('id','palabra')->inRandomOrder();
+      }
+
+      $palabras = $palabras->get();
+
+      return view ('idiomas.practicar', compact('palabras','idioma', 'selected'));
+    }
     /**
      * Practicar vocabulario
      */
@@ -158,9 +184,9 @@ class IdiomaController extends Controller
         $palabra = DB::table($tabla)->where('id', '=', $request->id)->first();
 
         if (($request->respuesta == $palabra->significado) || ($request->respuesta == $palabra->palabra)) {
-          return response()->json(['msj' => 'Acertaste!']);
+          return response()->json(['msj' => 'Acertaste!', 'status' => 'ok']);
         }else {
-          return response()->json(['msj' =>'Respuesta incorrecta']);
+          return response()->json(['msj' =>'Respuesta incorrecta', 'status' => 'nook']);
         }
       }else {
         return response()->json(['msj' =>'Datos incompletos']);
@@ -311,4 +337,33 @@ class IdiomaController extends Controller
       return view ('idiomas.show', compact('palabras','idioma','categoria','repetidas'));
 
     }
+
+    /**
+     * Agregar vocabulario desde archivo de texto
+     */
+    public function agg_vocabulario_archivo(Request $request, $idioma)
+    {
+
+      if ($request->idioma == 'griego') {
+        $table = new Griego;
+        $table->palabra = trim($request->palabra);
+
+      }elseif ($request->idioma == 'italiano') {
+        $table = new Italiano;
+      }else {
+        $table = new Ingles;
+      }
+
+      if ($request->idioma != 'griego') {
+        $table->palabra = trim(strtolower($request->palabra));
+      }
+
+      $table->significado = trim(strtolower($request->significado));
+      $table->id_categoria = $request->id_categoria;
+      $table->slug = str_replace(' ','',strtolower($request->palabra)).str_replace(' ','',strtolower($request->significado));
+      $table->save();
+
+      return $this->add_word($request->idioma);
+    }
+
 }

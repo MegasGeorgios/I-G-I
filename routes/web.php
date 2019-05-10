@@ -25,6 +25,7 @@ Route::get('/home', function () {
 Route::get('/idioma/{idioma}', 'IdiomaController@index');
 Route::get('/idioma/{idioma}/agregar', 'IdiomaController@add_word');
 Route::get('/idioma/{idioma}/repaso', 'IdiomaController@repaso')->name('idiomas.repaso');
+Route::get('/idioma/{idioma}/practicar', 'IdiomaController@practicar');
 Route::get('/idioma/{idioma}/buscar', 'IdiomaController@search');
 Route::get('/idioma/{idioma}/pdf','IdiomaController@export_pdf');
 Route::get('/idioma/{idioma}/categoria/{cat_id}/pdf','IdiomaController@export_pdf');
@@ -34,6 +35,7 @@ Route::get('/favorita/{id}/{idioma}','IdiomaController@favorita');
 Route::post('/validar/palabra','IdiomaController@validar_palabra');
 Route::post('/idioma/agregar/palabra', 'IdiomaController@store')->name('idioma.store');
 Route::post('/eliminar/palabra', 'IdiomaController@destroy')->name('idioma.destroy');
+Route::get('/agregar/vocabulario/{idioma}', 'IdiomaController@agg_vocabulario_archivo');
 
 /*
 *   Routes Categoria Controller

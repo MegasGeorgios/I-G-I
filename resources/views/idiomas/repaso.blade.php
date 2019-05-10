@@ -11,8 +11,6 @@
         <option value="0">Todas</option>
         <option value="1">Aleatoreo</option>
         <option value="4">Favoritas</option>
-        <option value="2">Solo {{$idioma}}</option>
-        <option value="3">Solo español</option>
         <option value="20">Ultimas 20</option>
         <option value="60">Ultimas 60</option>
         <option value="100">Ultimas 100</option>
@@ -87,33 +85,6 @@
   </table>
 
   {{ $palabras->links() }}
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Introduzca la respuesta:</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- <form method="POST" action="{{ url('/eliminar/palabra/') }}"> -->
-            {{ csrf_field() }}
-            <div class="form-group">
-              <input type="text" class="form-control" name="significado" v-model="respuesta" placeholder="Ingresa la palabra" required>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" v-on:click="validarPalabra">
-                <i class="fa fa-check"  aria-hidden="true"></i>
-              </button>
-            </div>
-          <!-- </form> -->
-        </div>
-      </div>
-    </div>
-  </div>
 
 </div>
 @endsection

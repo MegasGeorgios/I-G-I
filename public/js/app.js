@@ -49019,7 +49019,9 @@ var app = new Vue({
     clave: '',
     respuesta: '',
     columnas: '3',
-    filas: '3'
+    filas: '3',
+    contador: 0,
+    falladas: 0
   },
   methods: {
     asignAtributesShow: function asignAtributesShow(id, idioma) {
@@ -49061,6 +49063,13 @@ var app = new Vue({
         idioma: this.idioma,
         respuesta: this.respuesta
       }).then(function (response) {
+        if (response.data.status == 'ok') {
+          _this.contador++;
+        } else {
+          _this.falladas++;
+        }
+
+        document.getElementById('puntaje').innerHTML = "<span><p style='color:#01DF01';>Acertadas: </p>" + _this.contador + "<p style='color:#FF0000';> Falladas: </p>" + _this.falladas + "</span>";
         alert(response.data.msj);
         _this.respuesta = ''; //location.reload();
       });

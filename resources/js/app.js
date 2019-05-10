@@ -36,7 +36,9 @@ const app = new Vue({
     clave: '',
     respuesta: '',
     columnas:'3',
-    filas:'3'
+    filas:'3',
+    contador: 0,
+    falladas: 0
   },
   methods:{
     asignAtributesShow (id, idioma){
@@ -76,6 +78,15 @@ const app = new Vue({
         idioma: this.idioma,
         respuesta: this.respuesta,
       }).then(response => {
+
+        if (response.data.status == 'ok') {
+          this.contador++;
+        }else {
+          this.falladas++;
+        }
+
+        document.getElementById('puntaje').innerHTML = "<span><p style='color:#01DF01';>Acertadas: </p>"+this.contador+"<p style='color:#FF0000';> Falladas: </p>"+this.falladas+"</span>";
+
         alert(response.data.msj);
         this.respuesta = '';
         //location.reload();
