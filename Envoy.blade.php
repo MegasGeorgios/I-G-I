@@ -63,7 +63,7 @@
 
 @task('assets:install', ['on' => $on])
     cd {{ $app_dir }}
-    yarn install
+    npm install
 @endtask
 
 @task('up', ['on' => $on])
