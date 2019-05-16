@@ -10,25 +10,18 @@
       <select name="value" class="custom-select center-block" style="width:150px; height:30px;">
         <option value="0">Todas</option>
         <option value="1">Aleatoreo</option>
-        <option value="4">Favoritas</option>
+        <option value="2">Favoritas</option>
         <option value="20">Ultimas 20</option>
         <option value="60">Ultimas 60</option>
         <option value="100">Ultimas 100</option>
       </select>
     </div>
   </div>
-  <div class="col-md-12 mb-3">
-    <select name="cat_id[]" multiple class="custom-select center-block" style="width:150px; height:300px;">
-      @foreach($categorias as $categoria)
-        <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
-      @endforeach
-    </select>
-  </div>
   <button class="btn btn-primary center-block" style="width:150px;" type="submit">Filtrar</button>
 </form>
 
 <form action="{{ url('/idioma/'.$idioma.'/pdf') }}" method="get" style="padding-top: 10px; padding-bottom: 10px;">
-  <button class="btn btn-primary center-block" style="width:150px;" type="submit">Exportar a PDF</button>
+  <button class="btn btn-primary center-block" style="width:150px;" type="submit">Exportar todas a PDF</button>
 </form>
 
 <div class="col-md-8 col-md-offset-2" id="vue">

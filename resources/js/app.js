@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import swal from 'sweetalert';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -57,7 +59,8 @@ const app = new Vue({
         idioma: this.idioma,
         clave: this.clave,
       }).then(response => {
-        alert(response.data.msj);
+        //alert(response.data.msj);
+        swal(response.data.msj, "", "success");
         location.reload();
       });
     },
@@ -87,7 +90,12 @@ const app = new Vue({
 
         document.getElementById('puntaje').innerHTML = "<span><p style='color:#01DF01';>Acertadas: </p>"+this.contador+"<p style='color:#FF0000';> Falladas: </p>"+this.falladas+"</span>";
 
-        alert(response.data.msj);
+        //alert(response.data.msj);
+        if (response.data.status == 'ok') {
+          swal(response.data.msj, "", "success");
+        }else {
+          swal(response.data.msj, "", "error");
+        }
         this.respuesta = '';
         //location.reload();
       });

@@ -116,26 +116,20 @@ class IdiomaController extends Controller
         $tabla = 'ingles';
       }
 
-      $categorias = Categoria::all();
-      $palabras = DB::table($tabla);
-
       if ($request->value == 1) {
-        $palabras = $palabras->inRandomOrder();
-      }elseif ($request->value == 4) {
-        $palabras = $palabras->where('favorita',1)->inRandomOrder();
+        $palabras = DB::table($tabla)->inRandomOrder()->paginate(15);
+      }elseif ($request->value == 2) {
+        $palabras = DB::table($tabla)->where('favorita',1)->inRandomOrder()->paginate(15);
       }elseif (in_array($request->value,['20','60','100'])) {
-        $palabras = $palabras->latest()->take($request->value);
+        $palabras = DB::table($tabla)->orderBy('id', 'desc')->take($request->value)->paginate(15);
+        dd($palabras);
       }else {
-        $palabras = $palabras->latest();
-      }
-      //dd($request->cat_id);
-      if ($request->cat_id > 0) {
-        $palabras = $palabras->whereNotIn('id_categoria',$request->cat_id)->paginate(15);
-      }else {
-        $palabras = $palabras->paginate(15);
+        $palabras = DB::table($tabla)->orderBy('id', 'desc')->paginate(15);
       }
 
-      return view ('idiomas.repaso', compact('idioma','palabras','categorias'));
+      //dd($palabras);
+
+      return view ('idiomas.repaso', compact('idioma','palabras'));
     }
 
     /*
@@ -152,6 +146,7 @@ class IdiomaController extends Controller
       if (isset($request->value)) {
         $selected = $request->value;
       }else {
+        // Solo griego por defecto
         $selected = 2;
       }
 
@@ -183,7 +178,12 @@ class IdiomaController extends Controller
 
         $palabra = DB::table($tabla)->where('id', '=', $request->id)->first();
 
-        if (($request->respuesta == $palabra->significado) || ($request->respuesta == $palabra->palabra)) {
+        $significado = str_replace(' ', '', $this->eliminar_tildes($palabra->significado));
+        $respuesta = str_replace(' ', '', $this->eliminar_tildes($request->respuesta));
+
+        if ($respuesta == $significado) {
+          return response()->json(['msj' => 'Acertaste!', 'status' => 'ok']);
+        }elseif ($request->respuesta == $palabra->palabra) {
           return response()->json(['msj' => 'Acertaste!', 'status' => 'ok']);
         }else {
           return response()->json(['msj' =>'Respuesta incorrecta', 'status' => 'nook']);
@@ -191,6 +191,44 @@ class IdiomaController extends Controller
       }else {
         return response()->json(['msj' =>'Datos incompletos']);
       }
+    }
+
+    public function eliminar_tildes($cadena){
+
+        //Ahora reemplazamos las letras
+        $cadena = str_replace(
+            array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
+            array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
+            $cadena
+        );
+
+        $cadena = str_replace(
+            array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
+            array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
+            $cadena );
+
+        $cadena = str_replace(
+            array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
+            array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
+            $cadena );
+
+        $cadena = str_replace(
+            array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
+            array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
+            $cadena );
+
+        $cadena = str_replace(
+            array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
+            array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
+            $cadena );
+
+        $cadena = str_replace(
+            array('ñ', 'Ñ', 'ç', 'Ç'),
+            array('n', 'N', 'c', 'C'),
+            $cadena
+        );
+
+        return $cadena;
     }
 
     /**
@@ -344,26 +382,6 @@ class IdiomaController extends Controller
     public function agg_vocabulario_archivo(Request $request, $idioma)
     {
 
-      if ($request->idioma == 'griego') {
-        $table = new Griego;
-        $table->palabra = trim($request->palabra);
-
-      }elseif ($request->idioma == 'italiano') {
-        $table = new Italiano;
-      }else {
-        $table = new Ingles;
-      }
-
-      if ($request->idioma != 'griego') {
-        $table->palabra = trim(strtolower($request->palabra));
-      }
-
-      $table->significado = trim(strtolower($request->significado));
-      $table->id_categoria = $request->id_categoria;
-      $table->slug = str_replace(' ','',strtolower($request->palabra)).str_replace(' ','',strtolower($request->significado));
-      $table->save();
-
-      return $this->add_word($request->idioma);
     }
 
 }
