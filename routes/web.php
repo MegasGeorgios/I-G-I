@@ -24,7 +24,8 @@ Route::get('/home', function () {
 */
 Route::get('/idioma/{idioma}', 'IdiomaController@index');
 Route::get('/idioma/{idioma}/agregar', 'IdiomaController@add_word');
-Route::get('/idioma/{idioma}/repaso', 'IdiomaController@repaso')->name('idiomas.repaso');
+Route::get('/idioma/{idioma}/repaso', 'IdiomaController@vista_repaso')->name('idiomas.repaso');
+Route::post('/idioma/{idioma}/repaso/vue', 'IdiomaController@repaso');
 Route::get('/idioma/{idioma}/practicar', 'IdiomaController@practicar');
 Route::get('/idioma/{idioma}/buscar', 'IdiomaController@search');
 Route::get('/idioma/{idioma}/pdf','IdiomaController@export_pdf');

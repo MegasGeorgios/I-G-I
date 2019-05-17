@@ -108,6 +108,11 @@ class IdiomaController extends Controller
     /**
      * Repasar vocabulario, filtrar palabras
      */
+     public function vista_repaso(Request $request, $idioma)
+     {
+       return view ('idiomas.repaso', compact('idioma'));
+
+     }
     public function repaso(Request $request, $idioma)
     {
       if ($idioma == 'italiano' || $idioma == 'griego') {
@@ -117,19 +122,43 @@ class IdiomaController extends Controller
       }
 
       if ($request->value == 1) {
-        $palabras = DB::table($tabla)->inRandomOrder()->paginate(15);
+        $palabras = DB::table($tabla)->inRandomOrder()->paginate();
       }elseif ($request->value == 2) {
-        $palabras = DB::table($tabla)->where('favorita',1)->inRandomOrder()->paginate(15);
+        $palabras = DB::table($tabla)->where('favorita',1)->inRandomOrder()->paginate();
       }elseif (in_array($request->value,['20','60','100'])) {
-        $palabras = DB::table($tabla)->orderBy('id', 'desc')->take($request->value)->paginate(15);
-        dd($palabras);
+        /*  Dado que los metodos take y limit para obtener solo el numero de palabras requidas
+        *   no funcionan con el metodo paginate, se devolvera el numero de palabras requeridas
+        *   en una sola pagina.
+        */
+        $palabras = DB::table($tabla)->orderBy('id', 'desc')->paginate($request->value);
+
+        return response()->json([
+          'pagination' => [
+                    'total'         => $request->value,
+                    'current_page'  => 1,
+                    'per_page'      => $request->value,
+                    'last_page'     => 1,
+                    'from'          => $request->value,
+                    'to'            => $request->value,
+          ],
+          'palabras'=>$palabras
+        ]);
+
       }else {
-        $palabras = DB::table($tabla)->orderBy('id', 'desc')->paginate(15);
+        $palabras = DB::table($tabla)->orderBy('id', 'desc')->paginate();
       }
 
-      //dd($palabras);
-
-      return view ('idiomas.repaso', compact('idioma','palabras'));
+      return response()->json([
+        'pagination' => [
+                  'total'         => $palabras->total(),
+                  'current_page'  => $palabras->currentPage(),
+                  'per_page'      => $palabras->perPage(),
+                  'last_page'     => $palabras->lastPage(),
+                  'from'          => $palabras->firstItem(),
+                  'to'            => $palabras->lastItem(),
+        ],
+        'palabras'=>$palabras
+      ]);
     }
 
     /*
