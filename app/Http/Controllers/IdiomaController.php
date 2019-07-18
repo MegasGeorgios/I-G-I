@@ -406,11 +406,36 @@ class IdiomaController extends Controller
     }
 
     /**
-     * Agregar vocabulario desde archivo de texto
+     * Agregar vocabulario masivo desde textarea
      */
-    public function agg_vocabulario_archivo(Request $request, $idioma)
+    public function agg_vocabulario_masivo($idioma)
+    {
+      return view ('agg_voc', compact('idioma'));
+    }
+
+    public function guardar_vocabulario_masivo(Request $request, $idioma)
     {
 
+      $table = new Italiano;
+      $vocabulario = explode('*', $request->vocabulario);
+      $id_categoria = $request->id_categoria;
+
+      foreach ($vocabulario as $key => $value)
+      {
+        $split = explode('-', $value);
+
+        if (strlen($split[0]) > 0 &&  strlen($split[1]) > 0)
+        {
+          $table = new Italiano;
+          $table->palabra = trim(strtolower($split[0]));
+          $table->significado = trim(strtolower($split[1]));
+          $table->id_categoria = $id_categoria;
+          $table->slug = str_replace(' ','',strtolower($split[0])).str_replace(' ','',strtolower($split[1]));
+          $table->save();
+        }
+      }
+
+      return back()->withInput();
     }
 
 }

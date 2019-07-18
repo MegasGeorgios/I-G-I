@@ -29,6 +29,7 @@
                       <!-- <a href="{{ url('/recursos/'.$idioma) }}" class="list-group-item list-group-item-action" style="text-align:center;">Ver Galeria</a> -->
                       <a href="{{ url('/idioma/'.$idioma.'/practicar') }}" class="list-group-item list-group-item-action" style="text-align:center;">Practicar</a>
                       <a href="{{ url('/dialogos/'.$idioma) }}" class="list-group-item list-group-item-action" style="text-align:center;">Dialogos</a>
+                      <a href="{{ url('/agregar/vocabulario/'.$idioma) }}" class="list-group-item list-group-item-action" style="text-align:center;">AGG VOC MASIVO</a>
                       <form class="form-inline my-2 my-lg-0" method="GET" action="{{url('/idioma/'.$idioma.'/buscar')}}">
                         <input class="form-control mr-sm-2" name="palabra" type="search" placeholder="Buscar palabra" aria-label="Search" autocomplete="off">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>

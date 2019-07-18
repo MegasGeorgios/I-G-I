@@ -33,11 +33,11 @@ Route::get('/idioma/{idioma}/categoria/{cat_id}/pdf','IdiomaController@export_pd
 Route::get('/interseccion','IdiomaController@intersection');
 Route::get('/repetidas/{idioma}','IdiomaController@repeat_words');
 Route::get('/favorita/{id}/{idioma}','IdiomaController@favorita');
+Route::get('/agregar/vocabulario/{idioma}', 'IdiomaController@agg_vocabulario_masivo');
 Route::post('/validar/palabra','IdiomaController@validar_palabra');
 Route::post('/idioma/agregar/palabra', 'IdiomaController@store')->name('idioma.store');
 Route::post('/eliminar/palabra', 'IdiomaController@destroy')->name('idioma.destroy');
-Route::get('/agregar/vocabulario/{idioma}', 'IdiomaController@agg_vocabulario_archivo');
-
+Route::post('/agregar/vocabulario/{idioma}', 'IdiomaController@guardar_vocabulario_masivo');
 /*
 *   Routes Categoria Controller
 */

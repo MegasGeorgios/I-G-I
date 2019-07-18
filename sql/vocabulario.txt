@@ -1,0 +1,1790 @@
+---------------VERBOS Y ADVERB---------
+ricordare-recordar*
+morire-morir*
+mancare-faltar*
+bere-beber*
+aggiungere-añadir*
+chiamare-llamar*
+mettere-poner*
+vedere-ver*
+giocare-jugar*
+iniziare-iniciar*
+sognare-soñar*
+aprire-abrir*
+venire-venir*
+studiare-estudiar*
+andare-ir*
+vivere-vivir*
+sogni-sueños*
+sapere-saber*
+pensare-pensar*
+trovare-encontrar*
+parlare-hablar*
+conoscere-conocer*
+arrivare-llegar*
+portare-llevar*
+chiedere-preguntar, pedir*
+credere-creer*
+lui-el*
+abbastanza-bastante, suficiente*
+ci-nos*
+si-si*
+noi-nosotros*
+il-el*
+una-una*
+comunità-comunidad*
+alla-a la*
+in-en*
+un-un*
+piatti-platos*
+di-de*
+dei-de los*
+giornale-periodico*
+non-no*
+tranne-excepto*
+con-con*
+molti-muchos*
+poco-poco*
+me-mi*
+bene-bien*
+nulla-nada*
+piatto-plata*
+nessuno-ninguno*
+per-para*
+nel-en el*
+molto-mucho*
+capire-entender*
+rimanere-permanecer*
+entrare-entrar*
+passare-pasar*
+sentire-sentir, oir*
+succo-jugo*
+bottiglia-botella*
+vino-vino*
+arancia-naranja*
+diventare-volverse, convertirse en*
+tenere-mantener*
+meglio-mejor*
+pensiamoci-pensemos en eso*
+chiamiamoci-llamémonos*
+passiamola-pasémosla*
+speriamo-esperamos*
+presto-pronto, temprano*
+preghiamo-pedimos, rogamos*
+cominciare-comenzar*
+dimmi-dime*
+usare-usar*
+ovviamente-obviamente*
+però-pero, sin embargo*
+avanti-adelante*
+dietro-atras*
+quasi-casi*
+giù-abajo*
+decidere-decidir*
+seguire-seguir*
+finire-terminar*
+unire-unir*
+offrire-ofrecer*
+cambiare-cambiar*
+suonare-tocar, sonar*
+costruire-construir*
+rispondere-responder*
+indicare-indicar*
+scegliere-elegir*
+aiutare-ayudar*
+amare-amar*
+chiudere-cerrar*
+succedere-suceder*
+dimostrare-demostrar*
+ricevere-recibir*
+guidare-manejar*
+correre-correr*
+tirare-tirar, jalar*
+ripetere-repetir*
+svegliare-despertar*
+insomma-en conclusión*
+certo-ciertp*
+assolutamente-absolutamente*
+adesso-ahora*
+allora-entonces*
+fuori-afuera*
+spinge-empuja*
+ringrazio-agradezco*
+cantano-cantan*
+spingiamo-empujamos*
+compra-compra*
+siede-sienta*
+dorme-duerme*
+visitiamo-visitamos*
+disegniamo-dibujamos*
+volo-vuelo*
+indosso-visto(Indosso una maglia)*
+rompono-rompen*
+viaggia-viaja*
+pesca-pesca*
+pescano-pescan*
+cammini-caminos*
+fuma-fuma*
+riempi-llenas*
+riposo-descanso*
+fallisco-fallo*
+coltiva-cultiva*
+lava-lava*
+coltivo-cultiva*
+prenota-reserva*
+esploriamo-exploramos*
+cucino-cocino*
+nuota-nada*
+friggi-fríes*
+asciugo-seco*
+lasciamo-dejamos*
+rimane-permanece*
+rimangono-permanecen*
+trovate-encuentran*
+porti-llevas, puertos*
+usa-usa*
+vivete-viven*
+passano-pasan*
+uso-uso*
+divento-me vuelvo*
+trovo-encuentro*
+porta-puerta, lleva*
+muoiono-mueren*
+moriamo-morimos*
+diventa-se vuelve*
+muore-muere*
+vive-vive*
+tenete-tengan, mantienen*
+tengono-guardan*
+vivono-viven*
+usiamo-usamos*
+passi-pasas*
+chiede-pide, pregunta*
+metto-pongo*
+parli-hablas*
+parlano-hablan*
+sta-está*
+ricordano-recuerdan*
+viene-viene*
+parla-habla*
+vieni-vienes*
+prende-toma, agarra*
+mettete-ponen*
+vengono-vienen*
+stanno-estan*
+aprite-abren*
+aspettate-esperan*
+aspetto-espero*
+ricordo-recuerdo*
+crede-creo*
+faccio-hago*
+danno-dan*
+può-puede*
+vediamo-vemos*
+facciamo-hacemos*
+lavorano-trabajan*
+vede-ve*
+lavori-trabajas*
+arrivi-llegas*
+credo-creo*
+chiama-llama*
+vedo-veo*
+chiamo-llamo*
+fai-haces*
+finiamo-terminamos*
+completamente-completamente*
+tipi-tipos*
+piani-pisos, planes*
+problemi-problemas*
+volta-vez*
+forze-fuerzas*
+piano-piso, plan*
+problema-problema*
+punto-punto*
+forza-fuerza*
+volte-veces*
+caso-caso*
+punti-puntos*
+lavoro-trabajo*
+possono-pueden*
+domande-preguntas*
+risposta-respuesta*
+domanda-pregunta*
+carattere-caracter*
+rapporti-relaciones*
+dà-da(de dar)*
+sento-oigo, siento*
+piacciono-gustan*
+decidi-decides*
+posso-puedo*
+dice-dice*
+conosciamo-conocemos*
+potete-pueden*
+certi-ciertos*
+pieno-lleno*
+possibile-posible*
+diversi-diferentes*
+prossimo-proximo*
+rispondo-respondo*
+crescono-crecen*
+cambio-cambio*
+chiudete-cierran*
+indica-indica*
+colpiamo-golpeamos*
+colpisci-golpeas*
+controllo-control*
+scrivo-escribo*
+scrive-escribe*
+scrivi-escribes*
+scriviamo-escribimos*
+scrivete-escriben*
+scrivono-escriben*
+manca-falta*
+aggiungi-añades*
+guidiamo-manejamos, conducimos*
+significa-significa*
+dimostra-demuestra*
+sceglie-elige*
+riceve-recibe*
+paghiamo-pagamos*
+pagano-pagan*
+paga-paga*
+cadono-caen*
+cade-cae*
+spiega-explica*
+ascolta-escucha*
+ascoltiamo-escuchamos*
+ascoltano-escuchan*
+cresciamo-crecen*
+cresce-crece*
+studia-estudia*
+studio-estudio*
+ritorna-retorna, regresa*
+ritorni-retornas, regresas*
+corro-corro*
+corre-corre*
+corri-corres*
+corrono-corren*
+corriamo-corremos*
+manda-manda, envia*
+gira-gira*
+descrive-describe*
+vendo-vendo*
+tira-tira*
+salviamo-salvamos*
+dimentica-olvida*
+dimentichiamo-olvidamos*
+invitiamo-invitamos*
+invita-invita*
+vende-vende*
+descrivi-describes*
+salva-salva*
+preferisce-prefiere*
+dura-dura(de duracion)*
+impari-aprendes*
+attraverso-a través, atravieso, a través de*
+cerco-busco*
+beviamo-bebemos*
+bevo-bevo*
+bevono-beben*
+bevi-bebes*
+beve-bebe*
+è-es/esta*
+sei-eres*
+sono-son/estan*
+ha-tiene*
+ho-tengo*
+mangi-comes*
+mangio-come*
+mangia-come*
+sappiamo-sabemos*
+sa-sabe*
+voglio-quiero*
+pensi-piensas*
+pensano-piensan*
+crediamo-creemos*
+credi-crees*
+piaccio-gusto*
+piace-gusta*
+prendono-toman*
+prendiamo-tomamos*
+decidiamo-decidimos*
+capisce-entiende*
+passiamo-pasamos*
+finisci-terminas*
+finisce-termina*
+capisco-entiendo*
+capisci-entiendes*
+decide-decide*
+arrivo-llego*
+arriva-llega*
+guardiamo-miramos*
+guardate-miran*
+segue-sigue*
+conosco-conosco*
+leggo-leo*
+leggono-leen*
+leggete-leen*
+leggiamo-leemos*
+pessiamo-podemos*
+pensa-piensa*
+chiediamo-pedimos*
+limpida-limpia*
+limpido-limpio*
+compriamo-compramos*
+impossibile-imposible*
+vecchia-vieja*
+stesso-mismo*
+perdo-pierdo*
+offre-ofrece*
+giochiamo-jugamos*
+proviamo-probamos*
+offro-ofrezco*
+gioca-juega*
+unisci-unes*
+perde-pierde*
+provo-pruebo*
+chiudi-cierras*
+succede-sucede, ocurre, pasa*
+ama-ama*
+aiuta-ayuda*
+indichi-indicas*
+costruiamo-construimos*
+fa-hace*
+fate-hacen*
+stai-estas*
+andiamo-vamos*
+trova-encuentra*
+diciamo-decimos*
+venite-vienen*
+venga-venga*
+vai-vas*
+sappi-sabe*
+dite-digan, dicen*
+andate-van*
+arrivate-llegan*
+chiedere-preguntar, pedir*
+chieda-pregunte, pida*
+chiedi-pides, preguntas*
+lascia-deja*
+prendi-tomas*
+metti-pones*
+lasciate-dejan*
+chiedete-piden, preguntan*
+senti-oyes, sientes*
+entra-entra*
+rimani-permaneces*
+entrate-entran*
+vivi-vives*
+viva-viva*
+rimanete-permaneces*
+lavorate-trabajan*
+rimanga-permanezca*
+tieni-manten, mantienes*
+passa-pasa*
+lavora-trabaja*
+teniamo-mantenemos, mantengamos*
+ricordate-recuerden*
+usate-usan*
+guarda-mira*
+apri-abres*
+usi-usas*
+seguite-sigan*
+segui-sigue*
+ricorda-recuerda*
+aspetta-espera*
+contro-contra*
+certe-ciertas*
+nostra-nuestra*
+entro-entro*
+mio-mio*
+dammi-dame*
+scrivere-escribir*
+aspettare-esperar*
+donna-mujer*
+chi-quien*
+tu-tu*
+ciò-lo(Quello è tutto ciò che ho da dire)*
+dire-decir*
+avere-tener, haber*
+stare-estar*
+società-sociedad*
+tipo-tipo*
+struttura-estructura*
+programmi-programas*
+programma-programa*
+risultati-resultados*
+effetti-efectos*
+situazione-situacion*
+risultato-resultado*
+situazioni-situaciones*
+effetto-efecto*
+possibilità-posibilidad*
+presenza-presencia*
+zone-zona*
+esperienza-experiencia*
+azione-accion*
+zona-zona*
+processo-preceso*
+ragioni-razones*
+processi-procesos*
+esperienze-experiencias*
+ragione-razon*
+qualità-cualiad*
+perdere-perder*
+motivi-motivos*
+obiettivi-objetivos*
+motivo-motivo*
+sicurezza-seguridad*
+occasione-ocasion*
+fase-fase*
+fasi-fases*
+obiettivo-objetivos*
+necessità-necesidad*
+autorità-autoridad*
+allo-al*
+guardare-mirar*
+movimenti-movimientos*
+decisioni-decisiones*
+personaggio-personaje*
+decisione-decisión*
+rischi-riesgos*
+personaggi-personajes*
+del-del*
+insieme-juntos*
+questa-esta*
+nella-en la*
+origine-origen*
+vittime-victima*
+costruzioni-construcciones*
+categorie-caegorias*
+sezione-sesion*
+passo-paso*
+vittima-victima*
+costruzione-construccion*
+categoria-categoria*
+versione-version*
+internet-internet*
+lei-ella*
+difficoltà-dificultad*
+capacità-capacidad*
+delle-de las*
+differenza-diferencia*
+conseguenze-consecuencias*
+maggioranza-mayoría*
+differenze-diferencias*
+conseguenza-consecuencia*
+danni-daños*
+responsabilità-responsabilidad*
+fare-hacer*
+forse-quizás, tal vez*
+pratica-práctica*
+presentazione-presentacion*
+crescita-crecimiento*
+fenomeno-fenomeno*
+tradizione-tradicion*
+epoca-epoca*
+fenomeni-fenomenos*
+favore-favor*
+-------------------------------
+
+---------------COLORES---------
+nero-negro*
+azzurri-azules*
+azzurro-azul*
+arancione-naranja*
+rossi-rojos*
+rossa-roja*
+rosse-rojas*
+colore-color*
+colori-colores*
+bianche-blancas*
+bianca-blanca*
+rosso-rojo*
+arancioni-naranjas*
+viola-violeta*
+rosa-rosa*
+colorati-colorados*
+grigio-gris(elefante e grigio)*
+grigia-gris(camicia e grigia)*
+azzurre-azules*
+azzurra-azul*
+grigie-grises*
+bianco-blanco*
+marrone-marron*
+gialle-amarillas*
+gialla-amarillo*
+verde-verde*
+colorata-colorada*
+gialli-amarillos*
+-------------------------------
+
+---------------FECHAS---------
+giorno-dia*
+anni-años*
+quotidiano-diario*
+anno-año*
+secolo-siglo*
+mezzogiorno-mediodia*
+sabato-sabado*
+domenica-domingo*
+martedì-martes*
+gennaio-enero*
+febbraio-febrero*
+mercoledì-miercoles*
+stasera-esta noche*
+venerdì-viernes*
+oggi-hoy*
+ieri-ayer*
+domani-mañana*
+marzo-marzo*
+aprile-abril*
+giugno-junio*
+luglio-julio*
+agosto-agosto*
+settembre-septiembre*
+ottobre-octubre*
+novembre-noviembre*
+dicembre-diciembre*
+date-fechas*
+ora-hora*
+decennio-decada*
+decenni-decadas*
+data-fecha*
+ore-horas*
+primavera-primavera*
+estate-verano*
+autunno-otoño*
+inverno-invierno*
+feste-fiestas*
+festa-fiesta*
+ritardo-tarde, retrasado*
+mese-mes*
+pomeriggio-tarde*
+compleanno-cumpleaño*
+settimane-semanas*
+secondi-segundos*
+mezzanotte-medianoche*
+settimana-semana*
+mattina-mañana*
+calendario-calendario*
+sera-noche*
+periodo-periodo*
+momento-momento*
+minuti-minutos*
+maggio-mayo*
+minuto-minuto*
+notte-noche*
+tempo-tiempo*
+tardi-tardes*
+stamattina-esta mañana*
+lunedì-lunes*
+settimanalmente-semanalmente*
+stanotte-esta noche*
+giovedì-jueves*
+-------------------------------
+
+---------------OBJETOS---------
+libri-libros*
+giornali-periodico*
+libro-libro*
+finestre-ventanas*
+sedia-silla*
+giocattoli-juguetes*
+ombrelli-paraguas*
+tappeto-alfombra*
+tappeti-alfombras*
+chiave-llave*
+giocattolo-jugete*
+finestra-ventana*
+spazzolino-cepillo*
+lenzuola-sabanas*
+busta-sobre(para cartas)*
+diario-diario*
+pettine-peine*
+scatole-cajas*
+motore-motor*
+spazzola-cepillo*
+computer-computadora*
+scatola-caja*
+pezzi-piezas, pedazos*
+ventilatore-ventilador*
+pezzo-pedazo*
+regali-regalos*
+regalo-regalo*
+oggetti-objetos*
+oggetto-objeto*
+flauti-flautas*
+violino-violin*
+cosa-que, cosa*
+ruota-rueda*
+flauto-flauta*
+fogli-hojas*
+schermo-pantalla*
+macchine-carro*
+automobile-auto*
+batteria-bateria*
+benzina-gasolina*
+automobili-autos*
+strumento-instrumento, herramienta*
+-------------------------------
+
+---------------LUGARES, PAISES, VIAJES---------
+nazionale-nacional*
+straniera-extranjera*
+internazionale-internacional*
+stranieri-extranjeros*
+cittadini-ciudadanos*
+cittadina-ciudadana*
+popolo-pueblo*
+dove-donde*
+bar-bar*
+nord-norte*
+ovest-oeste*
+est-este*
+sud-sur*
+autobus-autobus*
+argentini-argentinos*
+americano-americano*
+argentino-argentino*
+brasiliani-brasileño*
+inghilterra-ingleterra*
+americani-americanos*
+argentina-argentina*
+americane-americanas*
+germania-alemania*
+brasiliano-brasileño*
+americana-americana*
+asia-asia*
+europa-europa*
+africa-africa*
+america-america*
+cina-china*
+brasile-brasil*
+francia-francia*
+spagna-españa*
+italia-italia*
+inglese-ingles*
+inglesi-ingleses*
+cinese-chino*
+cinesi-chinos*
+francesi-franceses*
+europea-europea*
+europeo-europeo*
+tedesco-aleman*
+tedeschi-alemanes*
+francese-franceses*
+tedesca-alemana*
+tedesche-alemanas*
+spagnolo-español*
+italiana-italiana*
+italiano-italiano*
+spagnoli-españoles*
+italiani-italianos*
+portoghese-portugues*
+portoghesi-portugueses*
+continente-continente*
+aeroplani-aeroplano, avion*
+barca-barco*
+campeggi-campamentos*
+campeggio-campamento*
+avventura-aventura*
+aeroplano-aeroplano, avion*
+avventure-aventuras*
+passeggeri-pasajeros*
+guida-guia, conduce, maneja*
+passaporto-pasaporte*
+isole-islas*
+motocicletta-moto*
+pilota-piloto*
+isola-isla*
+voli-vuelos, vuelas*
+turista-turista*
+turisti-turistas*
+valigia-maleta*
+biglietti-boletos, billetes*
+valigie-maletas*
+biglietto-boleto, billete*
+traffico-trafico*
+vista-vista*
+turismo-turismo*
+luogo-lugar*
+vacanza-vacaciones*
+viaggio-viaje*
+vacanze-vacaciones*
+destinazione-destino*
+visite-visitas*
+mappa-mapa*
+treni-trenes*
+treno-tren*
+viaggi-viajes*
+visita-visita*
+luoghi-lugares*
+territorio-territorio*
+estero-extranjero(Lui è all'estero)*
+straniero-extranjero*
+prenotazione-reserva*
+conto-cuenta*
+trasporti-transportes*
+aeroporto-aeropuerto*
+aereo-avion*
+appartamento-apartamento*
+porto-puerto*
+cucina-cocina*
+bagno-baño*
+castello-castillo*
+libreria-libreria*
+castelli-castillos*
+ponte-puente*
+edificio-edificio*
+pasticceria-pasteleria*
+angolo-esquina*
+campi-campos*
+centro-centro*
+collina-colina*
+sala-sala*
+campo-campo*
+parco-parque*
+posti-lugares, sitios*
+prigione-prision, carcel*
+regione-region*
+piazza-plaza*
+posto-lugar*
+museo-museo*
+stadio-stadio*
+paese-pais*
+teatri-teatros*
+supermercato-supermercado*
+paesi-paises*
+teatro-teatro*
+strada-calle*
+villaggio-pueblo*
+stazione-estacion*
+ferroviaria-ferroviaria*
+palazzi-palacios*
+palazzo-palacio*
+provincia-provincia*
+quartiere-barrio*
+-------------------------------
+
+---------------FAMILIA Y PERSONAS---------
+compagno-compañero*
+fratelli-hermanos*
+nipote-sobrino, nieto, sobrina*
+amica-amiga*
+uomo-hombre*
+uomini-hombres*
+ragazzo-chico*
+ragazze-chicas*
+ragazza-chica*
+fidanzato-novio*
+bambino-niño*
+donne-mujeres*
+adulto-adulto*
+folla-multitud*
+matrimonio-matrimonio*
+ospite-huesped*
+ospiti-huespedes*
+vicina-vecina*
+vicini-vecinos*
+gente-gente*
+fratello-hermano*
+padre-padre*
+figlio-hijo*
+figlie-hijas*
+papà-papa*
+cugini-primos*
+zia-tia*
+famiglia-familia*
+zio-tio*
+cugino-primo*
+zie-tias*
+marito-marido*
+figli-fijos*
+mogli-esposas*
+madre-madre*
+nonno-abuelo*
+moglie-esposa*
+figlia-hija*
+nonna-abuela*
+nomi-nombres*
+genitori-padres*
+mamma-mama*
+nome-nombre*
+cognomi-apellidos*
+sorella-hermana*
+sorelle-hermanas*
+cognome-apellido*
+età-edad*
+personalità-personalidad*
+ragazzi-chicos*
+-------------------------------
+
+---------------ADJETIVOS---------
+cattivi-malos
+fritto-frito
+originali-originales
+recente-reciente
+definitivi-definitivos
+seguenti-siguientes
+cattivo-malo
+definitiva-definitiva
+finale-final
+recenti-recientes
+originale-originale
+cattiva-mala
+seguente-siguiente
+necessari-necesarios
+generale-general
+personale-personal
+necessario-necesario
+poveri-pobres
+naturale-natural
+grave-grave
+particolari-particulares
+povera-pobre
+particolare-particular
+naturali-naturales
+personali-personales
+superiori-superiores
+semplici-simples
+fisici-fisicos
+fisica-fisica
+simile-similar
+fondamentale-fundamental
+simili-similares
+scorsa-pasada(la settimana scorsa)
+superiore-superior
+scorso-pasado(Non la vedo dallo scorso mese)
+vicino-cerca
+semplice-simple
+dolce-dulce
+leggero-ligero
+differenti-diferentes
+leggera-ligera
+futura-futura
+profondo-profundo
+dolci-dulces
+leggere-leer, ligeras
+profonda-profunda
+differente-diferente
+doppio-doble
+piccoli-pequeños
+enorme-enorme
+piccolo-pequeño
+piccola-pequeña
+simpatici-simpaticos
+diverse-diferente
+alto-alto
+buona-buena
+buon-bueno
+bassi-bajos
+cari-caros
+libero-libre
+gratuito-gratuito
+utile-util
+moderno-moderno
+popolare-popular
+elettrica-electrica
+importante-importante
+speciali-especiales
+interessata-interesada
+speciale-especial
+unico-unico
+capace-capaz
+perfetta-perfecta
+interessato-interesado
+perfetti-perfectos
+perfetto-perfecto
+pesante-pesado, pesada
+strana-extraña, rara
+soli-solos
+forte-fuerte
+grosso-gordo
+corto-corto
+intero-entero
+lunga-larga
+prossimi-proximos
+normale-normal
+comune-comun
+pronto-pronto
+vero-cierto
+sicura/o-segura/o
+giusta/o-correcta, justa, adecuada
+pronta-lista
+caldo-caliente
+fredda-fria
+chiara-clara
+grande-grande
+nuova-nueva
+interessante-interesante
+popolari-populares
+bello-bello
+bella-bella
+vecchie-viejas
+corte-cortas
+pericoloso-peligroso
+bravo-bueno
+difficili-dificiles
+facile-facil
+aperta-abierta
+economico-economico
+breve-breve
+moderni-modernos
+famosa-famosa
+buono-bueno
+giovane-joven
+moderna-moderna
+ricco-rico
+antichi-antiguos
+storici-historicos
+antico-antiguo
+familiare-familiar
+storica-historica
+antica-antigua
+positiva-positiva
+negativa-negativa
+negativo-negativo
+positive-positivo
+tradizionale-tradicional
+storico-historico
+positivo-positivo
+culturali-culturales
+familiari-familiares
+negative-negativas
+culturale-cultural
+statale-estatal
+regionali-regionales
+locale-local
+statali-estatales
+regionale-regional
+divertente-divertido, divertida
+pubblica-publica
+globale-global
+provinciale-provincial
+indipendente-independiente
+attento-atento
+puro-puro
+fresco-fresco
+migliori-mejores
+fresca-fresca
+attenta-atenta
+attenti-atentos
+migliore-mejor
+veloce-veloz, rápido
+indipendenti-independientes
+industriale-industrial
+pura-pura
+efficace-eficaz
+legale-legal
+efficaci-efecaces
+principale-principales
+responsabili-responsables
+responsabile-responsable
+commerciale-comercial
+professionali-profesionales
+avanzata-avanzada
+professionale-profesional
+legali-legales
+avanzato-avanzado
+commerciali-comerciales
+-------------------------------
+
+-------SALUDOS, DISCULPAS------
+scusa-disculpe&
+spiacente-lo siento&
+prego-de nada&
+ciao-hola, chao&
+buonanotte-buenas noches&
+buonasera-buenas noches&
+grazie-gracias&
+arrivederci-adios&
+salve-hola&
+buongiorno-buenos dias&
+-------------------------------
+
+---------------ROPA------------
+borsa-bolsa, cartera
+abbigliamento-vestuario, ropa
+gioielleria-joyeria
+maglia-camisa
+abito-traje, vestido
+cuoio-cuero
+abiti-trajes, vestidos
+costume-traje
+scarpe-zapatos
+cappotto-abrigo
+scarpa-zapato
+borse-bolsas, carteras
+ombrello-paraguas
+vestiti-vestidos
+calza-media, calcetin
+portafoglio-cartera, billetera
+lana-lana
+portafogli-carteras
+camicia-camisa
+camicie-camisas
+tasche-bolsillos
+tasca-bolsillo
+calze-medias
+cintura-cinturon
+cappelli-sombrero
+vestito-vestido
+stivale-botas
+stivali-botas
+gonna-falda
+orologio-reloj
+giacca-chaqueta
+guanti-guantes
+divisa-uniforme
+maglioni-sueteres
+pantaloni-pantalones
+sandalo-sandalia
+maglione-sueter
+sandali-sandalias
+-------------------------------
+
+---------------MEDIDAS------------
+misure-medidas
+misura-medida
+miglio-milla
+chilometro-kilometro
+grammi-gramos
+grammo-gramo
+chilometri-kilometros
+coppia-pareja
+centimetri-centimetros
+centimetro-cetimetro
+metro-metro
+chilogrammi-kilogramos
+litro-litro
+quarto-cuarto
+totale-total
+chilogrammo-kilogramo
+metri-metros
+litri-litros
+-------------------------------
+
+---------------PROFESIONES------------
+specialità-especialidad
+operai-obreros
+postino-cartero
+idraulico-plomero
+idraulici-plomeros
+postini-plomeros
+contadino-granjero, campesino
+avvocati-abogados
+capitano-capitan
+contadini-granjeros, campesinos
+pagliacci-payasos
+pescatore-pescador
+architetto-arquitecto
+pagliaccio-payaso
+guardie-guardias
+guardia-guardia
+avvocato-abogado
+poliziotto-policias
+ingegnere-ingeniero
+ricercatrice-investigadora
+dottoresse-doctoras
+segretario-secretario
+conduttore-conductor
+dottori-doctores
+segretaria-secretaria
+poliziotti-policias
+ingegneri-ingenieros
+meccanici-mecanicos
+direttore-director
+direttori-directores
+scrittore-escritor
+ricercatori-investigadores
+meccanico-mecanico
+dottore-doctor
+scrittrice-escritora
+ricercatore-investigador
+-------------------------------
+
+------HOGAR, COCINA, COMIDA-----
+cibo-comida
+forchetta-tenedor
+ricetta-receta
+olio-aceite
+carne-carne
+prendere-tomar
+fra-entre
+lasciare-dejar
+bicchieri-vasos
+pesce-pescado
+pollo-pollo
+zucchero-azucar
+formaggio-queso
+latte-leche
+ingrediente-ingrediente
+pane-pan
+torta-pastel
+pesci-peces
+birra-cerveza
+caffè-caffe
+frutta-fruta
+cioccolato-chocolate
+funghi-hongos
+coltello-cuchillo
+fame-hambre
+gelato-helado
+bicchiere-vaso
+cuoco-cocinero
+acqua-agua
+pasta-pasta
+colazione-desayuno
+zuppa-sopa
+ristorante-restaurante
+mangiare-comer
+biscotti-galletas
+tè-te
+gusto-sabor, gusto
+insalata-ensalada
+cucchiaio-cuchara
+pranza-almuerza
+riso-arroz
+mela-manzana
+ghiaccio-hielo
+manzo-carne
+pranzo-almuerzo
+alcol-alcohol
+pepe-pimienta
+bottiglie-botellas
+verdura-verdura
+uovo-huevo
+aglio-ajo
+banana-banana
+carota-zanahoria
+cipolla-cebolla
+pomodoro-tomate
+salsiccia-salchicha
+pranzano-almuerzan
+noleggiare-alquilar
+sale-sal
+ceniamo-cenamos
+maiale-cerdo
+marmellata-mermelada
+limone-limon
+bistecca-bistec
+pasto-comida
+menu-menu
+acido-acido, agrio
+panino-bocadillo
+fragola-fruta
+vegetariano-vegetariano
+cena-cena
+limonata-limonada
+tacchino-pavo
+cameriere-camarero
+griglia-parrilla
+patata-papa
+caramella-caramelo
+ciotola-tazon
+bolle-hierve
+taglio-corto
+taglia-corta
+biscotto-galleta
+burro-mantequilla
+fagiolo-frijol
+bevanda-bebida
+crema-crema
+uva-uva
+tazza-taza
+insetti-insectos
+panini-bocadillos
+torte-pasteles
+caramelle-caramelos
+cuochi-cocineros
+cuscini-almohadas
+luci-luces
+scrivania-escritorio
+cuscino-almohada
+cancello-porton
+vasca-bañera
+luce-luz
+sciampo-shampoo
+cortile-patio
+cancelli-portones
+coperta-manta
+pavimento-piso, pavimento, suelo
+mobili-muebles
+forno-horno
+mobile-mueble
+sofà-sofá
+seggiola-silla
+frigorifero-refrigerador, frigorífico, nevera
+tenda-carpa
+asciugamani-toallas
+lampada-lampara
+entrata-entrada
+seggiole-sillas
+frigoriferi-neveras
+riscaldamento-calefacción
+telefono-telefono
+casa-casa
+tavola-mesa
+stanza-habitacion
+specchio-espejo
+docce-duchas
+doccia-ducha
+scale-escaleras
+specchi-espejos
+tetto-techo
+telefoni-telefonos
+scala-escalera
+divano-sofá
+muri-muros
+balcone-balcon
+tavolo-mesa
+rasoio-afeitadora
+divani-sofas
+dentifricio-pasta de dientes
+muro-muro
+letto-cama
+sapone-jabon
+-------------------------------
+
+---------------NUMEROS Y CANTIDADES---------
+numerosa-numerosa
+numerose-numerosas
+terza-tercera
+primo-antes, primero
+prima-antes, primera
+numeri-numeros
+troppi-demasiados
+quanto-cuanto
+ce-hay
+paio-par
+appena-apenas
+pochino-poquito
+sette-7
+settanta-70
+tre-3
+due-2
+diciotto-18
+tredici-13
+quindici-15
+nove-9
+novanta-90
+cinque-5
+quaranta-40
+uno-1
+dodici-12
+cento-100
+ottanta-80
+sessanta-60
+dieci-10
+quattro-4
+settanta-70
+trenta-30
+otto-8
+quattordici-14
+diciassette-17
+sedici-16
+venti-20
+zero-0
+undici-11
+diciannove-19
+quaranta-40
+-------------------------------
+
+----------ANIMALES--------
+polli-pollos
+gatti-gatos
+cavalli-caballos
+cavallo-caballo
+tigre-tigre
+lupo-lobo
+animali-animales
+zoo-zoologico
+animale-animal
+gatto-gato
+topo-raton
+orso-oso
+cani-perros
+uccelli-pajaros
+pinguino-pinguino
+farfalle-mariposas
+elefanti-elefantes
+banane-bananas
+mucche-vacas
+gatte-gatas
+mele-manzanas
+ape-abeja
+mucca-vaca
+anatra-pato
+elefante-elefante
+formica-hormiga
+serpente-serpiente
+ragno-araña
+tartaruga-tortuga
+cane-perro
+toro-toro
+insetto-insecto
+uccello-pajaro
+squalo-tiburon
+leone-leon
+farfalla-mariposa
+balena-ballena
+mosca-mosca
+scimmia-mono
+delfino-delfin
+forchette-tenedores
+-------------------------------
+
+----------DETERMINANTES--------
+questi-estos
+qualcosa-algo
+quale-cual
+alcuno-alguno
+quali-cuales
+quella-aquella
+tutta-toda
+tutti-todos
+queste-estas
+quando-cuando
+qualcuna-alguna
+mai-nunca, jamás
+qual-cuál
+ancora-todavía, aún, otra vez
+della-de la
+qualche-algunas
+perché-por que
+più-mas
+ma-pero
+sempre-siempre
+la-la
+senza-sin
+questo-esto
+nei-en los
+qualcuno-alguien, alguno
+cui-la cual, el cual, las cuales
+chiunque-cualquier, cualquiera
+nonostante-a pesar de
+soprattutto-sobre todo
+alcuni-algunos
+alcuna-alguna
+alcune-algunas
+propri-propios
+troppe-demasiadas
+quei-aquellos
+quanti-cuantos
+niente-nada
+spesso-a menudo, con frecuencia
+sulla-sobre la
+mie-mias
+tra-entre
+che-que
+come-como
+quel-aquel
+vostri-sus, suyos
+vostro-su, suyo
+vostre-su, suyas
+tue-tus, tuyas
+proprio-propio
+parecchio-mucho
+qualsiasi-cualquier, cualquiera
+certa-cierta
+tutto-todo
+voi-ustedes
+alle-allas
+propria-propia
+no-no
+durante-durante
+quelle-aquellas
+sui-en los, sobre los
+tanto-tanto
+ovunque-donde sea, en todas partes
+ognuno-cada uno
+suoi-suyos
+tutte-todas
+quello-aquello, eso
+nessun-ningun
+quelli-aquellos, esos
+parecchie-muchas
+qualunque-cualquier, cualquiera
+quegli-aquellos, esos
+parecchia-mucha
+troppo-demasiado
+parecchi-muchos
+troppa-demasiada
+tuoi-tus, tuyos
+tuo-tu, tuyo
+nostro-nouestro
+sue-sus, suyas
+nostre-nuestras
+suo-su, suyo
+miei-mios, mis
+nostri-nuestros
+sua-su, suya
+quanta-cuanta
+quante-cuantas
+oppure-o
+finché-hasta que
+bensì-sino
+circa-aproximadamente, acerca, alrededor de
+piuttosto-bastante, más bien
+comunque-de todas maneras
+neanche-ni siquiera, tampoco
+sotto-bajo, debajo de
+pure-también
+oltre-más de, más allá, más que
+benissimo-muy bien
+davvero-en serio, realmente, de verdad
+poi-después, luego
+sopra-sobre
+subito-en seguida, de inmediato, inmediatamente
+intorno-alrededor
+veramente-realmente, verdaderamente
+tuttavia-sin embargo
+dentro-dentro
+anche-también
+nessuna-ninguna
+soltanto-solamente
+col-con el, con la
+già-ya
+metà-mitad
+sì-si
+dopo-despues, luego
+altra-otra
+altro-otro
+altri-otros
+altre-otras
+meno-menos
+almeno-al menos
+così-asi
+mentre-mientras
+ogni-cada
+mia-mia
+tua-tu, tuya
+ognuna-cada una
+entrambe-ambas
+entrambi-ambos
+-------------------------------
+
+---------DIRECCIONES-----------
+là-alla
+lì-alli
+qua-acá
+qui-aqui
+edifici-edificios
+albergo-hotel
+uscita-salida
+inizi-inicios
+distanza-distancia
+fine-final
+inizio-inicio
+ingresso-ingreso
+direzione-direccion
+sinistra-izquierda
+mezzo-medio
+destra-derecha
+mezzi-medios
+mezzi publici- transporte publico
+posizione-posicion
+interiore-interior
+lati-lados
+fondo-fondo
+interiori-interiores
+fermata-parada
+lato-lado
+fronte-frente
+lontano-lejos
+lontana-lejos
+cima-cima, cumbre
+parte-parte
+-------------------------------
+
+---------EDUCACION------------
+professore-profesor
+alunni-alumnos
+studente-estudiante
+insegnante-maestro
+insegnanti-maestros
+classe-clase
+studentessa-estudiante
+istituti-institutos
+istituto-instituto
+principiante-principiante
+educazione-educacion
+scuola-escuela
+tesi-tesis
+università-universidad
+studenti-estudiantes
+capitoli-capítulos
+aula-aula
+scuole-escuelas
+capitolo-capitulo
+liceo-liceo
+laurea-titulo academico
+diploma-diploma
+corso-curso
+concetto-concepto
+dizionario-diccionario
+dizionari-diccionarios
+dipartimento-departamento
+dipartimenti-departamentos
+descrizione-descripcion
+voti-calificaciones, votos, notas
+spiegazione-explicación
+esame-examen
+esercizio-ejercicio
+esami-examenes
+esercizi-ejercicios
+esempio-ejemplo
+compito-tarea
+voto-voto
+compiti-tareas
+esempi-ejemplos
+lingua-lengua, idioma
+istituzione-institucion
+pagina-pagina
+lezione-leccion
+istruzioni-instrucciones
+istituzioni-instituciones
+lingue-lenguas, idiomas
+lezioni-lecciones
+errore-error
+pagine-paginas
+biblioteca-biblioteca
+errori-errores
+carta-carta, papel, tarjeta, menu
+paragrafo-parrafo
+semestre-semestre
+paragrafi-parrafos
+progetto-proyecto
+progetti-proyectos
+penne-boligrafos
+pagella-boletín de calificaciones
+penna-boligrafo
+matita-lapiz
+pagelle-boletines de calificaciones
+regole-regla
+testo-texto
+parola-palabra
+prove-pruebas
+livello-nivel
+titolo-titulo
+livelli-niveles
+frase-frase
+storie-historia
+parole-palabras
+prova-prueba
+storia-historia
+titoli-titulos
+-------------------------------
+
+----------PREPOSICIONES--------
+nello-en el
+negli-en los
+sull'-sobre el
+secondo-segundo
+sul-en el, sobre el
+nelle-en las
+da-desde
+gli-los
+dal-del, desde el
+solo-solo
+davanti-delante
+ai-a los, en los
+dalla-desde la
+verso-hacia
+dai-de los
+lungo-largo
+senz'-sin
+dalle-de las
+dell'-del, de la
+dello-del
+ad-a, en, para
+sia-haya
+dagli-de los, desde los
+agli-a los
+le-las, le
+se-si
+né-ni
+dallo-desde el, del
+fino-hasta
+degli-de los
+sulle-sobre las
+sullo-en la, en el, sobre el, sobre la
+-------------------------------
+
+------------EMOCIONES-----------
+emozione-emocion
+sorpresi-sorpresas
+desideri-deseos
+stanca-cansada
+stanche-cansadas
+sorprese-sorpresas
+triste-triste
+soddisfazione-satisfacción
+soddisfazioni-satisfacciones
+serie-serias
+seria-seria
+desiderio-deseo
+stanco-cansado
+lacrime-lagrimas
+sorpresa-sorpresa
+coraggio-coraje
+amicizia-amistad
+colpa-culpa
+bisogno-necesidad
+spero-espero
+nervosi-nerviosos
+nervoso-nervioso
+bugie-mentiras
+senso-sentido(La frase non ha molto senso)
+nervosa-nerviosa
+aiuto-ayudo
+bugia-mentira
+sentimenti-semtimientos
+baci-besos
+sogno-sueño
+emozioni-emociones
+bacio-beso
+pensiero-pensamiento
+sentimento-sentimiento
+amore-amor
+preoccupare-preocupar
+spaventare-asustar
+arrabbiati-enojados
+paura-miedo
+imbarazzata-avergonzada
+odio-odio
+arrabbiata-enojada
+arrabbiato-enojado
+rispetto-respeto
+odiare-odiar
+felicità-felicidad
+essere-ser, estar
+felici-felices
+tranquillo-tranquilo
+felice-feliz
+pazienza-paciencia
+tranquilli-tranquilos
+contenta-contenta
+tranquilla-tranquila
+contenti-contentos
+confondere-confundir
+piacere-placer, mucho gusto, gustar
+divertimenti-diversiones
+fortuna-suerte, fortuna
+divertimento-diversión
+risata-risa
+allegria-alegría
+gioia-alegría
+-------------------------------
+
+-------------VERBS PASADO-------------
+volevo-queria(Volevo sapere)
+venivi-venías
+potevano-podían
+stavi-estabas
+voleva-quería
+ero-era, había, estaba
+era-era
+volevano-querían
+erano-eran, estaban, habían
+stava-estaba
+facevi-hacías
+poteva-podía
+veniva-venía
+venivano-veniamos
+faceva-hacia
+andavamo-ibamos
+stavo-estaba
+dicevi-decías(Dicevi qualcosa?)
+dava-daba
+sapevo-sabia
+vedevamo-veíamos
+dicevo-decia
+pensavo-pensaba
+conosceva-conocia
+pensavi-pensabas
+trovavamo-encontrabamos
+diceva-decia
+pensava-pensaba
+vedevo-veia
+trovavano-encontraban
+vedeva-veia
+trovavi-encontrabas
+davamo-dábamos
+sapeva-sabia
+offrivano-ofrecían
+finivamo-terminábamos
+leggevo-leía
+giocava-jugaba
+suonava-tocaba
+giocavano-jugaban
+leggeva-leía
+cambiava-cambiaba
+leggevano-leían
+offriva-ofrecía
+suonavano-tocaban
+suonavi-tocabas
+perdevamo-perdíamos
+giocavamo-jugabamos
+finiva-terminaba
+perdevano-perdían
+succedeva-sucedía
+rispondeva-respondía
+indicava-indicaba
+costruiva-construía
+provava-intentaba
+provavamo-intentábamos
+arrivava-llegaba
+credeva-creía
+portavano-llevaban
+prendeva-tomaba
+portava-llevaba
+mettevo-ponía
+chiedeva-preguntaba
+credevano-creían
+credevo-creía
+metteva-ponía
+parlavano-hablaban
+parlava-hablaba
+tenevano-mantenían
+capiva-entendía
+lasciava-dejaba
+sentivo-sentía
+tenevo-mantenía, tenía
+sentiva-sentía
+diventava-se volvía
+rimaneva-quedaba, permanecía
+sentivamo-sentíamos
+lasciavo-dejaba
+passava-pasaba
+capivo-entendía
+lasciavano-dejaban
+teneva-mantenía
+rimanevano-se quedaban, permanecían
+vivevamo-vivíamos
+ricordava-acordaba, recordaba
+usava-usaba
+usavamo-usábamos
+lavorava-trabajaba
+entrava-entraba
+viveva-vivía
+moriva-moría
+entravano-entraban
+ricordavo-acordaba, recordaba
+lavoravano-trabajaban
+chiamava-llamaba
+morivano-morian
+decideva-decidía
+seguivano-seguían
+apriva-abría
+scriveva-escribía
+piaceva-gustaba
+aprivo-abría
+guardava-miraba
+aspettavo-esperaba
+seguivamo-seguíamos
+aprivano-abrían
+aspettava-esperaba
+seguiva-seguía
+-------------------------------
