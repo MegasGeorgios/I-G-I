@@ -69,12 +69,14 @@ class CategoriaController extends Controller
     {
       $this->validate($request, [
       'nota' => 'required',
-      'id_categoria' => 'required'
+      'id_categoria' => 'required',
+      'idioma' => 'required'
       ]);
 
       $table = new Notas;
       $table->nota = $request->nota;
       $table->id_categoria = $request->id_categoria;
+      $table->idioma = $request->idioma;
       $table->save();
 
       return back()->withInput();
@@ -94,8 +96,8 @@ class CategoriaController extends Controller
       $datos = [];
       $bandera = false;
       $numInputs = $request->filas*$request->columnas;
-      
-      for ($i=0; $i < $numInputs; $i++) { 
+
+      for ($i=0; $i < $numInputs; $i++) {
         if (isset($request->input[$i])) {
           $bandera = true;
           $datos[] = $request->input[$i];
@@ -119,7 +121,7 @@ class CategoriaController extends Controller
       }else{
         return back()->withInput()->with('wrong','La tabla debe contener al menos un valor');
       }
-      
+
     }
 
     /**
@@ -136,7 +138,7 @@ class CategoriaController extends Controller
       }
 
       $categoria = Categoria::find($id);
-      $notas = Notas::where('id_categoria',$id)->get();
+      $notas = Notas::where('id_categoria',$id)->where('idioma',$idioma)->get();
       $tablas = Tablas::where('id_categoria',$id)->get();
       $recursos = Recursos::where('id_categoria',$id)->where('imagen','like','%.pdf%')->get();
       $galeria = Recursos::where('idioma',$idioma)->where('id_categoria',$id)->where('imagen', 'NOT LIKE', '%pdf')->get();

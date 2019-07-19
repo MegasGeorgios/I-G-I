@@ -176,6 +176,7 @@
 
             <textarea class="form-control is-valid" id="validationServer05" name="nota" rows="8" required></textarea>
             <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
+            <input type="hidden" name="idioma" value="{{$idioma}}">
             <button type="submit">
               Agregar
             </button>

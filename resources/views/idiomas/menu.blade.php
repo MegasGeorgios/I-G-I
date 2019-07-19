@@ -56,7 +56,7 @@
 
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Nombre:</label>
-            <input type="text" class="form-control" name="nombre_categoria" required>
+            <input type="text" class="form-control" name="nombre_categoria" autocomplete="off" required>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
