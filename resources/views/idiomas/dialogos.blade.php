@@ -14,7 +14,7 @@
 
       <div id="collapse{{$index}}" class="collapse show" aria-labelledby="heading{{$index}}" data-parent="#accordionExample">
         <div class="card-body">
-             {{$dialogo->dialogo}}
+          <?php  echo html_entity_decode($dialogo->dialogo); ?>
         </div>
       </div>
     </div>
@@ -28,10 +28,10 @@
 <form method="POST" action="{{ url('/dialogos/'.$idioma) }}">
   {{ csrf_field() }}
   <div class="row">
-    <div class="col-md-3 mb-3 center-block">
+    <div class="col-md-6 mb-3 center-block">
       <label for="validationServer01">Agregar dialogo</label>
-      <input type="text" class="form-control is-valid" name="titulo" placeholder="Titulo del dialogo">
-      <textarea class="form-control is-valid" name="dialogo" rows="15" placeholder="Inserta un dialogo" required></textarea>
+      <input type="text" class="form-control is-valid" name="titulo" placeholder="Titulo del dialogo" autocomplete="off">
+      <textarea class="form-control is-valid ckeditor" name="dialogo" rows="15" placeholder="Inserta un dialogo" required></textarea>
       <input type="hidden" name="numdialogo" value="{{$num_dialogos}}">
 
       <button type="submit">

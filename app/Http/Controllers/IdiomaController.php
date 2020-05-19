@@ -307,7 +307,9 @@ class IdiomaController extends Controller
       ->where('slug','LIKE','%'.$buscar.'%')->get();
       // ->Orwhere('significado','LIKE','%'.$buscar.'%')->get();
 
-      return view ('idiomas.show', compact('palabras','idioma'));
+      $view = 'buscar';
+      
+      return view ('idiomas.show', compact('palabras','idioma', 'view'));
 
     }
 

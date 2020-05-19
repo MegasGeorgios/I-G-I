@@ -43,7 +43,7 @@
 
           <!-- <textarea class="form-control is-valid" id="validationServer04" name="descripcion" placeholder="Descripcion"></textarea> -->
 
-          <input type="file" name="archivo" accept=".doc,.docx,.pdf">
+          <input type="file" name="archivo" accept=".doc,.docx,.pdf,.txt">
 
           <input type="hidden" name="idioma" value="{{$idioma}}">
           <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
@@ -125,33 +125,46 @@
         </thead>
         <tbody>
           <?php $i=1; ?>
-          @foreach($palabras as $palabra)
-          @if($palabra->favorita == 1)
-          <tr id="resaltarfila-{{$palabra->id}}" style="background-color: #B8F9AA;">
-          @else
-          <tr id="resaltarfila-{{$palabra->id}}">
-          @endif
-            <th scope="row">
-              <?php echo "$i";$i++; ?>
-            </th>
-            <td>{{$palabra->palabra}}</td>
-            <td>{{$palabra->significado}}
-              <a href="" data-toggle="modal" data-target="#exampleModal" v-on:click="asignAtributesShow({{$palabra->id}},'{{$idioma}}')">
-                <i class="fa fa-trash" style="font-size:20px;color:black; float: right;"></i>
-              </a>
-              <a v-on:click="resaltarPalabra({{$palabra->id}},'{{$idioma}}')">
-                <i class="fa fa-bookmark-o" style="font-size:20px;color:black; float: right; padding-right: 5px;"></i>
-              </a>
-            </td>
-            @if(isset($repetidas))
-              @if($repetidas)
-                <td scope="col">{{$palabra->nomb_cat}}</td>
-              @endif
+          @if(count($palabras) > 0)
+            @foreach($palabras as $palabra)
+            @if($palabra->favorita == 1)
+            <tr id="resaltarfila-{{$palabra->id}}" style="background-color: #B8F9AA;">
+            @else
+            <tr id="resaltarfila-{{$palabra->id}}">
             @endif
+              <th scope="row">
+                <?php echo "$i";$i++; ?>
+              </th>
+              <td>{{$palabra->palabra}}</td>
+              <td>{{$palabra->significado}}
+                <a href="" data-toggle="modal" data-target="#exampleModal" v-on:click="asignAtributesShow({{$palabra->id}},'{{$idioma}}')">
+                  <i class="fa fa-trash" style="font-size:20px;color:black; float: right;"></i>
+                </a>
+                <a v-on:click="resaltarPalabra({{$palabra->id}},'{{$idioma}}')">
+                  <i class="fa fa-bookmark-o" style="font-size:20px;color:black; float: right; padding-right: 5px;"></i>
+                </a>
+              </td>
+              @if(isset($repetidas))
+                @if($repetidas)
+                  <td scope="col">{{$palabra->nomb_cat}}</td>
+                @endif
+              @endif
+            </tr>
+            @endforeach
+          @else
+          <tr>
+            <td>Sin resultados !</td>
           </tr>
-          @endforeach
+          @endif
         </tbody>
       </table>
+
+      @if(isset($view))
+        <form class="form-inline my-2 my-lg-0" method="GET" action="{{url('/idioma/'.$idioma.'/buscar')}}">
+          <input class="form-control mr-sm-2" name="palabra" type="search" placeholder="Buscar palabra" aria-label="Search" autocomplete="off">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      @endif
 
       @if(isset($notas))
         @foreach($notas as $nota)
@@ -160,7 +173,7 @@
               Nota
             </div>
             <div class="card-body">
-              <p class="card-text">{{ $nota->nota }}</p>
+              <p class="card-text"><?php  echo html_entity_decode($nota->nota); ?></p>
             </div>
             <div class="card-footer text-muted">
               {{ $nota->created_at->format('d/m/Y')}} - {{ $nota->created_at->format('H:i')}}
@@ -171,10 +184,10 @@
 
         <form method="POST" action="{{ url('/guardar/nota') }}" >
         @csrf
-          <div class="row" style="padding-top: 15px; padding-bottom: 15px;">
+          <div style="padding-top: 15px; padding-bottom: 15px;">
             <label for="validationServer01">AGREGA UNA NOTA!</label>
 
-            <textarea class="form-control is-valid" id="validationServer05" name="nota" rows="8" required></textarea>
+            <textarea class="form-control is-valid ckeditor" id="validationServer05" name="nota" rows="8" required></textarea>
             <input type="hidden" name="id_categoria" value="{{$categoria->id}}">
             <input type="hidden" name="idioma" value="{{$idioma}}">
             <button type="submit">
@@ -306,4 +319,5 @@
       </div>
     </div>
 </div>
+
 @endsection

@@ -18,7 +18,7 @@
 
     #idioma td, #idioma th {
         border: 1px solid #ddd;
-        padding: 8px;
+        padding: 4px;
     }
 
     #idioma tr:nth-child(even){background-color: #f2f2f2;}
@@ -26,8 +26,8 @@
     #idioma tr:hover {background-color: #ddd;}
 
     #idioma th {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 4px;
+        padding-bottom: 4px;
         text-align: left;
         background-color: #4CAF50;
         color: white;
