@@ -98,9 +98,9 @@ class IdiomaController extends Controller
         DB::table($tabla)->where('id', '=', $request->id)->delete();
 
         // return back()->withInput()->with('success','Se ha eliminado correctamente');
-        return ['msj' => 'Se ha eliminado correctamente'];
+        return ['msj' => 'Se ha eliminado correctamente', 'status' => 'ok'];
       }else {
-        return ['msj' =>'Clave incorrecta'];
+        return ['msj' =>'Clave incorrecta', 'status' => 'notok'];
         // return back()->withInput()->with('wrong','Clave incorrecta');
       }
     }

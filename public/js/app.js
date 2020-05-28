@@ -49308,8 +49308,15 @@ var app = new Vue({
         clave: this.clave
       }).then(function (response) {
         //alert(response.data.msj);
-        sweetalert__WEBPACK_IMPORTED_MODULE_0___default()(response.data.msj, "", "success");
-        location.reload();
+        //sweetalert__WEBPACK_IMPORTED_MODULE_0___default()(response.data.msj, "", "success");
+        if (response.data.status == 'ok') {
+          sweetalert__WEBPACK_IMPORTED_MODULE_0___default()(response.data.msj, "", "success");
+        } else {
+          sweetalert__WEBPACK_IMPORTED_MODULE_0___default()(response.data.msj, "", "error");
+        }
+        setTimeout(function(){ 
+          location.reload(); 
+        }, 2000);
       });
     },
     resaltarPalabra: function resaltarPalabra(id, idioma) {

@@ -61,8 +61,16 @@ const app = new Vue({
         clave: this.clave,
       }).then(response => {
         //alert(response.data.msj);
-        swal(response.data.msj, "", "success");
-        location.reload();
+        if (response.data.status == 'ok') {
+          swal(response.data.msj, "", "success");
+        } else {
+          swal(response.data.msj, "", "error");
+        }
+        
+        setTimeout(function(){ 
+          location.reload(); 
+        }, 2000);
+
       });
     },
     resaltarPalabra(id, idioma){
