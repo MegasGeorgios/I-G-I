@@ -63,6 +63,9 @@ class IdiomaController extends Controller
       if ($request->idioma == 'griego') {
         $table = new Griego;
         $table->palabra = trim($request->palabra);
+        $slug = DB::connection()->getPdo()->quote(utf8_encode(str_replace(' ','',strtolower($request->palabra)).str_replace(' ','',strtolower($request->significado))));
+ 
+        $table->slug = $slug;
 
       }elseif ($request->idioma == 'italiano') {
         $table = new Italiano;
@@ -72,11 +75,11 @@ class IdiomaController extends Controller
 
       if ($request->idioma != 'griego') {
         $table->palabra = trim(strtolower($request->palabra));
+        $table->slug = str_replace(' ','',strtolower($request->palabra)).str_replace(' ','',strtolower($request->significado));
       }
 
       $table->significado = trim(strtolower($request->significado));
       $table->id_categoria = $request->id_categoria;
-      $table->slug = str_replace(' ','',strtolower($request->palabra)).str_replace(' ','',strtolower($request->significado));
       $table->save();
 
       return $this->add_word($request->idioma);
