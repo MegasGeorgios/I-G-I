@@ -169,12 +169,6 @@ class IdiomaController extends Controller
     */
     public function practicar(Request $request, $idioma)
     {
-      if ($idioma == 'italiano' || $idioma == 'griego') {
-        $tabla = $idioma.'s';
-      }else {
-        $tabla = 'ingles';
-      }
-
       if (isset($request->value)) {
         $selected = $request->value;
       }else {
@@ -182,7 +176,31 @@ class IdiomaController extends Controller
         $selected = 2;
       }
 
-      $categorias = Categoria::all();
+      if ($idioma == 'italiano') {
+        $tabla = $idioma.'s';
+        $pl = Italiano::orderBy('created_at', 'desc')->get();
+      }elseif ($idioma == 'griego') {
+        $tabla = $idioma.'s';
+        $pl = Griego::orderBy('created_at', 'desc')->get();
+      }elseif ($idioma == 'ingles') {
+        $tabla = 'ingles';
+        $pl = Ingles::orderBy('created_at', 'desc')->get();
+      }
+
+      if (count($pl)>0)
+      {
+        $cat = $pl->map(function ($u) {
+            return $u->id_categoria;
+        });
+
+        $id_categorias = collect($cat)->unique();
+
+        $categorias = Categoria::whereIn('id',$id_categorias)->select('id','nombre_categoria')->get();
+
+      }else {
+        $categorias = [];
+      }
+
       $palabras = DB::table($tabla);
 
       if ($request->value == 3) {
@@ -191,9 +209,14 @@ class IdiomaController extends Controller
         $palabras = $palabras->select('id','palabra')->inRandomOrder();
       }
 
+      if (isset($request->categoria) && $request->categoria != 0) 
+      {
+        $palabras = $palabras->where('id_categoria', $request->categoria);
+      }
+      
       $palabras = $palabras->get();
 
-      return view ('idiomas.practicar', compact('palabras','idioma', 'selected'));
+      return view ('idiomas.practicar', compact('palabras','idioma', 'selected', 'categorias'));
     }
     /**
      * Practicar vocabulario

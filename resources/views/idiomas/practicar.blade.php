@@ -15,6 +15,12 @@
         <option value="2">Solo {{$idioma}}</option>
         @endif
       </select>
+      <select name="categoria" class="custom-select center-block" style="width:150px; height:30px;">
+        <option value="0">Todas las categorias</option>
+        @foreach($categorias as $cat)
+        <option value="{{$cat->id}}">{{$cat->nombre_categoria}}</option>
+        @endforeach
+      </select>
     </div>
   </div>
   <button class="btn btn-primary center-block" style="width:150px;" type="submit">Practicar</button>
